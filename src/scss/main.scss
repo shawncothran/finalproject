@@ -20,17 +20,20 @@ html, body {
 }
 
 body {
-  font-family: 'Press Start 2P', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 'Helvetica', 'Arial', "Lucida Grande", sans-serif;
+  font-weight: 300;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 
 #app {
-  height: 100%;
-  width: 100%;
-}
-main {
-  @include outer-container(80%);
+  @include outer-container();
   @include vertical-align();
-  height: 80%;
+}
+
+main {
+  @include outer-container();
   border-radius: 20px;
   background: #c0ffff;
 }
