@@ -1,18 +1,26 @@
-import React from 'react';
-import { Link } from 'react-router';
+import React, { PropTypes } from 'react';
 import $ from 'jquery';
+import { Link } from 'react-router';
+
+
+import Header from './header';
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  
   render () {
+    let childrenWithProps = React.Children.map(this.props.children, child => {
+      return React.cloneElement(child)
+    })
+
     return (
-      <main>
-        <header>
-          <h1>Snailephant @c;</h1>
-          <nav>
-            <Link to="/">Home</Link>
-          </nav>
-        </header>
-      </main>
+      <div>
+        <Header />
+
+        {childrenWithProps}
+      </div>
     )
   }
 }
