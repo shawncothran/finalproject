@@ -9,8 +9,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
   }
-
-
+  
   render () {
     let childrenWithProps = React.Children.map(this.props.children, child => {
       return React.cloneElement(child)

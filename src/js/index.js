@@ -1,5 +1,6 @@
+<<<<<<< HEAD
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import {Router, Route, IndexRoute} from 'react-router';
 
 import App from './components/app';
@@ -7,8 +8,7 @@ import Header from './components/header';
 import Login from './components/login';
 import Register from './components/register';
 
-
-ReactDOM.render((
+render((
   <Router>
     <Route path="/" component={App}>
         <Route path="login" component={Login} />

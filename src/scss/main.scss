@@ -1,0 +1,68 @@
+@import '../../dist/bower_components/normalize-css/normalize';
+@import '../../dist/bower_components/bourbon/app/assets/stylesheets/bourbon';
+$visual-grid: true;
+@import '../../dist/bower_components/neat/app/assets/stylesheets/neat';
+
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 'Helvetica', 'Arial', "Lucida Grande", sans-serif;
+  font-weight: 300;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+#app {
+  @include outer-container();
+  @include vertical-align();
+}
+
+main {
+  @include outer-container();
+  border-radius: 20px;
+  background: #c0ffff;
+}
+
+nav {
+  @include span-columns(12);
+  text-align: center;
+}
+
+a {
+  color: #003BB4;
+  text-decoration: none;
+  &:hover {
+    color: #1651DC;
+  }
+}
+
+.settings {
+  @include span-columns(12);
+  margin-top: 36px;
+  text-align: center;
+  font-size: 67px;
+}
+
+button {
+  text-align: center;
+  background: none;
+  border: 1px solid #00c000;
+  &:hover {
+    border: 8px solid #0000c0;
+  }
+}
