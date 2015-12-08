@@ -10,9 +10,15 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "dist/bower_components"
   ],
   "dependencies": {
-
-  }
+    "neat": "~1.7.2",
+    "normalize-css": "normalize.css#~3.0.3"
+  },
+  "homepage": "https://github.com/shawncothran/finalproject",
+  "description": "",
+  "main": "",
+  "moduleType": []
 }
