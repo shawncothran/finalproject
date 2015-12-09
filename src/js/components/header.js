@@ -10,15 +10,12 @@ class Header extends React.Component {
   render() {
     return (
       <header>
-
-        <h1>Snailephant: Never Remember Another Birthday!</h1>
+        <h1>@c; Snailephant. Never forget to send a card.</h1>
         <nav>
           <Link to="/">Your Dashboard</Link>
           <Link to="login">Login</Link>
           <Link to="register">Register</Link>
         </nav>
-
-        <p> @C;</p>
       </header>
     )
   }
