@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from 'react';
 import { render } from 'react-dom';
 import {Router, Route, IndexRoute} from 'react-router';
