@@ -3,6 +3,41 @@
 $visual-grid: true;
 @import '../../dist/bower_components/neat/app/assets/stylesheets/neat';
 
+// Predefined Media Query Break-points //
+
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+// saved data //
+
+.fonts {
+  font-family: 'Raleway', sans-serif; //////////////// thin or bold sans ///////
+  font-family: 'Mountains of Christmas', cursive; //// goofy christmas /////////
+  font-family: 'Playfair Display', serif; //////////// serif ///////////////////
+  font-family: 'Annie Use Your Telescope', cursive; // logo font, handwritten //
+  font-family: 'Great Vibes', cursive; /////////////// fancy curly formal //////
+}
+
+.colors {
+  color: #b30000; // //
+  color: #00ccff; // //
+  color: #6036e3; //
+}
+
+// other mixins //
+
 @mixin vertical-align($position: relative) {
   position: $position;
   top: 50%;
@@ -10,6 +45,8 @@ $visual-grid: true;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
+
+// down to business //
 
 html, body {
     height: 100%;
@@ -20,7 +57,7 @@ html, body {
 }
 
 body {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 'Helvetica', 'Arial', "Lucida Grande", sans-serif;
+  font-family: 'Raleway', sans-serif; // thin sans //
   font-weight: 300;
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
@@ -34,8 +71,19 @@ body {
 
 main {
   @include outer-container();
-  border-radius: 20px;
   background: #c0ffff;
+}
+
+.logo {
+  font-family: 'Annie Use Your Telescope', 'Helvetica', 'Arial', sans-serif; // logo //
+  text-align: center;
+  font-size: 100px;
+}
+
+.homeHeader h1 {
+  font-family: 'Annie Use Your Telescope', cursive; // logo font, handwritten //
+  text-align: center;
+  font-size: 50px;
 }
 
 nav {
@@ -46,23 +94,4 @@ nav {
 a {
   color: #003BB4;
   text-decoration: none;
-  &:hover {
-    color: #1651DC;
-  }
-}
-
-.settings {
-  @include span-columns(12);
-  margin-top: 36px;
-  text-align: center;
-  font-size: 67px;
-}
-
-button {
-  text-align: center;
-  background: none;
-  border: 1px solid #00c000;
-  &:hover {
-    border: 8px solid #0000c0;
-  }
 }
