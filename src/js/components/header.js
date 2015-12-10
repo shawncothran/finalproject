@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import $ from 'jquery';
 import { Link } from 'react-router';
 
@@ -20,6 +20,5 @@ class Header extends React.Component {
     )
   }
 }
-
 
 export default Header;
