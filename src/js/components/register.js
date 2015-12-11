@@ -11,11 +11,17 @@ class Register extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    let data = {username: this.refs.username.value, password: this.refs.password.value};
+    let data = {
+      "user": {
+        "email": this.refs.username.value,
+         "password": this.refs.password.value
+          }
+      };
     $.ajax({
-      url: 'https://api.parse.com/1/users',
+      url: 'http://snailephant.herokuapp.com/users',
       type: 'POST',
-      data: JSON.stringify(data)
+      data: data,
+      dataType: "json"
     })
   }
 
