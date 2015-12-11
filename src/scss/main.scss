@@ -4,21 +4,21 @@ $visual-grid: true;
 @import '../../dist/bower_components/neat/app/assets/stylesheets/neat';
 
 // Predefined Media Query Break-points //
-
-$tablet-width: 768px;
-$desktop-width: 1024px;
-
-@mixin tablet {
-  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
-    @content;
-  }
-}
-
-@mixin desktop {
-  @media (min-width: #{$desktop-width}) {
-    @content;
-  }
-}
+//
+// $tablet-width: 768px;
+// $desktop-width: 1024px;
+//
+// @mixin tablet {
+//   @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+//     @content;
+//   }
+// }
+//
+// @mixin desktop {
+//   @media (min-width: #{$desktop-width}) {
+//     @content;
+//   }
+// }
 
 // saved data //
 
@@ -33,7 +33,7 @@ $desktop-width: 1024px;
 .colors {
   color: #b30000; // //
   color: #00ccff; // //
-  color: #6036e3; //
+  color: #6036e3; // //
 }
 
 // other mixins //
@@ -59,13 +59,18 @@ html, body {
 body {
   font-family: 'Raleway', sans-serif; // thin sans //
   font-weight: 300;
+  font-size: 2.5vw;
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
 
+img {
+  max-width:100%;
+}
+
 #app {
-  @include outer-container();
+  @include outer-container(100%);
   @include vertical-align();
 }
 
@@ -77,18 +82,14 @@ main {
 .logo {
   font-family: 'Annie Use Your Telescope', 'Helvetica', 'Arial', sans-serif; // logo //
   text-align: center;
-  font-size: 100px;
+  font-size: 7vw;
 }
 
-.homeHeader h1 {
+.headerTitle {
+  display: inline-block;
   font-family: 'Annie Use Your Telescope', cursive; // logo font, handwritten //
   text-align: center;
-  font-size: 50px;
-}
-
-nav {
-  @include span-columns(12);
-  text-align: center;
+  font-size: 4vw;
 }
 
 a {
