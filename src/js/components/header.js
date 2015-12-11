@@ -10,15 +10,13 @@ class Header extends React.Component {
   render() {
     return (
       <header className="homeHeader">
-        <h1>
-          <span className="logo">@c; </span>
+        <h1 className="headerTitle">
+          <span className="logo">@c;</span>
           Snailephant. Never forget to send a card.
         </h1>
-        <nav>
-          <Link to="/">Your Dashboard</Link>
-          <Link to="login">Login</Link>
-          <Link to="register">Register</Link>
-        </nav>
+        <Link to="/">Dashboard</Link>
+        <Link to="login">Login</Link>
+        <Link to="register">Register</Link>
       </header>
     )
   }
