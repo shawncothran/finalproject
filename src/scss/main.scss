@@ -20,40 +20,32 @@ $visual-grid: true;
 //   }
 // }
 
-// saved data //
+// SAVED STUFF //
+//
+// FONTS //
+// font-family: 'Raleway', sans-serif; //////////////// thin or bold sans ///////
+// font-family: 'Mountains of Christmas', cursive; //// goofy christmas /////////
+// font-family: 'Playfair Display', serif; //////////// serif ///////////////////
+// font-family: 'Annie Use Your Telescope', cursive; // logo font, handwritten //
+// font-family: 'Great Vibes', cursive; /////////////// fancy curly formal //////
+//
+// COLORS//
+//   color: #b30000; //
+//   color: #00ccff; //
+//   color: #6036e3; //
+//
 
-.fonts {
-  font-family: 'Raleway', sans-serif; //////////////// thin or bold sans ///////
-  font-family: 'Mountains of Christmas', cursive; //// goofy christmas /////////
-  font-family: 'Playfair Display', serif; //////////// serif ///////////////////
-  font-family: 'Annie Use Your Telescope', cursive; // logo font, handwritten //
-  font-family: 'Great Vibes', cursive; /////////////// fancy curly formal //////
-}
-
-.colors {
-  color: #b30000; // //
-  color: #00ccff; // //
-  color: #6036e3; // //
-}
-
-// other mixins //
-
-@mixin vertical-align($position: relative) {
-  position: $position;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
+// mixins //
 
 // down to business //
 
-html, body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
 body {
@@ -66,12 +58,11 @@ body {
 }
 
 img {
-  max-width:100%;
+  max-width: 100%;
 }
 
 #app {
   @include outer-container(100%);
-  @include vertical-align();
 }
 
 main {

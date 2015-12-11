@@ -37,11 +37,12 @@ gulp.task('watch', function() {
   gulp.watch(['./src/**/*.js'], ['lint','babel']);
   gulp.watch(['./src/scss/*.scss'], ['sass']);
   gulp.watch(['./src/index.html'], ['copy']);
+  gulp.watch(['./src/assets/**/*.*'], ['copy']);
 });
 
 gulp.task('copy', function () {
-  gulp.src('./src/img/**/*')
-    .pipe(gulp.dest('dist/img/'));
+  gulp.src('./src/assets/**/*')
+    .pipe(gulp.dest('dist/assets/'));
 
   gulp.src('./src/index.html')
     .pipe(gulp.dest('dist'));
