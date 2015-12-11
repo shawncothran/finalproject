@@ -6,7 +6,11 @@ class Register extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSuccess = this.handleSuccess.bind(this);
   }
+ handleSuccess(data) {
+     document.getElementById("success").innerHTML= ',@D; "I will Remember that"   <a href="#/login">Continue eh to Dashboard</a>';
+   }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -17,10 +21,12 @@ class Register extends React.Component {
          "password": this.refs.password.value
           }
       };
+      var self = this;
     $.ajax({
       url: 'http://snailephant.herokuapp.com/users',
       type: 'POST',
       data: data,
+      success: this.handleSuccess,
       dataType: "json"
     })
   }
@@ -35,6 +41,7 @@ class Register extends React.Component {
         <input type="password" ref="passconfirm" placeholder="wait, what was that?"/>
         <input type="submit" value="sign up"/>
         <Link to="login">Already a member? Login</Link>
+        <div id="success"></div>
       </form>
     )
   }

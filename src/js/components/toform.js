@@ -14,7 +14,8 @@ handleToFormSubmit () {
   let name = this.refs.name.value,
       address_line1 = this.refs.address1.value,
       address_line2 = this.refs.address2.value,
-      address_city = this.refs.state.value,
+      address_city = this.refs.city.value,
+      address_state = this.refs.state.value,
       address_country = this.refs.country.value,
       address_zip = this.refs.zip.value;
 }
