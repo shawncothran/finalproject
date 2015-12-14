@@ -1,6 +1,6 @@
 @import '../../dist/bower_components/normalize-css/normalize';
 @import '../../dist/bower_components/bourbon/app/assets/stylesheets/bourbon';
-$visual-grid: true;
+// $visual-grid: true;
 @import '../../dist/bower_components/neat/app/assets/stylesheets/neat';
 
 // Predefined Media Query Break-points //
@@ -62,7 +62,7 @@ img {
 }
 
 #app {
-  @include outer-container(100%);
+  @include outer-container(95%);
 }
 
 main {
@@ -72,8 +72,10 @@ main {
 
 .logo {
   font-family: 'Annie Use Your Telescope', 'Helvetica', 'Arial', sans-serif; // logo //
+  color: #666;
   text-align: center;
   font-size: 7vw;
+  padding-right: 2vw;
 }
 
 .headerTitle {
@@ -86,6 +88,7 @@ main {
 a {
   color: #003BB4;
   text-decoration: none;
+  padding-left: 2vw;
 }
 
 .button {
