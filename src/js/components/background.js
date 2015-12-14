@@ -9,7 +9,9 @@ class Background extends React.Component {
 
   render() {
     return (
-      <h1>Background</h1>
+      <section className="slide">
+        <h1>Background</h1>
+      </slide>
     )
   }
 }
