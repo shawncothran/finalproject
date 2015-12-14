@@ -3,9 +3,10 @@ import { render } from 'react-dom';
 import {Router, Route, IndexRoute, Link} from 'react-router';
 
 import App from './components/app';
-import Hero from './components/hero';
+import Home from './components/home';
 import Login from './components/login';
 import Register from './components/register';
+import Dashboard from './components/dashboard';
 import ToForm from './components/toform';
 
 let NotFound = () => {
@@ -22,9 +23,10 @@ let NotFound = () => {
 render((
   <Router>
     <Route path="/" component={App}>
-      <IndexRoute component={Hero} />
+      <IndexRoute component={Home} />
         <Route path="login" component={Login} />
         <Route path="register" component={Register} />
+        <Route path="dashboard" component={Dashboard} />
         <Route path="toform" component={ToForm} />
     </Route>
     <Route path='*' component={NotFound} />
