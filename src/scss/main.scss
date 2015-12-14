@@ -45,7 +45,6 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
 }
 
 body {
@@ -63,6 +62,7 @@ img {
 
 #app {
   @include outer-container(95%);
+
 }
 
 main {
