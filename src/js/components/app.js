@@ -3,6 +3,7 @@ import $ from 'jquery';
 import { Link } from 'react-router';
 
 import Header from './header';
+import Hero from './hero';
 import ToForm from './toform';
 
 class App extends React.Component {
@@ -23,6 +24,8 @@ class App extends React.Component {
     return (
       <div>
         <Header />
+        <Hero />
+        <Link to="register" className="button">Create a card!</Link>
         {childrenWithProps}
       </div>
     )

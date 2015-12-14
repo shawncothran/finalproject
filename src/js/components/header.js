@@ -9,7 +9,7 @@ class Header extends React.Component {
 
   render() {
     return (
-      <header className="homeHeader Aligner-item">
+      <header className="homeHeader">
         <h1 className="headerTitle">
           <span className="logo">@c;</span>
           Snailephant. Never forget to send a card.
