@@ -2,35 +2,30 @@ import $ from "jquery";
 
 class Card {
   constructor() {
-    this.card.name = null;
-    this.card.
+    this.name = null;
+    this.address1 = null;
+    this.address2 = null;
+    this.city = null;
+    this.state = null;
+    this.country = null;
+    this.zip = null;
+    this.front = null;
+    this.back = null;
+    this.date = null;
 
   }
-  card(data, done) {
+
+  postCard(data, done) {
     let url = "http://snailephant.herokuapp.com/cards";
 
     let options = {
       url: url,
       method: "POST",
-      data: {
-        "card": {
-          "name": name,
-          "address_line1": address1,
-          "address_line2": address2,
-          "address_city": city,
-          "address_state": state,
-          "address_country": country,
-          "address_zip": zip,
-          "front": html
-        }
-      }
-    };
-
-    $.ajaxSetup({
+      data: { data },
       headers: {
         "Authorization": "Bearer " + this.access_token
       }
-    });
+    };
 
     $.ajax(options).then(response => {
       done(null, response);
@@ -38,4 +33,5 @@ class Card {
       done(error);
     });
   }
-}
+
+  export default new Card();
