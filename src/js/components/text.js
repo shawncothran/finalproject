@@ -9,9 +9,9 @@ class Text extends React.Component {
 
   render() {
     return (
-      <section className="slide">
+      <section>
         <h1>Text</h1>
-      </slide>    )
+      </section>    )
   }
 }
 

@@ -9,9 +9,9 @@ class Preview extends React.Component {
 
   render() {
     return (
-      <section className="slide">
+      <section>
         <h1>Preview</h1>
-      </slide>
+      </section>
     )
   }
 }

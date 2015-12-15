@@ -23,7 +23,7 @@ handleToFormSubmit () {
 
   render () {
     return (
-      <section className="slide">
+      <section>
         <h1>Step 2 of 5: To Whom Are You Sending?</h1>
         <input ref='name' type='text' placeholder='Mommy Momephant' required/><p className='required'>*</p>
         <input ref='address1' type='text' placeholder='123 Snail Way' required/><p className='required'>*</p>
