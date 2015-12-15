@@ -26,12 +26,19 @@ class CardCreator extends React.Component {
   };
 
   render() {
-    let previous = this.props.views[this.state.currentIndex -1],
-        current = this.props.views[this.state.currentIndex],
-        next = this.props.views[this.state.currentIndex + 1];
+    // let previousStyle = {position: 'absolute'; right: '0';},
+    //     currentStyle = {position: 'absolute'; left: '0';},
+    //     nextStyle = {position: 'absolute'; left: '100%';},
+    let previousStyle,
+        currentStyle,
+        nextStyle,
 
-    let previousButton = previous ? <button onClick={this.handleClickPrevious}>&lt;prev</button> : undefined;
-    let nextButton = next ? <button onClick={this.handleClickNext}>next&gt;</button> : undefined;
+        previous = (<div style={previousStyle}>{this.props.views[this.state.currentIndex - 1]}</div>),
+        current = (<div style={currentStyle}>{this.props.views[this.state.currentIndex]}</div>),
+        next = (<div style={nextStyle}>{this.props.views[this.state.currentIndex + 1]}</div>),
+
+        previousButton = previous ? <button onClick={this.handleClickPrevious}>&lt;prev</button> : undefined,
+        nextButton = next ? <button onClick={this.handleClickNext}>next&gt;</button> : undefined;
 
     return (
       <section className="cardCreator">

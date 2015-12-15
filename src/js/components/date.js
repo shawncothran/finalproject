@@ -9,9 +9,9 @@ class Date extends React.Component {
 
   render() {
     return (
-      <section className="slide">
+      <section>
         <h1>Date</h1>
-      </slide>    )
+      </section>    )
   }
 }
 
