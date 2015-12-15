@@ -9,30 +9,28 @@ class Register extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
 
     this.state = {
-      username: null
+      email: null
     }
   }
 
   handleSubmit(e) {
     e.preventDefault();
 
-    let username = this.refs.username.value;
+    let email = this.refs.email.value;
     let password = this.refs.password.value;
 
-    User.register({username, password}, (results) => {
-      User.login({username, password}, () => {
-        // we are logged in now...
-        // user router to redirect
-        this.setState({username: username});
+    User.register({email, password}, (results) => {
+      User.login({username: email, password: password}, () => {
+        this.setState({email: email});
       })
     });
   }
 
   render() {
     let successMsg;
-    if (this.state.username) {
+    if (this.state.email) {
         successMsg = (
-        <p>,@D; {this.state.username} I will Remember that
+        <p>,@D; {this.state.email}, I'll Remember that
           <Link to="#/login">Continue to Dashboard</Link>
         </p>
       )
@@ -40,11 +38,11 @@ class Register extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <h2>Sign Up for Free</h2>
-        <p>Make your first card in seconds</p>
+        <p>Make your first card in seconds!</p>
         <div id="success">{successMsg}</div>
-        <input type="text" ref="username" placeholder="Millie@Snailephant.com"/>
-        <input type="password" ref="password" placeholder="secret passcode"/>
-        <input type="password" ref="passconfirm" placeholder="wait, what was that?"/>
+        <input type="text" ref="email" placeholder="Millie@Snailephant.com" required/>
+        <input type="password" ref="password" placeholder="secret passcode" required/>
+        <input type="password" ref="passconfirm" placeholder="wait, what was that?" required/>
         <input type="submit" value="sign up"/>
         <Link to="login">Already a member? Login</Link>
       </form>

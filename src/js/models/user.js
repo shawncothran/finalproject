@@ -28,20 +28,23 @@ class User {
     return this.access_token !== null;
   }
 
-  register({username, password}, done) {
+  register({email, password}, done) {
 
     $.ajax({
       url: 'http://snailephant.herokuapp.com/users',
       type: 'POST',
       data: {
         user: {
-          email: username,
+          email: email,
           password: password
         }
       },
       dataType: "json"
     })
-    .then(done)
+    .then((results) => {
+      console.log(results);
+      done(results);
+    })
     .fail((err) => {
 
     })
@@ -74,8 +77,6 @@ class User {
         expires_in: expires_in,
         created_at: created_at
       }));
-
-
       done(null, response);
     }).fail(error => {
       done(error);
