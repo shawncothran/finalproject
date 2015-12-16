@@ -23,12 +23,12 @@ handleToFormSubmit () {
 
   render () {
     return (
-      <section>
-        <h1>Step 2 of 5: To Whom Are You Sending?</h1>
-        <input ref='name' type='text' placeholder='Mommy Momephant' required/><p className='required'>*</p>
-        <input ref='address1' type='text' placeholder='123 Snail Way' required/><p className='required'>*</p>
+      <section className="toForm">
+        <h1>Send To:</h1>
+        <input ref='name' type='text' placeholder='Mommy Momephant' required/><span className='required'>*</span>
+        <input ref='address1' type='text' placeholder='123 Snail Way' required/><span className='required'>*</span>
         <input ref='address2' type='text' placeholder='Apt. 321'/>
-        <input ref='addresscity' type='text' placeholder='Nashville' required/><p className='required'>*</p>
+        <input ref='addresscity' type='text' placeholder='Nashville' required/><span className='required'>*</span>
         <select ref='state' required>
             <option value='TN'>Tennessee</option>
             <option value='AL'>Alabama</option>
@@ -81,7 +81,7 @@ handleToFormSubmit () {
             <option value='WV'>West Virginia</option>
             <option value='WI'>Wisconsin</option>
             <option value='WY'>Wyoming</option>
-        </select>	<p className='required'>*</p>
+        </select>	<span className='required'>*</span>
         <select ref='country' required>
             <option value='US'>United States</option>
           	<option value='AF'>Afghanistan</option>
@@ -334,7 +334,7 @@ handleToFormSubmit () {
           	<option value='ZM'>Zambia</option>
           	<option value='ZW'>Zimbabwe</option>
         </select>
-        <input ref='zip' type='text' placeholder='Zip Code' required/><p className='required'>*</p>
+        <input ref='zip' type='text' placeholder='Zip Code' required/><span className='required'>*</span>
         <p> Looks Good? Hit Submit to proceed to Delivery Scheduler! </p>
         <input type='submit' value='Submit'/>
       </section>
