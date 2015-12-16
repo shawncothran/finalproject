@@ -1,5 +1,4 @@
 import React from 'react';
-import $ from 'jquery';
 import { Link } from 'react-router';
 import User from '../models/user';
 
@@ -19,8 +18,8 @@ class Login extends React.Component {
     let email = this.refs.email.value;
     let password = this.refs.password.value;
 
-    User.login({username: email, password: password}, () => {
-      this.setState({email: email});
+    User.login({username: email, password}, () => {
+      this.setState({email});
       this.props.history.pushState(null, "dashboard");
     })
   }
