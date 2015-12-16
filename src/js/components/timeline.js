@@ -10,6 +10,7 @@ class Timeline extends React.Component {
   render() {
     return (
       <section className="timeline">
+        <Link to="account">Account</Link>
         <h1>Timeline</h1>
       </section>
     )
