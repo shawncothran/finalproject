@@ -37,9 +37,7 @@ class CardCreator extends React.Component {
   };
 
   render() {
-    console.log('called render');
-    let
-        prevIndex = this.state.currentIndex - 1,
+    let prevIndex = this.state.currentIndex - 1,
         currentIndex = this.state.currentIndex,
         nextIndex = this.state.currentIndex + 1,
 
