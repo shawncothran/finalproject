@@ -23,6 +23,7 @@ class Dashboard extends React.Component {
     let views = [(<Background/>), (<Text/>), (<Date/>), (<ToForm/>), (<Preview/>)]
     return (
       <section className="dashboard">
+        <Link to="account">Account</Link>
         <Timeline />
         <CardCreator views = {views}/>
       </section>

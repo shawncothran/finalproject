@@ -6,7 +6,7 @@ class Hero extends React.Component {
   render() {
     return (
       <section className="hero">
-        <h1 className="logo">@c;</h1>
+        <h1 className="logo"><img className="logoImg" src="../../assets/snailephant.png" alt="@c;" title="@c;" /></h1>
         <h2>
           You make it. We mail it.
           You create the card on your time. Snailephant will never forget to snail mail the card at the appropriate time.

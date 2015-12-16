@@ -13,7 +13,6 @@ class Background extends React.Component {
 
   handleBackground(background) {
     this.setState({background})
-    console.log(this.state);
   };
 
   render() {

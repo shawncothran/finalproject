@@ -3,9 +3,6 @@ import $ from 'jquery';
 import { Link } from 'react-router';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-
-
-
 class CardCreator extends React.Component {
   constructor(props) {
     super(props);
@@ -50,7 +47,6 @@ class CardCreator extends React.Component {
 
     return (
       <section className="cardCreator">
-
         <ReactCSSTransitionGroup transitionName={`card__${this.state.direction}`} transitionAppear={true} transitionAppearTimeout={1000} transitionEnterTimeout={1000} transitionLeaveTimeout={1000}>
           <div className="slide prevSlide" key={`${prevIndex}_prev`}>{previous}</div>
           <div className="slide currentSlide" key={`${currentIndex}_current`}>{current}</div>
