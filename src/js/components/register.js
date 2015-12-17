@@ -18,14 +18,21 @@ class Register extends React.Component {
 
     let email = this.refs.email.value;
     let password = this.refs.password.value;
+    let passwordConfirm = this.refs.passconfirm.value;
 
-    User.register({email, password}, (results) => {
-      User.login({username: email, password: password}, () => {
-        this.setState({email: email});
-      })
-    });
+    if (email && password && password === passwordConfirm) {
+      User.register({email, password}, (results) => {
+        User.login({username: email, password: password}, () => {
+          this.setState({email: email});
+        })
+      });
+    } else {
+      alert("Type yo password twice yo and spell it the same both times. Try again, hen.")
+      this.refs.email.value = "",
+      this.refs.password.value = "",
+      this.refs.passconfirm.value = ""
+    }
   }
-
   render() {
     let successMsg;
     if (this.state.email) {
