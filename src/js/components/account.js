@@ -15,6 +15,7 @@ class Account extends React.Component {
   }
   render() {
     return (
+      <Link to="dashboard">Dashboard</Link>
       <form>
         <input type="text" placeholder="finish me!"/>
       </form>
