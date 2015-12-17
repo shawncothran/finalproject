@@ -7,11 +7,17 @@ class Date extends React.Component {
     super(props);
   }
 
+  handleBackground(background) {
+    this.props.updateCard(background)
+  };
+
   render() {
     return (
       <section>
         <h1>Date</h1>
-      </section>    )
+        <div className="preview" style={{backgroundColor: this.props.front.background}}></div>
+      </section>
+    )
   }
 }
 

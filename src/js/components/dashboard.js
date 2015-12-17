@@ -17,12 +17,24 @@ class Dashboard extends React.Component {
     this.state = {
       front: {}
     }
+
+    this.handleUpdateCard = this.handleUpdateCard.bind(this)
+  }
+
+  handleUpdateCard(data) {
+    let newData = Object.assign({}, this.state.front, data);
+    this.setState({front: newData});
   }
 
   render() {
-    let views = [(<Background/>), (<Text/>), (<Date/>), (<ToForm/>), (<Preview/>)]
+    let views = [
+      (<Background front={this.state.front} updateCard={this.handleUpdateCard}/>),
+      (<Text front={this.state.front} updateCard={this.handleUpdateCard}/>),
+      (<Date front={this.state.front} updateCard={this.handleUpdateCard}/>),
+      (<ToForm front={this.state.front} updateCard={this.handleUpdateCard}/>)];
     return (
       <section className="dashboard">
+        <Link to="account">Account</Link>
         <Timeline />
         <CardCreator views = {views}/>
       </section>

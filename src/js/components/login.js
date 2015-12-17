@@ -1,5 +1,4 @@
 import React from 'react';
-import $ from 'jquery';
 import { Link } from 'react-router';
 import User from '../models/user';
 
@@ -19,12 +18,11 @@ class Login extends React.Component {
     let email = this.refs.email.value;
     let password = this.refs.password.value;
 
-
-      if(email && password) {
-        User.login({username: email, password: password}, () => {
-          this.setState({email: email});
-          this.props.history.pushState(null, "dashboard");
-        })
+    if(email && password) {
+      User.login({username: email, password: password}, () => {
+        this.setState({email: email});
+        this.props.history.pushState(null, "dashboard");
+      })
     } else {
       alert("Hmmm... I don't remember that. Try again");
       this.refs.email.value = "",

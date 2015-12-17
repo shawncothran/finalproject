@@ -1,5 +1,6 @@
 @import '../../dist/bower_components/normalize-css/normalize';
 @import '../../dist/bower_components/bourbon/app/assets/stylesheets/bourbon';
+
 // $visual-grid: true;
 @import '../../dist/bower_components/neat/app/assets/stylesheets/neat';
 
@@ -19,7 +20,6 @@
 //     @content;
 //   }
 // }
-
 // SAVED STUFF //
 //
 // FONTS //
@@ -34,118 +34,259 @@
 //   color: #00ccff; //
 //   color: #6036e3; //
 //
-
 // mixins //
-
 // down to business //
-
 html,
 body {
-  height: 100%;
+  height: 100vh;
   width: 100%;
   margin: 0;
   padding: 0;
 }
-
 body {
-  font-family: 'Raleway', sans-serif; // thin sans //
+  font-family: 'Annie Use Your Telescope', 'Helvetica', 'Arial', sans-serif; // logo //
   font-weight: 300;
   font-size: 2.5vw;
   background-color: #babec9;
 }
-
 img {
   max-width: 100%;
 }
-
 #app {
   @include outer-container(100%);
   height: 100%;
   > div {
-    height: 100%;
+    height: 100vh;
   }
 }
-
 main {
   @include outer-container();
   background: #c0ffff;
-  height: 100%;
+  height: 100vh;
 }
-
 .logo {
-  font-family: 'Annie Use Your Telescope', 'Helvetica', 'Arial', sans-serif; // logo //
   color: #666;
   text-align: center;
   font-size: 7vw;
   padding-right: 2vw;
 }
-
+.homeHEader {
+  padding: 5vw;
+}
 .headerTitle {
   display: inline-block;
-  font-family: 'Annie Use Your Telescope', cursive; // logo font, handwritten //
   text-align: center;
   font-size: 4vw;
 }
-
 a {
   color: #003BB4;
   text-decoration: none;
   padding-left: 2vw;
 }
-
 .logoImg {
   width: 9vw;
 }
-
 .button {
-   padding: 1vw;
-   border: 0.1vw solid #C7C7C7;
-   background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#AAAAAA));
-   background: -webkit-linear-gradient(top, #FFFFFF, #FF0000);
-   background: -moz-linear-gradient(top, #FFFFFF, #FF0000);
-   background: -ms-linear-gradient(top, #FFFFFF, #FF0000);
-   background: -o-linear-gradient(top, #FFFFFF, #FF0000);
-   background-color: #FF0000;
-   box-shadow: 0px 7px 2px -5px #1A1A1A, inset 0px 0px 3px #9C0000;
-   -webkit-box-shadow: 0px 7px 2px -5px #1A1A1A, inset 0px 0px 3px #9C0000;
-   -moz-box-shadow: 0px 7px 2px -5px #1A1A1A, inset 0px 0px 3px #9C0000;
-   -webkit-border-radius: 10px;
-   -moz-border-radius: 10px;
-   border-radius: 10px;
-   text-shadow: #FF7A7A 1px 1px 0px;
-   color: #8F0000;
-   font-size: 19px;
-   font-family: Arial;
-   text-decoration: none;
-   font-weight: bold;
-   -webkit-transition: 0.2s;
-   -moz-transition: 0.2s;
-   -o-transition: 0.2s;
-   }
-.button:focus {
-   background: none;
-   background-color: #FF0000;
-   box-shadow: 0px 0px 5px 0px #AAAAAA;
-   -webkit-box-shadow: 0px 0px 5px 0px #AAAAAA;
-   -moz-box-shadow: 0px 0px 5px 0px #AAAAAA;
-   border: 0.1vw solid #ffffff;
-   color: #470000;
-   }
-.button:active {
-   top: 1px;
-   position: relative;
-   }
-
-.dashboard {
-  height: 100%;
+  padding: 1vw;
+  border: 0.1vw solid #C7C7C7;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#AAAAAA));
+  background: -webkit-linear-gradient(top, #FFFFFF, #FF0000);
+  background: -moz-linear-gradient(top, #FFFFFF, #FF0000);
+  background: -ms-linear-gradient(top, #FFFFFF, #FF0000);
+  background: -o-linear-gradient(top, #FFFFFF, #FF0000);
+  background-color: #FF0000;
+  box-shadow: 0 7px 2px -5px #1A1A1A, inset 0 0 3px #9C0000;
+  -webkit-box-shadow: 0 7px 2px -5px #1A1A1A, inset 0 0 3px #9C0000;
+  -moz-box-shadow: 0 7px 2px -5px #1A1A1A, inset 0 0 3px #9C0000;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  text-shadow: #FF7A7A 1px 1px 0;
+  color: #8F0000;
+  font-size: 19px;
+  font-family: Arial;
+  text-decoration: none;
+  font-weight: bold;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -o-transition: 0.2s;
 }
+.button:focus {
+  background: none;
+  background-color: #FF0000;
+  box-shadow: 0 0 5px 0 #AAAAAA;
+  -webkit-box-shadow: 0 0 5px 0 #AAAAAA;
+  -moz-box-shadow: 0 0 5px 0 #AAAAAA;
+  border: 0.1vw solid #ffffff;
+  color: #470000;
+}
+.button:active {
+  top: 1px;
+  position: relative;
+}
+.dashboard {
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.timeline {
+  padding: 5vw;
+}
+
 .cardCreator {
   position: relative;
-  width: 100%;
-  overflow: hidden;
-  height: 100%;
-  div {
+  .slide {
     position: absolute;
-    top: 3.4vw;
+    height: 100vh;
+    width: 100vw;
+  }
+  .prevSlide {
+    left: -100%;
+  }
+  .currentSlide {
+    width: 90vw;
+    left: 5vw;
+  }
+  .nextSlide {
+    left: 100%;
+  }
+
+  .controls {
+    position: absolute;
+    z-index: 5;
+    width: 100vw;
+    top: 45vh;
+
+    .controlBtn {
+      position: absolute;
+      background: none;
+      font-size: 8vw;
+      border: none;
+      color: #003BB4;
+      outline: none;
+    }
+    .previous {
+      left: 0;
+    }
+
+    .next {
+      right: 0;
+    }
+  }
+}
+
+.bgSelector {
+  .colorPicker {
+    cursor: pointer;
+    margin: 1.2vw;
+    height: 12vw;
+    width: 12vw;
+    float: left;
+    border: solid 0.3vw #777;
+    border-radius: 3vw;
+  }
+
+  .one {
+    background-color: #ffffff;
+  }
+  .two {
+    background-color: #898989;
+  }
+  .three {
+    background-color: #FF1747;
+  }
+  .four {
+    background-color: #FFFF77;
+  }
+  .five {
+    background-color: #FE9901;
+  }
+  .six {
+    background-color: #BBE0F3;
+  }
+  .seven {
+    background-color: #b30000;
+  }
+  .eight {
+    background-color: #87D5AB;
+  }
+  .nine {
+    background-color: #6036e3;
+  }
+  .ten {
+    background-color: #152743;
+  }
+  .eleven {
+    background-color: #029680;
+  }
+  .twelve {
+    background-color: #00ccff;
+  }
+}
+
+
+.cardCreator {
+  /** Previous Button is Clicked **/
+  .card__previous-enter {
+    left: -100%;
+  }
+  .card__previous-enter.card__previous-enter-active {
+    left: 5%;
+    transition: left 400ms ease-in;
+  }
+  .card__previous-leave {
+    left: 5%;
+  }
+  .card__previous-leave.card__previous-leave-active {
+    left: 100%;
+    transition: left 400ms ease-in;
+  }
+  /** Next Button is Clicked **/
+  .card__next-enter {
+    left: 100%;
+  }
+  .card__next-enter.card__next-enter-active {
+    left: 5%;
+    transition: left 400ms ease-in;
+  }
+  .card__next-leave {
+    left: 5%;
+  }
+  .card__next-leave.card__next-leave-active {
+    left: -100%;
+    transition: left 400ms ease-in;
+  }
+}
+
+.cardText {
+  margin: 0 auto;
+  display: block;
+  width:60vw;
+  resize: none;
+}
+
+.preview {
+  background-color: #dddddd;
+  display: table;
+  margin: 0 auto 4vw auto;
+  padding: 2vw;
+  border: dotted 0.3vw #777;
+  height:40vw;
+  width:60vw;
+  h1 {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    margin: 0;
+  }
+}
+.toForm {
+  input,
+  select,
+  p {
+    clear: left;
+  }
+  > * {
+    float: left;
   }
 }
