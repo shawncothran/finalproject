@@ -25,7 +25,7 @@ handleToFormSubmit () {
     return (
       <section className="toForm">
         <h1>Send To:</h1>
-        <div className="preview" style={{backgroundColor: this.props.front.background}}></div>
+        <div className="preview" style={{backgroundColor: this.props.front.background}}><h1>{this.props.front.text}</h1></div>
         <input ref='name' type='text' placeholder='Mommy Momephant' required/><span className='required'>*</span>
         <input ref='address1' type='text' placeholder='123 Snail Way' required/><span className='required'>*</span>
         <input ref='address2' type='text' placeholder='Apt. 321'/>

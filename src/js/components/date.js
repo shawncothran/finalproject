@@ -15,7 +15,7 @@ class Date extends React.Component {
     return (
       <section>
         <h1>Date</h1>
-        <div className="preview" style={{backgroundColor: this.props.front.background}}></div>
+        <div className="preview" style={{backgroundColor: this.props.front.background}}><h1>{this.props.front.text}</h1></div>
       </section>
     )
   }
