@@ -11,6 +11,7 @@ class Preview extends React.Component {
     return (
       <section>
         <h1>Preview</h1>
+        <div className="preview" style={{backgroundColor: this.state.background}}></div>
       </section>
     )
   }

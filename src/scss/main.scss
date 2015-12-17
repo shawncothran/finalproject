@@ -44,7 +44,7 @@ body {
   padding: 0;
 }
 body {
-  font-family: 'Raleway', sans-serif; // thin sans //
+  font-family: 'Annie Use Your Telescope', 'Helvetica', 'Arial', sans-serif; // logo //
   font-weight: 300;
   font-size: 2.5vw;
   background-color: #babec9;
@@ -65,15 +65,16 @@ main {
   height: 100vh;
 }
 .logo {
-  font-family: 'Annie Use Your Telescope', 'Helvetica', 'Arial', sans-serif; // logo //
   color: #666;
   text-align: center;
   font-size: 7vw;
   padding-right: 2vw;
 }
+.homeHEader {
+  padding: 5vw;
+}
 .headerTitle {
   display: inline-block;
-  font-family: 'Annie Use Your Telescope', cursive; // logo font, handwritten //
   text-align: center;
   font-size: 4vw;
 }
@@ -129,16 +130,13 @@ a {
 }
 
 .timeline {
-  padding: 4%;
-  border-top: 2px solid #444;
-  border-bottom: 2px solid #444;
+  padding: 5vw;
 }
 
 .cardCreator {
   position: relative;
   .slide {
     position: absolute;
-    z-index: 4;
     height: 100vh;
     width: 100vw;
   }
@@ -178,83 +176,110 @@ a {
 }
 
 .bgSelector {
-  &::after {
-    clear: none;
-    display: block;
-    content: "";
-  }
   .colorPicker {
-      cursor: pointer;
-      margin: 7.4vw 0 0 1vw;
-      height: 25vw;
-      width: 25vw;
-      float: left;
-      border: solid 0.3vw #777;
-      border-radius: 5vw;
-
+    cursor: pointer;
+    margin: 1.2vw;
+    height: 12vw;
+    width: 12vw;
+    float: left;
+    border: solid 0.3vw #777;
+    border-radius: 3vw;
   }
 
-  .primary {
+  .one {
+    background-color: #ffffff;
+  }
+  .two {
+    background-color: #898989;
+  }
+  .three {
+    background-color: #FF1747;
+  }
+  .four {
+    background-color: #FFFF77;
+  }
+  .five {
+    background-color: #FE9901;
+  }
+  .six {
+    background-color: #BBE0F3;
+  }
+  .seven {
     background-color: #b30000;
   }
-
-  .secondary {
-    background-color: #00ccff;
+  .eight {
+    background-color: #87D5AB;
   }
-
-  .tertiary {
+  .nine {
     background-color: #6036e3;
   }
+  .ten {
+    background-color: #152743;
+  }
+  .eleven {
+    background-color: #029680;
+  }
+  .twelve {
+    background-color: #00ccff;
+  }
 }
 
 
-/** Previous Button is Clicked **/
-.card__previous-enter {
-  &.currentSlide {
+.cardCreator {
+  /** Previous Button is Clicked **/
+  .card__previous-enter {
     left: -100%;
   }
-}
-.card__previous-enter.card__previous-enter-active {
-  &.currentSlide {
+  .card__previous-enter.card__previous-enter-active {
     left: 5%;
-    transition: left 500ms ease-in;
+    transition: left 400ms ease-in;
   }
-}
-.card__previous-leave {
-  &.currentSlide {
+  .card__previous-leave {
     left: 5%;
   }
-}
-.card__previous-leave.card__previous-leave-active {
-  &.currentSlide {
+  .card__previous-leave.card__previous-leave-active {
     left: 100%;
-    transition: left 500ms ease-in;
+    transition: left 400ms ease-in;
   }
-}
-/** Next Button is Clicked **/
-.card__next-enter {
-  &.currentSlide {
+  /** Next Button is Clicked **/
+  .card__next-enter {
     left: 100%;
   }
-}
-.card__next-enter.card__next-enter-active {
-  &.currentSlide {
+  .card__next-enter.card__next-enter-active {
     left: 5%;
-    transition: left 500ms ease-in;
+    transition: left 400ms ease-in;
   }
-}
-.card__next-leave {
-  &.currentSlide {
+  .card__next-leave {
     left: 5%;
   }
-}
-.card__next-leave.card__next-leave-active {
-  &.currentSlide {
+  .card__next-leave.card__next-leave-active {
     left: -100%;
-    transition: left 500ms ease-in;
+    transition: left 400ms ease-in;
   }
 }
 
+.cardText {
+  margin: 0 auto;
+  display: block;
+  width:60vw;
+  resize: none;
+}
+
+.preview {
+  background-color: #dddddd;
+  display: table;
+  margin: 0 auto 4vw auto;
+  padding: 2vw;
+  border: dotted 0.3vw #777;
+  height:40vw;
+  width:60vw;
+  h1 {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    margin: 0;
+  }
+}
 .toForm {
   input,
   select,

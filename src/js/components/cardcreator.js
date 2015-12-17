@@ -8,7 +8,8 @@ class CardCreator extends React.Component {
     super(props);
     this.state =  {
       direction: 'next',
-      currentIndex: 0
+      currentIndex: 0,
+      background: null
     }
 
     this.handleClickPrevious = this.handleClickPrevious.bind(this)
@@ -47,10 +48,8 @@ class CardCreator extends React.Component {
 
     return (
       <section className="cardCreator">
-        <ReactCSSTransitionGroup transitionName={`card__${this.state.direction}`} transitionAppear={true} transitionAppearTimeout={1000} transitionEnterTimeout={1000} transitionLeaveTimeout={1000}>
-          <div className="slide prevSlide" key={`${prevIndex}_prev`}>{previous}</div>
+        <ReactCSSTransitionGroup transitionName={`card__${this.state.direction}`} transitionEnterTimeout={500} transitionLeaveTimeout={500}>
           <div className="slide currentSlide" key={`${currentIndex}_current`}>{current}</div>
-          <div className="slide nextSlide" key={`${nextIndex}_next`}>{next}</div>
         </ReactCSSTransitionGroup>
         <div className="controls">
           {previousButton}
