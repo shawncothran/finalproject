@@ -18,10 +18,16 @@ class Login extends React.Component {
     let email = this.refs.email.value;
     let password = this.refs.password.value;
 
-    User.login({username: email, password}, () => {
-      this.setState({email});
-      this.props.history.pushState(null, "dashboard");
-    })
+    if(email && password) {
+      User.login({username: email, password: password}, () => {
+        this.setState({email: email});
+        this.props.history.pushState(null, "dashboard");
+      })
+    } else {
+      alert("Hmmm... I don't remember that. Try again");
+      this.refs.email.value = "",
+      this.refs.password.value = ""
+    }
   }
   render() {
     return (
