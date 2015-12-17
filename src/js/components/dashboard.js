@@ -27,7 +27,6 @@ class Dashboard extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     let views = [
       (<Background front={this.state.front} updateCard={this.handleUpdateCard}/>),
       (<Text front={this.state.front} updateCard={this.handleUpdateCard}/>),
