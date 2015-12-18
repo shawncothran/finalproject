@@ -1,18 +1,76 @@
 import React from 'react';
 import { Link } from 'react-router';
+
 import User from '../models/user';
 
 class Subscription extends React.Component {
   constructor(props) {
     super(props);
-    Stripe.setPublishableKey('sk_test_mvPrXPPjybaTLvDql3Fm4XUd');
-  }
-  render () {
-    
-    return (
-      <form action="" method="POST" id="payment-form">
-        <span className="payment-errors"></span>
+    this.state = {
+      success: null,
+      disableButton: false,
+      errorMsg: "",
+      plan: ""
+    };
+    this.handlePaySubmit = this.handlePaySubmit.bind(this);
+    this.stripeResponseHandler = this.stripeResponseHandler.bind(this);
+    this.handlePlanSelect = this.handlePlanSelect.bind(this);
+    this.handleResults = this.handleResults.bind(this);
 
+    Stripe.setPublishableKey('pk_test_eiTJaf9ETvML34B3RRoq2gRh');
+  }
+
+
+
+  handlePaySubmit(e) {
+    e.preventDefault();
+    this.setState({disableButton: true})
+    Stripe.card.createToken(this.refs.form, this.stripeResponseHandler);
+  };
+
+  handlePlanSelect (e) {
+  this.setState({
+    plan: e.target.value,
+    })
+  }
+
+  stripeResponseHandler (code, response) {
+    let errorMsg,
+    token,
+    plan;
+
+    if (response.error) {
+      this.setState({
+        errorMsg: response.error.message,
+        disableButton: false
+      })} else {
+        let token = response.id;
+        let plan = this.state.plan;
+        User.pay({token, plan}, this.handleResults);
+      }
+    }
+
+    handleResults(results) {
+      if (!results) {
+        this.setState({
+          success: false
+        });
+
+      } else {
+        this.setState({
+          success: true
+        });
+
+      }
+    }
+
+
+render() {
+  let resultsMsg;
+  let cardVisible;
+  if (this.state.plan) {
+    cardVisible = (
+      <div className="hide_until_plan_selected">
         <div className="form-row">
           <label>
             <span>Card Number</span>
@@ -36,10 +94,36 @@ class Subscription extends React.Component {
           <input type="text" size="4" data-stripe="exp-year"/>
         </div>
 
-        <button type="submit">Submit Payment</button>
+        <button type="submit" disabled={this.state.disableButton}>Submit Payment</button>
+      </div>
+    )
+  }
+  if (this.state.success) {
+    resultsMsg = <p>Thanks for your money! <Link to="dashboard">Return to Dashboard</Link> or <Link to="account">View your Account</Link></p>
+  } else if(this.state.success === false){
+    resultsMsg = <p>Oops, something flubbed. Try again or use a new card. If you continue to see this error, email us at Millie@snailephant.com so we can take your money</p>
+  }
+
+    return (
+      <form ref="form" onSubmit={this.handlePaySubmit}>
+        <div className="response" id="response"> { resultsMsg } </div>
+        <span ref="payment-errors">{this.state.errorMsg}</span>
+        <div className="form-row">
+          <label>
+            <span>Choose Your Plan</span>
+              <label>Tier 1 Plan - Send 3 Cards Each Month for $4.99/mo</label>
+              <input onClick={this.handlePlanSelect} type="button" value="basic"/>
+              <label>Tier 2 Plan - Send 5 Cards Each Month for $7.99/mo</label>
+              <input onClick={this.handlePlanSelect} type="button" value="premium"/>
+              <label>Tier 3 Plan - Send 10 Cards Each Month for $12.99/mo</label>
+              <input onClick={this.handlePlanSelect} type="button" value="platinum"/>
+          </label>
+        </div>
+        {cardVisible}
       </form>
     )
   }
 }
+
 
 export default Subscription;

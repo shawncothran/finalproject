@@ -8,6 +8,7 @@ import Login from './components/login';
 import Register from './components/register';
 import Dashboard from './components/dashboard';
 import ToForm from './components/toform';
+import Subscription from './components/subscription';
 
 let NotFound = () => {
   return (
@@ -28,6 +29,7 @@ render((
         <Route path="register" component={Register} />
         <Route path="dashboard" component={Dashboard} />
         <Route path="toform" component={ToForm} />
+        <Route path="subscription" component={Subscription} />
     </Route>
     <Route path='*' component={NotFound} />
   </Router>
