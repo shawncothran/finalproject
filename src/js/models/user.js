@@ -24,6 +24,7 @@ class User {
       this.token_created = token_created;
     }
   }
+
   isLoggedIn() {
     return this.access_token !== null;
   }
@@ -42,7 +43,6 @@ class User {
       dataType: "json"
     })
     .then((results) => {
-      console.log(results);
       done(results);
     })
     .fail((err) => {
@@ -81,6 +81,29 @@ class User {
     }).fail(error => {
       done(error);
     });
+  }
+
+
+  pay ({token, plan}, done) {
+
+      $.ajax({
+        url: 'http://snailephant.herokuapp.com/charges',
+        headers: {
+          'Authorization': 'Bearer ' + this.access_token
+        },
+        type: 'POST',
+        data: {
+            stripeToken: token,
+            plan: plan
+        },
+        dataType: "json"
+      })
+      .then((results) => {
+        done(results);
+      })
+      .fail((err) => {
+
+      })
   }
 
   logout() {
