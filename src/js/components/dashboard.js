@@ -8,7 +8,6 @@ import Background from './background';
 import Text from './text';
 import Date from './date';
 import ToForm from './toform';
-import Preview from './preview';
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -27,16 +26,17 @@ class Dashboard extends React.Component {
   }
 
   render() {
+    console.log(this.state);
     let views = [
       (<Background front={this.state.front} updateCard={this.handleUpdateCard}/>),
       (<Text front={this.state.front} updateCard={this.handleUpdateCard}/>),
-      (<Date front={this.state.front} updateCard={this.handleUpdateCard}/>),
-      (<ToForm front={this.state.front} updateCard={this.handleUpdateCard}/>)];
+      (<ToForm front={this.state.front} updateCard={this.handleUpdateCard}/>),
+      (<Date front={this.state.front} updateCard={this.handleUpdateCard}/>)];
     return (
       <section className="dashboard">
         <Link to="account">Account</Link>
         <Timeline />
-        <CardCreator views = {views}/>
+        <CardCreator front={this.state.front}  views = {views}/>
       </section>
     )
   }

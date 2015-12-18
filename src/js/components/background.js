@@ -9,22 +9,14 @@ class Background extends React.Component {
 
   handleBackground(background) {
     this.props.updateCard({
-      background
+      background: background
     });
-
-    // console.log('html', $(this.refs.preview).html());
-
   };
 
   render() {
     return (
       <section>
         <h1>Pick a Background!</h1>
-        <div ref="preview">
-          <div className="preview" style={{backgroundColor: this.props.front.background}}>
-            <h1 style={{fontFamily: this.props.front.font}}>{this.props.front.text}</h1>
-          </div>
-        </div>
         <section className="bgSelector">
           <div className="colorPicker one" onClick={this.handleBackground.bind(this, '#ffffff')}></div>
           <div className="colorPicker two" onClick={this.handleBackground.bind(this, '#898989')}></div>

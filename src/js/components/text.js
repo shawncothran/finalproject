@@ -1,11 +1,16 @@
 import React from 'react';
 import $ from 'jquery';
 import { Link } from 'react-router';
+import { findDOMNode } from 'react-dom';
 
 class Text extends React.Component {
   constructor(props) {
     super(props);
   }
+
+  componentDidMount(){
+      findDOMNode(this.refs.text).focus();
+  };
 
   handleText(event) {
     this.props.updateCard({
@@ -13,28 +18,50 @@ class Text extends React.Component {
     });
   };
 
-  handleFont(event) {
-    console.log('ih');
+  handleFontFamily(event) {
     this.props.updateCard({
       font: event.target.value
+    });
+  };
+
+  handleFontSize(event) {
+    console.log('size');
+    this.props.updateCard({
+      fontSize: event.target.value
+    });
+  };
+
+  handleColor(color) {
+    this.props.updateCard({
+      color
     });
   };
 
   render() {
     return (
       <section>
-        <h1>Text</h1>
-        <div className="preview" style={{backgroundColor: this.props.front.background}}>
-          <h1 style={{fontFamily: this.props.front.font}}>{this.props.front.text}</h1>
-        </div>
-        <textarea className="cardText" maxLength="100" placeholder="Type your message here!" onChange={this.handleText.bind(this)} value={this.props.front.text}></textarea>
-        <select onChange={this.handleFont.bind(this)}>
+        <h1>Pick styles and craft your message!</h1>
+        <textarea className="cardText" ref="text" maxLength="100" placeholder="Type your message here!" onChange={this.handleText.bind(this)} value={this.props.front.text} autofocus></textarea>
+        <select onChange={this.handleFontFamily.bind(this)}>
           <option value='Annie Use Your Telescope'>Annie Use Your Telescope</option>
           <option value='Great Vibes'>Great Vibes</option>
           <option value='Playfair Display'>Playfair Display</option>
           <option value='Raleway'>Raleway</option>
           <option value='Mountains of Christmas'>Mountains of Christmas</option>
         </select>
+        <select onChange={this.handleFontSize.bind(this)}>
+          <option value='2em'>LARGE</option>
+          <option value='1.6em'>Medium</option>
+          <option value='1.2em'>small</option>
+        </select>
+        <section className="fontColor">
+          <div className="fontColorPicker one" onClick={this.handleColor.bind(this, '#000000')}></div>
+          <div className="fontColorPicker two" onClick={this.handleColor.bind(this, '#898989')}></div>
+          <div className="fontColorPicker three" onClick={this.handleColor.bind(this, '#ffffff')}></div>
+          <div className="fontColorPicker four" onClick={this.handleColor.bind(this, '#c3002a')}></div>
+          <div className="fontColorPicker five" onClick={this.handleColor.bind(this, '#00473d')}></div>
+          <div className="fontColorPicker six" onClick={this.handleColor.bind(this, '#200282')}></div>
+        </section>
       </section>
     )
   }

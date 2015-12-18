@@ -34,10 +34,10 @@ function cardFront(){
         .text {
           display: table;
           margin: 10px;
-          font-family: ${font};
+          font-family: ${fontFamily};
           font-weight: 400;
-          font-size: 40px;
-          color: ${color};
+          font-size: ${fontSize};
+          color: ${fontColor};
           text-shadow: 2px 2px black;
         }
         h1 {

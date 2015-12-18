@@ -8,11 +8,15 @@ class Preview extends React.Component {
   }
 
   render() {
+    let h1Style = {
+      fontFamily: this.props.front.fontFamily,
+      color: this.props.front.color,
+      fontSize: this.props.front.fontSize
+    };
     return (
-      <section>
-        <h1>Preview</h1>
-        <div className="preview" style={{backgroundColor: this.state.background}}></div>
-      </section>
+      <div className="preview" style={{backgroundColor: this.props.front.background}}>
+          <h1 style={h1Style}>{this.props.front.text}</h1>
+      </div>
     )
   }
 }
