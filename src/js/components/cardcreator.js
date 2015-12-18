@@ -8,8 +8,7 @@ class CardCreator extends React.Component {
     super(props);
     this.state =  {
       direction: 'next',
-      currentIndex: 0,
-      background: null
+      currentIndex: 0
     }
 
     this.handleClickPrevious = this.handleClickPrevious.bind(this)

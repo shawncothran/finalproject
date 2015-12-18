@@ -267,17 +267,24 @@ a {
 
 .preview {
   background-color: #dddddd;
-  display: table;
   margin: 0 auto 4vw auto;
   padding: 2vw;
   border: dotted 0.3vw #777;
   height:40vw;
   width:60vw;
+  position: relative;
   h1 {
-    display: table-cell;
-    vertical-align: middle;
+    position: absolute;
     text-align: center;
     margin: 0;
+    word-wrap:break-word;
+    max-width: 56vw;
+    max-height: 36vw;
+    overflow: hidden;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
   }
 }
 .toForm {
