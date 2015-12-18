@@ -95,9 +95,9 @@ a {
   background: -ms-linear-gradient(top, #FFFFFF, #FF0000);
   background: -o-linear-gradient(top, #FFFFFF, #FF0000);
   background-color: #FF0000;
-  box-shadow: 0 7px 2px -5px #1A1A1A, inset 0 0 3px #9C0000;
-  -webkit-box-shadow: 0 7px 2px -5px #1A1A1A, inset 0 0 3px #9C0000;
-  -moz-box-shadow: 0 7px 2px -5px #1A1A1A, inset 0 0 3px #9C0000;
+  -webkit-box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.36);
+  -moz-box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.36);
+  box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.36);
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
@@ -114,9 +114,9 @@ a {
 .button:focus {
   background: none;
   background-color: #FF0000;
-  box-shadow: 0 0 5px 0 #AAAAAA;
-  -webkit-box-shadow: 0 0 5px 0 #AAAAAA;
-  -moz-box-shadow: 0 0 5px 0 #AAAAAA;
+  -webkit-box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.36);
+  -moz-box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.36);
+  box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.36);
   border: 0.1vw solid #ffffff;
   color: #470000;
 }
@@ -135,9 +135,11 @@ a {
 
 .cardCreator {
   position: relative;
+  height: 100vh;
+  padding-top: 0.5vw;
+
   .slide {
     position: absolute;
-    height: 100vh;
     width: 100vw;
   }
   .prevSlide {
@@ -265,19 +267,55 @@ a {
   resize: none;
 }
 
+.fontColor {
+  margin: 0 auto;
+  .fontColorPicker {
+    cursor: pointer;
+    margin: 0.6vw;
+    height: 6vw;
+    width: 6vw;
+    float: left;
+    border: solid 0.3vw #777;
+    border-radius: 1.5vw;
+  }
+  .one {
+    background-color: #000000;
+  }
+  .two {
+    background-color: #898989;
+  }
+  .three {
+    background-color: #ffffff;
+  }
+  .four {
+    background-color: #c3002a;
+  }
+  .five {
+    background-color: #00473d;
+  }
+  .six {
+    background-color: #200282;
+  }
+}
+
 .preview {
   background-color: #dddddd;
-  margin: 0 auto 4vw auto;
+  margin: 4vw auto;
   padding: 2vw;
   border: dotted 0.3vw #777;
   height:40vw;
   width:60vw;
   position: relative;
+  -webkit-box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.36);
+  -moz-box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.36);
+  box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.36);
+
   h1 {
     position: absolute;
     text-align: center;
     margin: 0;
     word-wrap:break-word;
+    width: 56vw;
     max-width: 56vw;
     max-height: 36vw;
     overflow: hidden;
