@@ -1,23 +1,34 @@
 import React from 'react';
 import moment from 'moment';
+import User from '../models/user';
 
 class Date extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  handleDate(date) {
-    this.props.updateCard(date)
+  handleDate(e) {
+    this.props.updateCard({
+      date: e.target.value
+    });
+    
   };
 
+  handlePostCard(e) {
+    User.postCard(this.state, () => {
+      this.props.history.pushState(null, "dashboard");
+    });
+  }
+
   render() {
-    let minTime = moment().add(10, "days").format('YYYY-MM-DD');
-    let maxTime = moment().add(376, "days").format('YYYY-MM-DD');
+    let minTime = moment().add(7, "days").format('YYYY-MM-DD');
+    let maxTime = moment().add(373, "days").format('YYYY-MM-DD');
     console.log(minTime);
+    let submit;
     return (
       <section>
         <h1>Pick when your card will arrive!</h1>
-        <input type="date" min={minTime} max={maxTime} onChange={this.handleDate.bind(this)}/>
+        <input type="date" min={minTime} max={maxTime} onChange={this.handleDate.bind(this)} />
       </section>
     )
   }

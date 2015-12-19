@@ -9,7 +9,9 @@ class Background extends React.Component {
 
   handleBackground(background) {
     this.props.updateCard({
-      background: background
+      front: {
+        background: background
+      }
     });
   };
 

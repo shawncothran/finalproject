@@ -14,26 +14,38 @@ class Text extends React.Component {
 
   handleText(event) {
     this.props.updateCard({
-      text: event.target.value
+      front: {
+        text: event.target.value
+      }
+
     });
   };
 
   handleFontFamily(event) {
     this.props.updateCard({
-      font: event.target.value
+      front: {
+        fontFamily: event.target.value
+      }
+
     });
   };
 
   handleFontSize(event) {
     console.log('size');
     this.props.updateCard({
-      fontSize: event.target.value
+      front: {
+        fontSize: event.target.value
+      }
+
     });
   };
 
   handleColor(color) {
     this.props.updateCard({
-      color
+      front: {
+        color
+      }
+
     });
   };
 
@@ -41,7 +53,7 @@ class Text extends React.Component {
     return (
       <section>
         <h1>Pick styles and craft your message!</h1>
-        <textarea className="cardText" ref="text" maxLength="100" placeholder="Type your message here!" onChange={this.handleText.bind(this)} value={this.props.front.text} autofocus></textarea>
+        <textarea className="cardText" ref="text" maxLength="140" placeholder="Type your message here!" onChange={this.handleText.bind(this)} value={this.props.front.text} autofocus></textarea>
         <select onChange={this.handleFontFamily.bind(this)}>
           <option value='Annie Use Your Telescope'>Annie Use Your Telescope</option>
           <option value='Great Vibes'>Great Vibes</option>
@@ -50,9 +62,9 @@ class Text extends React.Component {
           <option value='Mountains of Christmas'>Mountains of Christmas</option>
         </select>
         <select onChange={this.handleFontSize.bind(this)}>
-          <option value='2em'>LARGE</option>
-          <option value='1.6em'>Medium</option>
-          <option value='1.2em'>small</option>
+          <option value='2em'>Medium</option>
+          <option value='2.7em'>LARGE</option>
+          <option value='1.3em'>small</option>
         </select>
         <section className="fontColor">
           <div className="fontColorPicker one" onClick={this.handleColor.bind(this, '#000000')}></div>

@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React from 'react';
 import $ from 'jquery';
 import { Link } from 'react-router';
@@ -9,34 +10,37 @@ import Text from './text';
 import Date from './date';
 import ToForm from './toform';
 
+
 class Dashboard extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      front: {}
+      front: {},
+      to: {},
+      date: {}
     }
 
     this.handleUpdateCard = this.handleUpdateCard.bind(this)
   }
 
   handleUpdateCard(data) {
-    let newData = Object.assign({}, this.state.front, data);
-    this.setState({front: newData});
+    let state = _.merge(this.state, data);
+    this.setState(state);
   }
 
   render() {
     console.log(this.state);
     let views = [
-      (<Background front={this.state.front} updateCard={this.handleUpdateCard}/>),
-      (<Text front={this.state.front} updateCard={this.handleUpdateCard}/>),
-      (<ToForm front={this.state.front} updateCard={this.handleUpdateCard}/>),
-      (<Date front={this.state.front} updateCard={this.handleUpdateCard}/>)];
+      (<Background {...this.state} updateCard={this.handleUpdateCard}/>),
+      (<Text {...this.state} updateCard={this.handleUpdateCard}/>),
+      (<ToForm {...this.state} updateCard={this.handleUpdateCard}/>),
+      (<Date {...this.state} updateCard={this.handleUpdateCard}/>)];
     return (
       <section className="dashboard">
         <Link to="account">Account</Link>
         <Timeline />
-        <CardCreator front={this.state.front}  views = {views}/>
+        <CardCreator {...this.state}  views = {views}/>
       </section>
     )
   }

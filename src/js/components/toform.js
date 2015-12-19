@@ -1,29 +1,32 @@
 import React from 'react';
+import _ from 'lodash';
 
 class ToForm extends React.Component {
   constructor(props){
     super(props);
   }
 
-  handleToFormSubmit () {
-    let name = this.refs.name.value,
-        address_line1 = this.refs.address1.value,
-        address_line2 = this.refs.address2.value,
-        address_city = this.refs.city.value,
-        address_state = this.refs.state.value,
-        address_country = this.refs.country.value,
-        address_zip = this.refs.zip.value;
+  handleToFormSubmit (e) {
+    let data = _.reduce(this.refs, (total, element, key) => {
+      total[key] = element.value;
+      return total;
+    }, {});
+
+
+    this.props.updateCard({
+      to: data
+    });
   }
 
   render () {
     return (
       <section className="toForm">
         <h1>Pick your recipient!</h1>
-        <input ref='name' type='text' placeholder='Mommy Momephant' required/><span className='required'>*</span>
-        <input ref='address1' type='text' placeholder='123 Snail Way' required/><span className='required'>*</span>
-        <input ref='address2' type='text' placeholder='Apt. 321'/>
-        <input ref='addresscity' type='text' placeholder='Nashville' required/><span className='required'>*</span>
-        <select ref='state' required>
+        <input ref='name' type='text' placeholder='Mommy Momephant' onChange={this.handleToFormSubmit.bind(this)} value={this.props.to.name} required/><span className='required'>*</span>
+        <input ref='address_line1' type='text' placeholder='123 Snail Way' onChange={this.handleToFormSubmit.bind(this)} value={this.props.to.address_line1} required/><span className='required'>*</span>
+        <input ref='address_line2' type='text' placeholder='Apt. 321' onChange={this.handleToFormSubmit.bind(this)} value={this.props.to.address_line2} />
+        <input ref='address_city' type='text' placeholder='Nashville' onChange={this.handleToFormSubmit.bind(this)} value={this.props.to.address_city} required/><span className='required'>*</span>
+        <select ref='address_state' onChange={this.handleToFormSubmit.bind(this)} value={this.props.to.address_state} required>
             <option value='TN'>Tennessee</option>
             <option value='AL'>Alabama</option>
             <option value='AK'>Alaska</option>
@@ -76,8 +79,7 @@ class ToForm extends React.Component {
             <option value='WI'>Wisconsin</option>
             <option value='WY'>Wyoming</option>
         </select>	<span className='required'>*</span>
-        <input ref='zip' type='text' placeholder='Zip Code' required/><span className='required'>*</span>
-        <input type='submit' value='Submit' onClick={this.handleToFormSubmit.bind(this)}/>
+      <input ref='address_zip' type='text' placeholder='Zip Code' onChange={this.handleToFormSubmit.bind(this)} value={this.props.to.address_zip} required/><span className='required'>*</span>
       </section>
     )
   }
