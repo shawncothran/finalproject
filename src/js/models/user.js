@@ -35,8 +35,8 @@ class User {
       type: 'POST',
       data: {
         user: {
-          email: email,
-          password: password
+          email,
+          password
         }
       },
       dataType: "json"
@@ -58,7 +58,7 @@ class User {
     let options = {
       url: url,
       method: "POST",
-      data: data
+      data
     };
 
     $.ajax(options).then(response => {
