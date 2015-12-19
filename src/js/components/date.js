@@ -7,11 +7,15 @@ class Date extends React.Component {
     super(props);
   }
 
+  submitCard() {
+    console.log("saved!!!");
+  };
+
   handleDate(e) {
     this.props.updateCard({
       date: e.target.value
     });
-    
+    this.submitCard.bind(this)
   };
 
   handlePostCard(e) {
