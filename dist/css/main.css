@@ -594,7 +594,7 @@ a {
 
 .preview {
   background-color: #dddddd;
-  margin: 4vw auto;
+  margin: 4vw auto 0 auto;
   padding: 2vw;
   border: dotted 0.3vw #777;
   height: 40vw;
