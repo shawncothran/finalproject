@@ -420,43 +420,25 @@ a {
 .logoImg {
   width: 9vw; }
 
+.hero {
+  padding: 2vw; }
+
 .button {
-  padding: 1vw;
-  border: 0.1vw solid #C7C7C7;
-  background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#AAAAAA));
-  background: -webkit-linear-gradient(top, #FFFFFF, #FF0000);
-  background: -moz-linear-gradient(top, #FFFFFF, #FF0000);
-  background: -ms-linear-gradient(top, #FFFFFF, #FF0000);
-  background: -o-linear-gradient(top, #FFFFFF, #FF0000);
-  background-color: #FF0000;
-  -webkit-box-shadow: 0px 0px 35px 5px rgba(0, 0, 0, 0.36);
-  -moz-box-shadow: 0px 0px 35px 5px rgba(0, 0, 0, 0.36);
-  box-shadow: 0px 0px 35px 5px rgba(0, 0, 0, 0.36);
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  text-shadow: #FF7A7A 1px 1px 0;
-  color: #8F0000;
-  font-size: 19px;
-  font-family: Arial;
-  text-decoration: none;
-  font-weight: bold;
+  padding: 0.6vw 1.2vw;
+  border: 0.18vw solid #cccccc;
+  background-color: #F0F0F0;
+  -webkit-box-shadow: 0px 0px 35px 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 0px 35px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 35px 5px rgba(0, 0, 0, 0.2);
   -webkit-transition: 0.2s;
   -moz-transition: 0.2s;
   -o-transition: 0.2s; }
 
 .button:focus {
-  background: none;
-  background-color: #FF0000;
-  -webkit-box-shadow: 0px 0px 35px 5px rgba(0, 0, 0, 0.36);
-  -moz-box-shadow: 0px 0px 35px 5px rgba(0, 0, 0, 0.36);
-  box-shadow: 0px 0px 35px 5px rgba(0, 0, 0, 0.36);
   border: 0.1vw solid #ffffff;
-  color: #470000; }
-
-.button:active {
-  top: 1px;
-  position: relative; }
+  color: #470000;
+  background: none;
+  background-color: #4A4F5C; }
 
 .dashboard {
   height: 100vh;
@@ -467,21 +449,16 @@ a {
 
 .cardCreator {
   position: relative;
-  background-color: #555;
   height: 100vh;
-  max-width: 100vw;
-  max-height: 100vh;
-  padding-top: 0.5vw; }
+  padding-top: 0.5vw;
+  text-align: center; }
   .cardCreator .slide {
     position: absolute;
-    max-height: inherit;
-    max-width: inherit; }
+    width: 100vw; }
   .cardCreator .prevSlide {
     left: -100%; }
   .cardCreator .currentSlide {
     width: 90vw;
-    max-height: inherit;
-    max-width: inherit;
     left: 5vw; }
   .cardCreator .nextSlide {
     left: 100%; }
@@ -504,9 +481,9 @@ a {
 
 .bgSelector .colorPicker {
   cursor: pointer;
-  margin: 1.2vw;
-  height: 12vw;
-  width: 12vw;
+  margin: 1vw;
+  height: 13vw;
+  width: 13vw;
   float: left;
   border: solid 0.3vw #777;
   border-radius: 3vw; }
@@ -577,16 +554,31 @@ a {
   width: 60vw;
   resize: none; }
 
+.fontSelects {
+  margin: 0 auto;
+  text-align: center; }
+  .fontSelects:after {
+    clear: both;
+    content: "";
+    display: block; }
+  .fontSelects .fontSize, .fontSelects .fontFamily {
+    margin: 1vw; }
+
 .fontColor {
-  margin: 0 auto; }
+  margin: 0 auto;
+  text-align: center; }
+  .fontColor:after {
+    clear: both;
+    content: "";
+    display: block; }
   .fontColor .fontColorPicker {
     cursor: pointer;
     margin: 0.6vw;
     height: 6vw;
     width: 6vw;
-    float: left;
-    border: solid 0.3vw #777;
-    border-radius: 1.5vw; }
+    border: solid 0.25vw #777;
+    border-radius: 1.5vw;
+    display: inline-block; }
   .fontColor .one {
     background-color: #000000; }
   .fontColor .two {
@@ -625,10 +617,20 @@ a {
     -ms-transform: translateY(-50%);
     transform: translateY(-50%); }
 
-.toForm input,
-.toForm select,
-.toForm p {
-  clear: left; }
+.toForm fieldset {
+  margin: 0 auto;
+  width: 44vw; }
 
-.toForm > * {
+.toForm .form {
+  margin: 0.5vw;
+  width: 22vw;
   float: left; }
+
+.toForm span {
+  float: left; }
+
+.toForm label {
+  float: left;
+  text-align: right;
+  margin-right: 1.2vw;
+  width: 11vw; }

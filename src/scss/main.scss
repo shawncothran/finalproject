@@ -1,6 +1,5 @@
 @import '../../dist/bower_components/normalize-css/normalize';
 @import '../../dist/bower_components/bourbon/app/assets/stylesheets/bourbon';
-
 // $visual-grid: true;
 @import '../../dist/bower_components/neat/app/assets/stylesheets/neat';
 
@@ -20,22 +19,6 @@
 //     @content;
 //   }
 // }
-// SAVED STUFF //
-//
-// FONTS //
-// font-family: 'Raleway', sans-serif; //////////////// thin or bold sans ///////
-// font-family: 'Mountains of Christmas', cursive; //// goofy christmas /////////
-// font-family: 'Playfair Display', serif; //////////// serif ///////////////////
-// font-family: 'Annie Use Your Telescope', cursive; // logo font, handwritten //
-// font-family: 'Great Vibes', cursive; /////////////// fancy curly formal //////
-//
-// COLORS//
-//   color: #b30000; //
-//   color: #00ccff; //
-//   color: #6036e3; //
-//
-// mixins //
-// down to business //
 html,
 body {
   height: 100vh;
@@ -86,58 +69,38 @@ a {
 .logoImg {
   width: 9vw;
 }
+.hero {
+  padding: 2vw;
+}
 .button {
-  padding: 1vw;
-  border: 0.1vw solid #C7C7C7;
-  background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#AAAAAA));
-  background: -webkit-linear-gradient(top, #FFFFFF, #FF0000);
-  background: -moz-linear-gradient(top, #FFFFFF, #FF0000);
-  background: -ms-linear-gradient(top, #FFFFFF, #FF0000);
-  background: -o-linear-gradient(top, #FFFFFF, #FF0000);
-  background-color: #FF0000;
-  -webkit-box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.36);
-  -moz-box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.36);
-  box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.36);
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  text-shadow: #FF7A7A 1px 1px 0;
-  color: #8F0000;
-  font-size: 19px;
-  font-family: Arial;
-  text-decoration: none;
-  font-weight: bold;
+  padding: 0.6vw 1.2vw;
+  border: 0.18vw solid #cccccc;
+  background-color: #F0F0F0;
+  -webkit-box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.20);
+  -moz-box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.20);
+  box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.20);
   -webkit-transition: 0.2s;
   -moz-transition: 0.2s;
   -o-transition: 0.2s;
-}
+  }
 .button:focus {
-  background: none;
-  background-color: #FF0000;
-  -webkit-box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.36);
-  -moz-box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.36);
-  box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.36);
   border: 0.1vw solid #ffffff;
   color: #470000;
-}
-.button:active {
-  top: 1px;
-  position: relative;
-}
+  background: none;
+  background-color: #4A4F5C;
+  }
 .dashboard {
   height: 100vh;
   overflow-x: hidden;
 }
-
 .timeline {
   padding: 5vw;
 }
-
 .cardCreator {
   position: relative;
   height: 100vh;
   padding-top: 0.5vw;
-
+  text-align: center;
   .slide {
     position: absolute;
     width: 100vw;
@@ -152,13 +115,11 @@ a {
   .nextSlide {
     left: 100%;
   }
-
   .controls {
     position: absolute;
     z-index: 5;
     width: 100vw;
     top: 45vh;
-
     .controlBtn {
       position: absolute;
       background: none;
@@ -170,24 +131,21 @@ a {
     .previous {
       left: 0;
     }
-
     .next {
       right: 0;
     }
   }
 }
-
 .bgSelector {
   .colorPicker {
     cursor: pointer;
-    margin: 1.2vw;
-    height: 12vw;
-    width: 12vw;
+    margin: 1vw;
+    height: 13vw;
+    width: 13vw;
     float: left;
     border: solid 0.3vw #777;
     border-radius: 3vw;
   }
-
   .one {
     background-color: #ffffff;
   }
@@ -225,8 +183,6 @@ a {
     background-color: #00ccff;
   }
 }
-
-
 .cardCreator {
   /** Previous Button is Clicked **/
   .card__previous-enter {
@@ -259,24 +215,40 @@ a {
     transition: left 400ms ease-in;
   }
 }
-
 .cardText {
   margin: 0 auto;
   display: block;
   width:60vw;
   resize: none;
 }
-
+.fontSelects {
+  margin: 0 auto;
+  text-align: center;
+  &:after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+  .fontSize, .fontFamily {
+    margin: 1vw;
+  }
+}
 .fontColor {
   margin: 0 auto;
+  text-align: center;
+  &:after {
+    clear: both;
+    content: "";
+    display: block;
+  }
   .fontColorPicker {
     cursor: pointer;
     margin: 0.6vw;
     height: 6vw;
     width: 6vw;
-    float: left;
-    border: solid 0.3vw #777;
+    border: solid 0.25vw #777;
     border-radius: 1.5vw;
+    display: inline-block;
   }
   .one {
     background-color: #000000;
@@ -297,7 +269,6 @@ a {
     background-color: #200282;
   }
 }
-
 .preview {
   background-color: #dddddd;
   margin: 4vw auto;
@@ -309,7 +280,6 @@ a {
   -webkit-box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.36);
   -moz-box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.36);
   box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.36);
-
   h1 {
     position: absolute;
     text-align: center;
@@ -326,12 +296,22 @@ a {
   }
 }
 .toForm {
-  input,
-  select,
-  p {
-    clear: left;
+  fieldset {
+    margin: 0 auto;
+    width: 44vw;
   }
-  > * {
+  .form {
+    margin: 0.5vw;
+    width: 22vw;
     float: left;
+  }
+  span {
+    float: left;
+  }
+  label {
+  	float: left;
+  	text-align: right;
+  	margin-right: 1.2vw;
+  	width: 11vw;
   }
 }
