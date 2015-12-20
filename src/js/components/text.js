@@ -52,20 +52,22 @@ class Text extends React.Component {
   render() {
     return (
       <section>
-        <h1>Pick styles and craft your message!</h1>
+        <h1>Pick your styles & craft your message!</h1>
         <textarea className="cardText" ref="text" maxLength="140" placeholder="Type your message here!" onChange={this.handleText.bind(this)} value={this.props.front.text} autofocus></textarea>
-        <select onChange={this.handleFontFamily.bind(this)}>
-          <option value='Annie Use Your Telescope'>Annie Use Your Telescope</option>
-          <option value='Great Vibes'>Great Vibes</option>
-          <option value='Playfair Display'>Playfair Display</option>
-          <option value='Raleway'>Raleway</option>
-          <option value='Mountains of Christmas'>Mountains of Christmas</option>
-        </select>
-        <select onChange={this.handleFontSize.bind(this)}>
-          <option value='2em'>Medium</option>
-          <option value='2.7em'>LARGE</option>
-          <option value='1.3em'>small</option>
-        </select>
+        <section className="fontSelects">
+          <select className="fontFamily" onChange={this.handleFontFamily.bind(this)}>
+            <option value='Annie Use Your Telescope'>Annie Use Your Telescope</option>
+            <option value='Great Vibes'>Great Vibes</option>
+            <option value='Playfair Display'>Playfair Display</option>
+            <option value='Raleway'>Raleway</option>
+            <option value='Mountains of Christmas'>Mountains of Christmas</option>
+          </select>
+          <select className="fontSize" onChange={this.handleFontSize.bind(this)}>
+            <option value='2em'>Medium</option>
+            <option value='2.7em'>LARGE</option>
+            <option value='1.3em'>small</option>
+          </select>
+        </section>
         <section className="fontColor">
           <div className="fontColorPicker one" onClick={this.handleColor.bind(this, '#000000')}></div>
           <div className="fontColorPicker two" onClick={this.handleColor.bind(this, '#898989')}></div>

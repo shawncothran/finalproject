@@ -18,7 +18,7 @@ class Background extends React.Component {
   render() {
     return (
       <section>
-        <h1>Pick a Background!</h1>
+        <h1>Pick your background!</h1>
         <section className="bgSelector">
           <div className="colorPicker one" onClick={this.handleBackground.bind(this, '#ffffff')}></div>
           <div className="colorPicker two" onClick={this.handleBackground.bind(this, '#898989')}></div>
