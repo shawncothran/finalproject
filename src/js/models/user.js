@@ -27,6 +27,7 @@ class User {
 
   isLoggedIn() {
     return this.access_token !== null;
+
   }
 
   register({email, password}, done) {
@@ -83,6 +84,19 @@ class User {
     });
   }
 
+  checkloginstatus() {
+    $.ajax({
+      url: 'http://snailephant.herokuapp.com/users',
+      headers: {
+        'Authorization': 'Bearer ' + this.access_token
+      },
+      type: 'GET',
+      dataType: "json"
+    }).then((results) => {
+      console.log(results);
+    })
+  }
+
 
   pay ({token, plan}, done) {
 
@@ -107,7 +121,7 @@ class User {
   }
 
   logout() {
-    this.access_token = null;
+    this.access_token = undefined;
     this.token_bearer = null;
     this.refresh_token = null;
     this.expires_in = null;

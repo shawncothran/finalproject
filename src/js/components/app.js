@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
+import User from '../models/user';
 import Header from './header';
 import ToForm from './toform';
 
@@ -10,8 +11,13 @@ class App extends React.Component {
     this.state = {
       toform: "",
       date: "",
-      html: ""
+      html: "",
+      session: {}
     }
+
+  }
+  componentDidMount() {
+    User.checkloginstatus();
   }
 
   render () {
@@ -21,7 +27,7 @@ class App extends React.Component {
 
     return (
       <div>
-        <Header />
+        <Header email={this.state.session.email}/>
         {childrenWithProps}
       </div>
     )
