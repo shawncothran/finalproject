@@ -7,15 +7,14 @@ class Date extends React.Component {
     super(props);
   }
 
-  submitCard() {
-    console.log("saved!!!");
-  };
-
   handleDate(e) {
     this.props.updateCard({
       date: e.target.value
     });
-    this.submitCard.bind(this)
+    function submitCard() {
+      console.log("saved!!!");
+    };
+    submitCard();
   };
 
   handlePostCard(e) {
@@ -33,6 +32,7 @@ class Date extends React.Component {
       <section>
         <h1>Pick when your card will arrive!</h1>
         <input type="date" min={minTime} max={maxTime} onChange={this.handleDate.bind(this)} />
+        <div className="button submitCard">Schedule your card!</div>
       </section>
     )
   }

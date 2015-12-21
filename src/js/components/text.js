@@ -10,6 +10,9 @@ class Text extends React.Component {
 
   componentDidMount(){
       findDOMNode(this.refs.text).focus();
+      
+      let node = findDOMNode(this);
+      node.scrollTop = node.scrollHeight;
   };
 
   handleText(event) {
