@@ -91,7 +91,6 @@ a {
   }
 .dashboard {
   height: 100vh;
-  overflow-x: hidden;
 }
 .timeline {
   padding: 5vw;
@@ -314,4 +313,9 @@ a {
   	margin-right: 1.2vw;
   	width: 11vw;
   }
+}
+.submitCard {
+  width: 25vw;
+  opacity: 0.33;
+  margin: 5vw auto 0 auto;
 }
