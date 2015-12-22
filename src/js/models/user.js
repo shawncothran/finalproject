@@ -8,14 +8,14 @@ class User {
     this.expires_in = null;
     this.token_created = null;
 
-    if (localStorage.getItem('auth')) {
+    if (localStorage.getItem('user_auth')) {
       let {
         access_token,
         token_bearer,
         refresh_token,
         expires_in,
         token_created
-      } = JSON.parse(localStorage.getItem('auth'));
+      } = JSON.parse(localStorage.getItem('user_auth'));
 
       this.access_token = access_token;
       this.token_bearer = token_bearer;
@@ -71,7 +71,8 @@ class User {
       this.token_expires = expires_in;
       this.token_created =  created_at;
 
-      localStorage.setItem('auth', JSON.stringify({
+
+      localStorage.setItem('user_auth', JSON.stringify({
         access_token: access_token,
         token_bearer: token_bearer,
         refresh_token: refresh_token,
@@ -85,11 +86,15 @@ class User {
   }
 
   checkloginstatus() {
+    let headers = {};
+
+    if (User.access_token) {
+        headers['Authorization'] = 'Bearer ' + this.access_token;
+    }
+
     $.ajax({
       url: 'http://snailephant.herokuapp.com/users',
-      headers: {
-        'Authorization': 'Bearer ' + this.access_token
-      },
+      headers: headers,
       type: 'GET',
       dataType: "json"
     }).then((results) => {
@@ -127,7 +132,7 @@ class User {
     this.expires_in = null;
     this.created_at = null;
 
-    localStorage.removeItem('auth');
+    localStorage.removeItem('user_auth');
   }
 }
 

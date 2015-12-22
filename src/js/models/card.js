@@ -1,14 +1,16 @@
 import $ from "jquery";
 
+import User from "./user";
+
 class Card {
   constructor() {
     // this.name = null;
-    // this.address1 = null;
-    // this.address2 = null;
-    // this.city = null;
-    // this.state = null;
-    // this.country = null;
-    // this.zip = null;
+    // this.address_line1 = null;
+    // this.address_line2 = null;
+    // this.address_city = null;
+    // this.address_state = null;
+    // this.address_country = null;
+    // this.address_zip = null;
     // this.front = null;
     // this.back = null;
     // this.date = null;
@@ -42,21 +44,26 @@ class Card {
       back: "<html></html>",
       date: data.date
     }
-    console.log(reqData);
 
     let options = {
       url: url,
       method: "POST",
-      data: reqData,
+      data: {card: reqData},
       headers: {
-        "Authorization": "Bearer " + this.access_token
+        "Authorization": "Bearer " + User.access_token
       }
     };
+    console.log(options);
 
     $.ajax(options).then(response => {
-      done(null, response);
+      if (done) {
+        done(null, response);
+      }
+
     }).fail(error => {
-      done(error);
+      if (done) {
+        done(error);
+      }
     });
   }
 }
