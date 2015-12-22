@@ -7,6 +7,7 @@ class User {
     this.refresh_token = null;
     this.expires_in = null;
     this.token_created = null;
+    this.email = null;
 
     if (localStorage.getItem('user_auth')) {
       let {
@@ -97,8 +98,8 @@ class User {
       headers: headers,
       type: 'GET',
       dataType: "json"
-    }).then((results) => {
-      console.log(results);
+    }).then((response) => {
+      let email = response;
     })
   }
 
