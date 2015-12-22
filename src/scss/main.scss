@@ -31,6 +31,13 @@ body {
   font-weight: 300;
   font-size: 2.5vw;
   background: #babec9 url("../assets/bg.jpg") left top no-repeat fixed;
+  background: rgba(255,255,255,0.6) fixed, #babec9 url("../assets/bg.jpg") left top no-repeat fixed;/* Old Browsers */
+  background: -moz-linear-gradient(top, rgba(255,255,255,0.55) 0%, rgba(199,199,204,0.8) 100%) fixed, #babec9 url("../assets/bg.jpg") left top no-repeat fixed;/* FF3.6+ */
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,0.55)), color-stop(100%, rgba(199,199,204,0.8))) fixed, #babec9 url("../assets/bg.jpg") left top no-repeat fixed;/* Chrome, Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(255,255,255,0.55) 0%, rgba(199,199,204,0.8) 100%) fixed, #babec9 url("../assets/bg.jpg") left top no-repeat fixed;/* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(255,255,255,0.55) 0%, rgba(199,199,204,0.8) 100%) fixed, #babec9 url("../assets/bg.jpg") left top no-repeat fixed;/* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(255,255,255,0.55) 0%, rgba(199,199,204,0.8) 100%) fixed, #babec9 url("../assets/bg.jpg") left top no-repeat fixed;/* IE 10+ */
+  background: linear-gradient(to bottom, rgba(255,255,255,0.55) 0%, rgba(199,199,204,0.8) 100%) fixed, #babec9 url("../assets/bg.jpg") left top no-repeat fixed;/* W3C */
 }
 img {
   max-width: 100%;
@@ -38,13 +45,6 @@ img {
 #app {
   @include outer-container(100%);
   height: 100%;
-  background: rgba(255,255,255,0.6);/* Old Browsers */
-  background: -moz-linear-gradient(top, rgba(255,255,255,0.55) 0%, rgba(199,199,204,0.8) 100%);/* FF3.6+ */
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,0.55)), color-stop(100%, rgba(199,199,204,0.8)));/* Chrome, Safari4+ */
-  background: -webkit-linear-gradient(top, rgba(255,255,255,0.55) 0%, rgba(199,199,204,0.8) 100%);/* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, rgba(255,255,255,0.55) 0%, rgba(199,199,204,0.8) 100%);/* Opera 11.10+ */
-  background: -ms-linear-gradient(top, rgba(255,255,255,0.55) 0%, rgba(199,199,204,0.8) 100%);/* IE 10+ */
-  background: linear-gradient(to bottom, rgba(255,255,255,0.55) 0%, rgba(199,199,204,0.8) 100%);/* W3C */
   > div {
     height: 100vh;
   }

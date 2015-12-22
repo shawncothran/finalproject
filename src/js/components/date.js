@@ -27,8 +27,7 @@ class Date extends React.Component {
   };
 
   handlePostCard(e) {
-    // Card.postCard();
-    console.log("ok");
+    Card.postCard();
   }
 
   render() {
