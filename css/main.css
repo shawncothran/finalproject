@@ -362,7 +362,7 @@ html {
 html,
 body {
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   margin: 0;
   padding: 0; }
 
@@ -370,7 +370,21 @@ body {
   font-family: 'Annie Use Your Telescope', 'Helvetica', 'Arial', sans-serif;
   font-weight: 300;
   font-size: 2.5vw;
-  background-color: #babec9; }
+  background: #babec9 url("../assets/bg.jpg") left top no-repeat fixed;
+  background: rgba(255, 255, 255, 0.6) fixed, #babec9 url("../assets/bg.jpg") left top no-repeat fixed;
+  /* Old Browsers */
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.8) 0%, rgba(211, 211, 211, 0.6) 100%) fixed, #babec9 url("../assets/bg.jpg") left top no-repeat fixed;
+  /* FF3.6+ */
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.8)), color-stop(100%, rgba(211, 211, 211, 0.6))) fixed, #babec9 url("../assets/bg.jpg") left top no-repeat fixed;
+  /* Chrome, Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.8) 0%, rgba(211, 211, 211, 0.6) 100%) fixed, #babec9 url("../assets/bg.jpg") left top no-repeat fixed;
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(255, 255, 255, 0.8) 0%, rgba(211, 211, 211, 0.6) 100%) fixed, #babec9 url("../assets/bg.jpg") left top no-repeat fixed;
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(255, 255, 255, 0.8) 0%, rgba(211, 211, 211, 0.6) 100%) fixed, #babec9 url("../assets/bg.jpg") left top no-repeat fixed;
+  /* IE 10+ */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8) 0%, rgba(211, 211, 211, 0.6) 100%) fixed, #babec9 url("../assets/bg.jpg") left top no-repeat fixed;
+  /* W3C */ }
 
 img {
   max-width: 100%; }
@@ -387,30 +401,25 @@ img {
   #app > div {
     height: 100vh; }
 
-main {
-  max-width: 68em;
-  margin-left: auto;
-  margin-right: auto;
-  background: #c0ffff;
-  height: 100vh; }
-  main::after {
-    clear: both;
-    content: "";
-    display: table; }
-
 .logo {
   color: #666;
   text-align: center;
   font-size: 7vw;
-  padding-right: 2vw; }
+  padding: 0 2vw 0 0; }
 
-.homeHEader {
-  padding: 5vw; }
+.homeHeader {
+  padding: 2vw 2vw 0 2vw;
+  background-color: rgba(228, 228, 235, 0.6);
+  border-bottom: solid 0.2vw #777;
+  -webkit-box-shadow: 0px 0px 35px 5px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 0px 35px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 35px 5px rgba(0, 0, 0, 0.3); }
 
 .headerTitle {
   display: inline-block;
   text-align: center;
-  font-size: 4vw; }
+  font-size: 4vw;
+  margin: 0; }
 
 a {
   color: #003BB4;
@@ -421,7 +430,15 @@ a {
   width: 9vw; }
 
 .hero {
-  padding: 2vw; }
+  padding: 0 2vw 2vw 2vw;
+  text-align: center; }
+  .hero h2 {
+    margin-bottom: 1vw; }
+
+.heroVideo {
+  border: dotted 0.3vw #777;
+  width: 90vw;
+  margin: 0 auto; }
 
 .button {
   padding: 0.6vw 1.2vw;
@@ -434,10 +451,8 @@ a {
   -moz-transition: 0.2s;
   -o-transition: 0.2s; }
 
-.button:focus {
+.button:active {
   border: 0.1vw solid #ffffff;
-  color: #470000;
-  background: none;
   background-color: #4A4F5C; }
 
 .dashboard {
@@ -618,6 +633,7 @@ a {
 
 .toForm fieldset {
   margin: 0 auto;
+  border: none;
   width: 44vw; }
 
 .toForm .form {
@@ -635,6 +651,9 @@ a {
   width: 11vw; }
 
 .submitCard {
-  width: 25vw;
-  opacity: 0.33;
-  margin: 5vw auto 0 auto; }
+  display: block;
+  font-size: 4vw;
+  width: 30vw;
+  opacity: 0;
+  margin: 6vw auto 0 auto;
+  cursor: default; }
