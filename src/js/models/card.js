@@ -39,7 +39,7 @@ class Card {
       address_country: "US",
       address_state: data.to.address_state,
       address_zip: data.to.address_zip,
-      back: "<html></html>"
+      back: "<html></html>",
       date: data.date
     }
     console.log(reqData);
@@ -59,5 +59,6 @@ class Card {
       done(error);
     });
   }
+}
 
   export default new Card();

@@ -9,7 +9,6 @@ import Background from './background';
 import Text from './text';
 import Date from './date';
 import ToForm from './toform';
-import cardFront from '../utils/htmlfront'
 import Card from '../models/card';
 
 
