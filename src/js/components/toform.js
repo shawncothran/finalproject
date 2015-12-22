@@ -1,10 +1,17 @@
 import React from 'react';
 import _ from 'lodash';
+import { findDOMNode } from 'react-dom';
 
 class ToForm extends React.Component {
   constructor(props){
     super(props);
   }
+
+  componentDidMount(){
+      findDOMNode(this.refs.name).focus();
+      let node = findDOMNode(this);
+      node.scrollTop = node.scrollHeight;
+  };
 
   handleToFormSubmit (e) {
     let data = _.reduce(this.refs, (total, element, key) => {
@@ -28,7 +35,7 @@ class ToForm extends React.Component {
           <label htmlFor="address_line1">ADDRESS</label>
           <input className='form' ref='address_line1' name='address_line1' type='text' placeholder='123 Snail Way' onChange={this.handleToFormSubmit.bind(this)} value={this.props.to.address_line1} required/><span className='required'>*</span>
           <label htmlFor="address_line2">ADDRESS 2</label>
-          <input className='form' ref='address_line2' name='address_line2' type='text' placeholder='Apt. 321' onChange={this.handleToFormSubmit.bind(this)} value={this.props.to.address_line2} /><span> </span>
+          <input className='form' ref='address_line2' name='address_line2' type='text' placeholder='(optional)' onChange={this.handleToFormSubmit.bind(this)} value={this.props.to.address_line2} /><span> </span>
           <label htmlFor="address_city">CITY</label>
           <input className='form'  ref='address_city' name='address_city' type='text' placeholder='Nashville' onChange={this.handleToFormSubmit.bind(this)} value={this.props.to.address_city} required/><span className='required'>*</span>
           <label htmlFor="address_state">STATE</label>
