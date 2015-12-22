@@ -9,6 +9,8 @@ import Background from './background';
 import Text from './text';
 import Date from './date';
 import ToForm from './toform';
+import cardFront from '../utils/htmlfront'
+import Card from '../models/card';
 
 
 class Dashboard extends React.Component {
@@ -27,6 +29,11 @@ class Dashboard extends React.Component {
   handleUpdateCard(data) {
     let state = _.merge(this.state, data);
     this.setState(state);
+  }
+
+  saveCard() {
+    var card = new Card();
+    card.postCard(this.state);
   }
 
   render() {

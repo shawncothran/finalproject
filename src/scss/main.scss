@@ -83,10 +83,8 @@ a {
   -moz-transition: 0.2s;
   -o-transition: 0.2s;
   }
-.button:focus {
+.button:active {
   border: 0.1vw solid #ffffff;
-  color: #470000;
-  background: none;
   background-color: #4A4F5C;
   }
 .dashboard {
@@ -315,7 +313,10 @@ a {
   }
 }
 .submitCard {
-  width: 25vw;
-  opacity: 0.33;
-  margin: 5vw auto 0 auto;
+  display: block;
+  font-size: 4vw;
+  width: 30vw;
+  opacity: 0;
+  margin: 6vw auto 0 auto;
+  cursor: default;
 }
