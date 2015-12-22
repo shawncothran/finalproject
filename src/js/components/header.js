@@ -19,7 +19,7 @@ class Header extends React.Component {
          LoginStatus = <Link to="login">Login</Link>
          UserStatus = <Link to="register">Register</Link>
         } else {
-         LoginStatus = <Link to="subscription">{this.props.email}</Link>
+         LoginStatus = <Link to="subscription">{email}</Link>
          UserStatus = <Link to="dashboard" onClick={() => {
           User.logout();
         }}>Log Out</Link>
