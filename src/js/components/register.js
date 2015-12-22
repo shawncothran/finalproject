@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+
 import User from '../models/user';
 
 class Register extends React.Component {
