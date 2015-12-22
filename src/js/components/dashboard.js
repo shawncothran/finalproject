@@ -17,8 +17,15 @@ class Dashboard extends React.Component {
     super(props);
 
     this.state = {
-      front: {},
-      to: {},
+      front: {
+        background: "#dddddd",
+        fontFamily: "Annie Use Your Telescope",
+        color: "#000",
+        fontSize: "2em"
+      },
+      to: {
+        address_line2: "_"
+      },
       date: {}
     }
 
@@ -36,7 +43,6 @@ class Dashboard extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     let views = [
       (<Background {...this.state} updateCard={this.handleUpdateCard}/>),
       (<Text {...this.state} updateCard={this.handleUpdateCard}/>),

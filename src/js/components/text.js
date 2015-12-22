@@ -33,7 +33,6 @@ class Text extends React.Component {
   };
 
   handleFontSize(event) {
-    console.log('size');
     this.props.updateCard({
       front: {
         fontSize: event.target.value
