@@ -74,11 +74,11 @@ class User {
 
 
       localStorage.setItem('user_auth', JSON.stringify({
-        access_token: access_token,
-        token_bearer: token_bearer,
-        refresh_token: refresh_token,
-        expires_in: expires_in,
-        created_at: created_at
+        access_token,
+        token_bearer,
+        refresh_token,
+        expires_in,
+        created_at
       }));
       done(null, response);
     }).fail(error => {
@@ -86,7 +86,7 @@ class User {
     });
   }
 
-  checkloginstatus() {
+  checkLoginStatus() {
     let headers = {};
 
     if (User.access_token) {
@@ -100,6 +100,7 @@ class User {
       dataType: "json"
     }).then((response) => {
       let email = response;
+      console.log(email);
     })
   }
 

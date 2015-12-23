@@ -16,14 +16,16 @@ class App extends React.Component {
     }
 
   }
+
   componentDidMount() {
-    User.checkloginstatus();
+    User.checkLoginStatus();
   }
 
   render () {
     let childrenWithProps = React.Children.map(this.props.children, child => {
       return React.cloneElement(child)
     })
+    // console.log(this.state);
 
     return (
       <div>
