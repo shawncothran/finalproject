@@ -11,6 +11,9 @@ class Timeline extends React.Component {
     return (
       <section className="timeline">
         <h1>Timeline</h1>
+        <div className="wrap">
+          <iframe className="frame" src={<h1>hi</h1>}></iframe>
+        </div>
       </section>
     )
   }
