@@ -16,11 +16,11 @@ class Header extends React.Component {
     let UserStatus;
 
       if (!User.access_token) {
-         LoginStatus = <Link to="login">Login</Link>
-         UserStatus = <Link to="register">Register</Link>
-        } else {
-         LoginStatus = <Link to="subscription">{email}</Link>
-         UserStatus = <Link to="dashboard" onClick={() => {
+        LoginStatus = <Link to="login">Login</Link>
+        UserStatus = <Link to="register">Register</Link>
+      } else {
+        LoginStatus = <Link to="subscription">{this.props.email}</Link>
+        UserStatus = <Link to="/" onClick={() => {
           User.logout();
         }}>Log Out</Link>
 
@@ -29,7 +29,7 @@ class Header extends React.Component {
       <header className="homeHeader">
         <h1 className="headerTitle">
           <span>
-            <Link to="/" className="logo"><img className="logoImg" src="../../assets/snailephant.png" alt="@c;" title="@c;" /></Link>
+            <Link to="/" className="logo"><img className="logoImg" src="/assets/snailephant.png" alt="@c;" title="@c;" /></Link>
           </span>
           Snailephant. Never forget to send a card.
         </h1>
