@@ -35,6 +35,7 @@ class Dashboard extends React.Component {
   handleUpdateCard(data) {
     let state = _.merge(this.state, data);
     this.setState(state);
+    console.log(state);
   }
 
   saveCard() {
@@ -50,7 +51,6 @@ class Dashboard extends React.Component {
       (<Date {...this.state} updateCard={this.handleUpdateCard}/>)];
     return (
       <section className="dashboard">
-        <Link to="account">Account</Link>
         <Timeline />
         <CardCreator {...this.state}  views = {views}/>
       </section>
