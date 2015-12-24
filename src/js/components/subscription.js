@@ -99,25 +99,33 @@ render() {
     )
   }
   if (this.state.success) {
-    resultsMsg = <p>Thanks for your money! <Link to="dashboard">Return to Dashboard</Link> or <Link to="account">View your Account</Link></p>
+    resultsMsg = <p>You're all set! <Link to="dashboard">Head to your Dashboard</Link></p>
   } else if(this.state.success === false){
-    resultsMsg = <p>Oops, something flubbed. Try again or use a new card. If you continue to see this error, email us at Millie@snailephant.com so we can take your money</p>
+    resultsMsg = <p>Oops, something flubbed! Try again. If the error persists, email us at support@snailephant.com and we can walk you through it.</p>
   }
 
     return (
-      <form ref="form" onSubmit={this.handlePaySubmit}>
+      <form className="subForm" ref="form" onSubmit={this.handlePaySubmit}>
         <div className="response" id="response"> { resultsMsg } </div>
         <span ref="payment-errors">{this.state.errorMsg}</span>
-        <div className="form-row">
-          <label>
-            <span>Choose Your Plan</span>
-              <label>Tier 1 Plan - Send 3 Cards Each Month for $4.99/mo</label>
-              <input onClick={this.handlePlanSelect} type="button" value="basic"/>
-              <label>Tier 2 Plan - Send 5 Cards Each Month for $7.99/mo</label>
-              <input onClick={this.handlePlanSelect} type="button" value="premium"/>
-              <label>Tier 3 Plan - Send 10 Cards Each Month for $12.99/mo</label>
-              <input onClick={this.handlePlanSelect} type="button" value="platinum"/>
-          </label>
+          <div className="form-row">
+          <h1>Choose Your Plan</h1>
+          <article>
+            <input onClick={this.handlePlanSelect} type="button" value="solo"/>
+            <label>Individual Card for $2</label>
+          </article>
+          <article>
+            <input onClick={this.handlePlanSelect} type="button" value="basic"/>
+            <label>3 Cards Each Month for $5/mo</label>
+          </article>
+          <article>
+            <input onClick={this.handlePlanSelect} type="button" value="premium"/>
+            <label>5 Cards Each Month for $8/mo</label>
+          </article>
+          <article>
+            <input onClick={this.handlePlanSelect} type="button" value="platinum"/>
+            <label>10 Cards Each Month for $14/mo</label>
+          </article>
         </div>
         {cardVisible}
       </form>

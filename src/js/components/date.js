@@ -12,7 +12,7 @@ class Date extends React.Component {
 
   handleDate(e) {
     this.props.updateCard({
-      date: e.target.value
+      date: moment(e.target.value).subtract(7, "d").format('YYYY-MM-DD')
     });
 
     this.setState({
@@ -32,8 +32,8 @@ class Date extends React.Component {
   }
 
   render() {
-    let minTime = moment().add(7, "days").format('YYYY-MM-DD');
-    let maxTime = moment().add(373, "days").format('YYYY-MM-DD');
+    let minTime = moment().add(7, "d").format('YYYY-MM-DD');
+    let maxTime = moment().add(373, "d").format('YYYY-MM-DD');
     return (
       <section>
         <h1>Pick when your card will arrive!</h1>
