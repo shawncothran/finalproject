@@ -37,7 +37,9 @@ class Login extends React.Component {
   }
   render() {
     return (
-      <form className="loginForm" onSubmit={this.handleLogin}>
+      <form className="userForm" onSubmit={this.handleLogin}>
+        <h2>Log in</h2>
+        <p>Manage and create your cards!</p>
         <input type="text" ref="email" placeholder="Millie@Snailephant.com" autofocus required/>
         <input type="password" ref="password" placeholder="password" required/>
         <input type="submit" value="login" required/>
