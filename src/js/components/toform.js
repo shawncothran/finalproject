@@ -9,8 +9,8 @@ class ToForm extends React.Component {
 
   componentDidMount(){
       findDOMNode(this.refs.name).focus();
-      let node = findDOMNode(this);
-      node.scrollTop = node.scrollHeight;
+      // let node = findDOMNode(this);
+      // node.scrollTop = node.scrollHeight;
   };
 
   handleToFormSubmit (e) {

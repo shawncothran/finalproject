@@ -10,8 +10,8 @@ class Text extends React.Component {
 
   componentDidMount(){
       findDOMNode(this.refs.text).focus();
-      let node = findDOMNode(this);
-      node.scrollTop = node.scrollHeight;
+      // let node = findDOMNode(this);
+      // node.scrollTop = node.scrollHeight;
   };
 
   handleText(event) {
@@ -65,13 +65,13 @@ class Text extends React.Component {
           </select>
           <select className="fontSize" onChange={this.handleFontSize.bind(this)}>
             <option value='2em'>Medium</option>
-            <option value='2.7em'>LARGE</option>
-            <option value='1.3em'>small</option>
+            <option value='3em'>LARGE</option>
+            <option value='1.5em'>small</option>
           </select>
         </section>
         <section className="fontColor">
           <div className="fontColorPicker one" onClick={this.handleColor.bind(this, '#000000')}></div>
-          <div className="fontColorPicker two" onClick={this.handleColor.bind(this, '#898989')}></div>
+          <div className="fontColorPicker two" onClick={this.handleColor.bind(this, '#505050')}></div>
           <div className="fontColorPicker three" onClick={this.handleColor.bind(this, '#ffffff')}></div>
           <div className="fontColorPicker four" onClick={this.handleColor.bind(this, '#c3002a')}></div>
           <div className="fontColorPicker five" onClick={this.handleColor.bind(this, '#00473d')}></div>
