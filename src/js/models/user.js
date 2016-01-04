@@ -29,7 +29,6 @@ class User {
 
   isLoggedIn() {
     return this.access_token !== null;
-
   }
 
   register({email, password}, done) {
@@ -52,7 +51,6 @@ class User {
 
     })
   }
-
 
   login(data, done) {
     let url = "http://snailephant.herokuapp.com/oauth/token";
