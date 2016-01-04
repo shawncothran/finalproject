@@ -16,7 +16,6 @@ class User {
         refresh_token,
         expires_in,
         token_created
-
       } = JSON.parse(localStorage.getItem('auth'));
 
       this.access_token = access_token;
@@ -72,11 +71,11 @@ class User {
       this.token_created =  created_at;
 
       localStorage.setItem('auth', JSON.stringify({
-        access_token: access_token,
-        token_bearer: token_bearer,
-        refresh_token: refresh_token,
-        expires_in: expires_in,
-        created_at: created_at
+        access_token,
+        token_bearer,
+        refresh_token,
+        expires_in,
+        created_at
       }));
       done(null, response);
     }).fail(error => {
@@ -98,21 +97,13 @@ class User {
       this.email = email;
 
       localStorage.setItem('header', JSON.stringify({
-        email: email
+        email
       }));
-
-
-
-
-      // console.log('hi', response);
-      // // done(null, response);
-      // this.email = response.email;
     });
   }
 
 
   pay ({token, plan}, done) {
-
       $.ajax({
         url: 'http://snailephant.herokuapp.com/charges',
         headers: {
@@ -129,7 +120,6 @@ class User {
         done(results);
       })
       .fail((err) => {
-
       })
   }
 
@@ -140,7 +130,6 @@ class User {
     this.expires_in = null;
     this.created_at = null;
     this.email = null;
-
     localStorage.removeItem('auth');
   }
 }

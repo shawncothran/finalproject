@@ -12,18 +12,15 @@ class Header extends React.Component {
 
 
   render() {
-    let {email} = JSON.parse(localStorage.getItem('header'));
-
     let LoginStatus;
     let UserStatus;
 
       if (!User.access_token) {
-         LoginStatus = <Link to="login">Login</Link>
-         UserStatus = <Link to="register">Register</Link>
-        } else {
-
-         LoginStatus = (<Link to="subscription">{ email }</Link>)
-         UserStatus = <Link to="dashboard" onClick={() => {
+        LoginStatus = <Link to="login">Login</Link>
+        UserStatus = <Link to="register">Register</Link>
+      } else {
+        LoginStatus = <Link to="subscription">ME!{this.props.email}</Link>
+        UserStatus = <Link to="/" onClick={() => {
           User.logout();
         }}>Log Out</Link>
 
