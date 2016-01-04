@@ -24,7 +24,7 @@ class Dashboard extends React.Component {
         fontSize: "2em"
       },
       to: {
-        address_line2: "__________"
+        address_line2: "(optional)"
       },
       date: {}
     }
