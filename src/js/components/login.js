@@ -27,7 +27,6 @@ class Login extends React.Component {
         } else {
           alert('Hmm. login failed. Try again.');
         }
-
       })
     } else {
       alert("Hmmm... I don't remember that. Try again");
