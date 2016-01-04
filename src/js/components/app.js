@@ -14,8 +14,7 @@ class App extends React.Component {
       html: ""
     }
   }
-
-
+  
   componentDidMount() {
     User.checkloginstatus();
   }

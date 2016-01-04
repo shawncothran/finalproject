@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from 'moment';
-import User from '../models/user';
+import Card from '../models/card';
 
 class Date extends React.Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class Date extends React.Component {
 
   handleDate(e) {
     this.props.updateCard({
-      date: e.target.value
+      date: moment(e.target.value).subtract(7, "d").format('YYYY-MM-DD')
     });
 
     this.setState({
@@ -27,13 +27,13 @@ class Date extends React.Component {
   };
 
   handlePostCard(e) {
-    Card.postCard();
+    console.log(this.props);
+    Card.postCard(this.props);
   }
 
   render() {
-    let minTime = moment().add(7, "days").format('YYYY-MM-DD');
-    let maxTime = moment().add(373, "days").format('YYYY-MM-DD');
-    console.log(minTime);
+    let minTime = moment().add(7, "d").format('YYYY-MM-DD');
+    let maxTime = moment().add(373, "d").format('YYYY-MM-DD');
     return (
       <section>
         <h1>Pick when your card will arrive!</h1>

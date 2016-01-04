@@ -30,11 +30,11 @@ class Header extends React.Component {
     }
     return (
       <header className="homeHeader">
+        <Link to="/" className="logo">
+          <img className="logoImg" src="../assets/snailephant.png" alt="@c;" title="@c;" />
+        </Link><span className="headerLogo">Snailephant!</span>
         <h1 className="headerTitle">
-          <span>
-            <Link to="/" className="logo"><img className="logoImg" src="../../assets/snailephant.png" alt="@c;" title="@c;" /></Link>
-          </span>
-          Snailephant. Never forget to send a card.
+          Never forget to send a card.
         </h1>
         {LoginStatus}
         {UserStatus}

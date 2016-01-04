@@ -22,7 +22,6 @@ class Login extends React.Component {
     if(email && password) {
       User.login({username: email, password: password}, () => {
         this.setState({email: email});
-        User.checkloginstatus()
         this.props.history.pushState(null, "dashboard");
       })
     } else {

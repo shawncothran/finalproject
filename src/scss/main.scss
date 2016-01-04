@@ -27,71 +27,113 @@ body {
   padding: 0;
 }
 body {
-  font-family: 'Annie Use Your Telescope', 'Helvetica', 'Arial', sans-serif; // logo //
-  font-weight: 300;
-  font-size: 2.5vw;
-  background: #babec9 url("../assets/bg.jpg") left top no-repeat fixed;
+  font-family: 'Raleway', 'Helvetica', 'Arial', sans-serif; // logo //
+  font-weight: 100;
+  font-size: 2vmin;
   background: rgba(255,255,255,0.6) fixed, #babec9 url("../assets/bg.jpg") left top no-repeat fixed;/* Old Browsers */
-  background: -moz-linear-gradient(top, rgba(255,255,255,0.55) 0%, rgba(199,199,204,0.8) 100%) fixed, #babec9 url("../assets/bg.jpg") left top no-repeat fixed;/* FF3.6+ */
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,0.55)), color-stop(100%, rgba(199,199,204,0.8))) fixed, #babec9 url("../assets/bg.jpg") left top no-repeat fixed;/* Chrome, Safari4+ */
-  background: -webkit-linear-gradient(top, rgba(255,255,255,0.55) 0%, rgba(199,199,204,0.8) 100%) fixed, #babec9 url("../assets/bg.jpg") left top no-repeat fixed;/* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, rgba(255,255,255,0.55) 0%, rgba(199,199,204,0.8) 100%) fixed, #babec9 url("../assets/bg.jpg") left top no-repeat fixed;/* Opera 11.10+ */
-  background: -ms-linear-gradient(top, rgba(255,255,255,0.55) 0%, rgba(199,199,204,0.8) 100%) fixed, #babec9 url("../assets/bg.jpg") left top no-repeat fixed;/* IE 10+ */
-  background: linear-gradient(to bottom, rgba(255,255,255,0.55) 0%, rgba(199,199,204,0.8) 100%) fixed, #babec9 url("../assets/bg.jpg") left top no-repeat fixed;/* W3C */
+  background: -moz-linear-gradient(top, rgba(255,255,255,0.8) 0%, rgba(211,211,211,0.6) 100%) fixed, #babec9 url("../assets/bg.jpg") left top no-repeat fixed;/* FF3.6+ */
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,0.8)), color-stop(100%, rgba(211,211,211,0.6))) fixed, #babec9 url("../assets/bg.jpg") left top no-repeat fixed;/* Chrome, Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(255,255,255,0.8) 0%, rgba(211,211,211,0.6) 100%) fixed, #babec9 url("../assets/bg.jpg") left top no-repeat fixed;/* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(255,255,255,0.8) 0%, rgba(211,211,211,0.6) 100%) fixed, #babec9 url("../assets/bg.jpg") left top no-repeat fixed;/* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(255,255,255,0.8) 0%, rgba(211,211,211,0.6) 100%) fixed, #babec9 url("../assets/bg.jpg") left top no-repeat fixed;/* IE 10+ */
+  background: linear-gradient(to bottom, rgba(255,255,255,0.8) 0%, rgba(211,211,211,0.6) 100%) fixed, #babec9 url("../assets/bg.jpg") left top no-repeat fixed;/* W3C */
+  background-size: cover;
 }
 img {
-  max-width: 100%;
+  max-width: 100vmin;
 }
 #app {
-  @include outer-container(100%);
-  height: 100%;
+  @include outer-container(100vmin);
+  height: 100vmin;
   > div {
-    height: 100vh;
+    // height: 100vmax;
   }
 }
-.logo {
-  color: #666;
-  text-align: center;
-  font-size: 7vw;
-  padding: 0 2vw 0 0;
+h1 {
+  font-size: 3.5vmin;
+  font-weight: 100;
+  text-shadow: 2px 2px 2px rgba(255, 255, 255, 1);
+}
+h2 {
+  font-size: 3vmin;
+  font-weight: 100;
 }
 .homeHeader {
-  padding: 2vw 2vw 0 2vw;
-  background-color: rgba(228, 228, 235, 0.6);
-  border-bottom: solid 0.2vw #777;
+  padding: 0;
+  height: 7.6vmin;
+  position: fixed;
+  z-index: 11;
+  top: 0;
+  width: 100vmin;
+  background-color: rgba(230, 230, 235, 0.7);
+  border-right: solid 0.2vmin #777;
+  border-left: solid 0.2vmin #777;
+  border-bottom: solid 0.2vmin #777;
+  -webkit-border-bottom-right-radius: 1vmin;
+  -webkit-border-bottom-left-radius: 1vmin;
+  -moz-border-radius-bottomright: 1vmin;
+  -moz-border-radius-bottomleft: 1vmin;
+  border-bottom-right-radius: 1vmin;
+  border-bottom-left-radius: 1vmin;
   -webkit-box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.30);
   -moz-box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.30);
   box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.30);
+  a, span {
+    vertical-align: top;
+    line-height: 7.6vmin;
+  }
+}
+.logo {
+  padding: 0 1.5vmin 0 0;
+  vertical-align: top;
+  overflow: auto;
+}
+.logoImg {
+  width: 8vmin;
+  margin: 0.7vmin;
+}
+.headerLogo {
+  font-family: 'Great Vibes', 'Helvetica', 'Arial', sans-serif; // logo //
+  font-size: 5vmin;
+  padding: 0 2vmin 0 0;
+  line-height: 7.6vmin;
+  vertical-align: text-bottom;
 }
 .headerTitle {
   display: inline-block;
+  line-height: 7.6vmin;
   text-align: center;
-  font-size: 4vw;
+  vertical-align: top;
   margin: 0;
 }
 a {
+  font-family: 'Annie Use Your Telescope', 'Helvetica', 'Arial', sans-serif; // logo //
+  font-size: 3.2vmin;
   color: #003BB4;
   text-decoration: none;
-  padding-left: 2vw;
-}
-.logoImg {
-  width: 9vw;
+  padding-left: 2vmin;
 }
 .hero {
-  padding: 0 2vw 2vw 2vw;
+  padding: 7vmin 2vmin 2vmin 2vmin;
   text-align: center;
   h2 {
-    margin-bottom: 1vw;
+    margin-bottom: 1vmin;
   }
 }
 .heroVideo {
-  border: dotted 0.3vw #777;
-  width: 90vw;
-  margin: 0 auto;
+  border: dotted 0.3vmin #777;
+  display: block;
+  width: 84vmin;
+  margin: 0 auto 2vmin auto;
+  clear: both;
+}
+button, input {
+  font-family: 'Annie Use Your Telescope', 'Helvetica', 'Arial', sans-serif; // logo //
 }
 .button {
-  padding: 0.6vw 1.2vw;
-  border: 0.18vw solid #cccccc;
+  font-family: 'Annie Use Your Telescope', 'Helvetica', 'Arial', sans-serif; // logo //
+  padding: 0.6vmin 1.2vmin;
+  border: 0.18vmin solid #cccccc;
   background-color: #F0F0F0;
   -webkit-box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.20);
   -moz-box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.20);
@@ -99,32 +141,57 @@ a {
   -webkit-transition: 0.2s;
   -moz-transition: 0.2s;
   -o-transition: 0.2s;
-  }
+}
 .button:active {
-  border: 0.1vw solid #ffffff;
+  border: 0.1vmin solid #ffffff;
   background-color: #4A4F5C;
-  }
+}
+.userForm {
+  padding: 7vmin 2vmin 2vmin 2vmin;
+}
 .dashboard {
-  height: 100vh;
+  height: 100vmin;
 }
 .timeline {
-  padding: 5vw;
+  padding: 7vmin 5vmin 5vmin 5vmin;
+  .wrap {
+    width: 12vmin;
+    height: 8vmin;
+    padding: 0;
+    overflow: hidden;
+  }
+  .frame {
+    width: 48vmin;
+    height: 32vmin;
+    border: 0;
+    -ms-transform: scale(0.25);
+    -moz-transform: scale(0.25);
+    -o-transform: scale(0.25);
+    -webkit-transform: scale(0.25);
+    transform: scale(0.25);
+
+    -ms-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+  }
 }
 .cardCreator {
   position: relative;
-  height: 100vh;
-  padding-top: 0.5vw;
+  height: 91.8vmin;
+  padding-top: 0.5vmin;
   text-align: center;
   .slide {
     position: absolute;
-    width: 100vw;
+    width: 100vmin;
   }
   .prevSlide {
     left: -100%;
   }
   .currentSlide {
-    width: 90vw;
-    left: 5vw;
+    width: 90vmin;
+    left: 5vmin;
   }
   .nextSlide {
     left: 100%;
@@ -132,12 +199,13 @@ a {
   .controls {
     position: absolute;
     z-index: 5;
-    width: 100vw;
-    top: 45vh;
+    width: 100vmin;
+    top: 45vmin;
     .controlBtn {
+      font-family: 'Annie Use Your Telescope', 'Helvetica', 'Arial', sans-serif; // logo //
       position: absolute;
       background: none;
-      font-size: 8vw;
+      font-size: 8vmin;
       border: none;
       color: #003BB4;
       outline: none;
@@ -153,12 +221,12 @@ a {
 .bgSelector {
   .colorPicker {
     cursor: pointer;
-    margin: 1vw;
-    height: 13vw;
-    width: 13vw;
+    margin: 1vmin;
+    height: 13vmin;
+    width: 13vmin;
     float: left;
-    border: solid 0.3vw #777;
-    border-radius: 3vw;
+    border: solid 0.3vmin #777;
+    border-radius: 3vmin;
   }
   .one {
     background-color: #ffffff;
@@ -201,38 +269,46 @@ a {
   /** Previous Button is Clicked **/
   .card__previous-enter {
     left: -100%;
+    opacity: 0;
   }
   .card__previous-enter.card__previous-enter-active {
     left: 5%;
-    transition: left 400ms ease-in;
+    opacity: 1;
+    transition: left 400ms ease-in, opacity 400ms linear;
   }
   .card__previous-leave {
+    opacity: 1;
     left: 5%;
   }
   .card__previous-leave.card__previous-leave-active {
     left: 100%;
-    transition: left 400ms ease-in;
+    opacity: 0;
+    transition: left 400ms ease-in, opacity 400ms linear;
   }
   /** Next Button is Clicked **/
   .card__next-enter {
+    opacity: 0;
     left: 100%;
   }
   .card__next-enter.card__next-enter-active {
     left: 5%;
-    transition: left 400ms ease-in;
+    opacity: 1;
+    transition: left 400ms ease-in, opacity 400ms linear;
   }
   .card__next-leave {
+    opacity: 1;
     left: 5%;
   }
   .card__next-leave.card__next-leave-active {
+    opacity: 0;
     left: -100%;
-    transition: left 400ms ease-in;
+    transition: left 400ms ease-in, opacity 400ms linear;
   }
 }
 .cardText {
   margin: 0 auto;
   display: block;
-  width:60vw;
+  width:60vmin;
   resize: none;
 }
 .fontSelects {
@@ -244,7 +320,7 @@ a {
     display: block;
   }
   .fontSize, .fontFamily {
-    margin: 1vw;
+    margin: 1vmin;
   }
 }
 .fontColor {
@@ -257,18 +333,18 @@ a {
   }
   .fontColorPicker {
     cursor: pointer;
-    margin: 0.6vw;
-    height: 6vw;
-    width: 6vw;
-    border: solid 0.25vw #777;
-    border-radius: 1.5vw;
+    margin: 0.6vmin;
+    height: 6vmin;
+    width: 6vmin;
+    border: solid 0.25vmin #777;
+    border-radius: 1.5vmin;
     display: inline-block;
   }
   .one {
     background-color: #000000;
   }
   .two {
-    background-color: #898989;
+    background-color: #505050;
   }
   .three {
     background-color: #ffffff;
@@ -285,11 +361,11 @@ a {
 }
 .preview {
   background-color: #dddddd;
-  margin: 4vw auto 0 auto;
-  padding: 2vw;
-  border: dotted 0.3vw #777;
-  height:40vw;
-  width:60vw;
+  margin: 4vmin auto 0 auto;
+  padding: 2vmin;
+  border: dotted 0.3vmin #777;
+  height: 42.5vmin;
+  width: 62.5vmin;
   position: relative;
   -webkit-box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.36);
   -moz-box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.36);
@@ -299,11 +375,12 @@ a {
     text-align: center;
     margin: 0;
     word-wrap:break-word;
-    width: 56vw;
-    max-width: 56vw;
-    max-height: 36vw;
+    width: 56vmin;
+    max-width: 56vmin;
+    max-height: 36vmin;
     overflow: hidden;
     top: 50%;
+    text-shadow: none;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
@@ -313,11 +390,12 @@ a {
   fieldset {
     margin: 0 auto;
     border: none;
-    width: 44vw;
+    width: 44vmin;
   }
   .form {
-    margin: 0.5vw;
-    width: 22vw;
+    font-family: 'Annie Use Your Telescope', 'Helvetica', 'Arial', sans-serif; // logo //
+    margin: 0.5vmin;
+    width: 22vmin;
     float: left;
   }
   span {
@@ -326,15 +404,26 @@ a {
   label {
   	float: left;
   	text-align: right;
-  	margin-right: 1.2vw;
-  	width: 11vw;
+  	margin-right: 1.2vmin;
+  	width: 11vmin;
   }
 }
 .submitCard {
   display: block;
-  font-size: 4vw;
-  width: 30vw;
+  font-size: 4vmin;
+  width: 30vmin;
   opacity: 0;
-  margin: 6vw auto 0 auto;
+  margin: 6vmin auto 0 auto;
   cursor: default;
+}
+.subForm {
+  font-size: 3.2vmin;
+}
+.form-row {
+  @include outer-container(94vmin);
+  article {
+    // @include span-columns(4);
+    // @include omega();
+    margin-bottom: 3vmin;
+  }
 }

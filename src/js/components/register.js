@@ -43,11 +43,11 @@ class Register extends React.Component {
       )
     }
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className="userForm" onSubmit={this.handleSubmit}>
         <h2>Sign Up for Free</h2>
         <p>Make your first card in seconds!</p>
         <div id="success">{successMsg}</div>
-        <input type="text" ref="email" placeholder="Millie@Snailephant.com" required/>
+        <input type="text" ref="email" placeholder="Millie@Snailephant.com" autofocus required/>
         <input type="password" ref="password" placeholder="secret passcode" required/>
         <input type="password" ref="passconfirm" placeholder="wait, what was that?" required/>
         <input type="submit" value="sign up"/>
