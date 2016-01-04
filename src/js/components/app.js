@@ -11,25 +11,23 @@ class App extends React.Component {
     this.state = {
       toform: "",
       date: "",
-      html: "",
-      session: {}
+      html: ""
     }
-
   }
-
+  
   componentDidMount() {
-    User.checkLoginStatus();
+    User.checkloginstatus();
   }
 
   render () {
+    console.log('state', this.state);
     let childrenWithProps = React.Children.map(this.props.children, child => {
       return React.cloneElement(child)
     })
-    // console.log(this.state);
 
     return (
       <div>
-        <Header email={this.state.session.email}/>
+        <Header />
         {childrenWithProps}
       </div>
     )

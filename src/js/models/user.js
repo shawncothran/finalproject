@@ -9,20 +9,21 @@ class User {
     this.token_created = null;
     this.email = null;
 
-    if (localStorage.getItem('user_auth')) {
+    if (localStorage.getItem('auth')) {
       let {
         access_token,
         token_bearer,
         refresh_token,
         expires_in,
         token_created
-      } = JSON.parse(localStorage.getItem('user_auth'));
+
+      } = JSON.parse(localStorage.getItem('auth'));
 
       this.access_token = access_token;
       this.token_bearer = token_bearer;
       this.refresh_token = refresh_token;
       this.expires_in = expires_in;
-      this.token_created = token_created;
+      this.token_created = token_created
     }
   }
 
@@ -72,13 +73,12 @@ class User {
       this.token_expires = expires_in;
       this.token_created =  created_at;
 
-
-      localStorage.setItem('user_auth', JSON.stringify({
-        access_token,
-        token_bearer,
-        refresh_token,
-        expires_in,
-        created_at
+      localStorage.setItem('auth', JSON.stringify({
+        access_token: access_token,
+        token_bearer: token_bearer,
+        refresh_token: refresh_token,
+        expires_in: expires_in,
+        created_at: created_at
       }));
       done(null, response);
     }).fail(error => {
@@ -86,22 +86,30 @@ class User {
     });
   }
 
-  checkLoginStatus() {
-    let headers = {};
-
-    if (User.access_token) {
-        headers['Authorization'] = 'Bearer ' + this.access_token;
-    }
-
+  checkloginstatus(done, email) {
     $.ajax({
       url: 'http://snailephant.herokuapp.com/users',
-      headers: headers,
+      headers: {
+        'Authorization': 'Bearer ' + this.access_token
+      },
       type: 'GET',
-      dataType: "json"
+      dataType: "json",
     }).then((response) => {
-      let email = response;
-      console.log(email);
-    })
+      let {email} = response;
+
+      this.email = email;
+
+      localStorage.setItem('header', JSON.stringify({
+        email: email
+      }));
+
+
+
+
+      // console.log('hi', response);
+      // // done(null, response);
+      // this.email = response.email;
+    });
   }
 
 
@@ -133,8 +141,9 @@ class User {
     this.refresh_token = null;
     this.expires_in = null;
     this.created_at = null;
+    this.email = null;
 
-    localStorage.removeItem('user_auth');
+    localStorage.removeItem('auth');
   }
 }
 

@@ -20,14 +20,9 @@ class Login extends React.Component {
     let password = this.refs.password.value;
 
     if(email && password) {
-      User.login({username: email, password: password}, (error) => {
-        if (!error) {
-          this.setState({email: email});
-          this.props.history.pushState(null, "dashboard");
-        } else {
-          alert('Hmm. login failed. Try again.');
-        }
-
+      User.login({username: email, password: password}, () => {
+        this.setState({email: email});
+        this.props.history.pushState(null, "dashboard");
       })
     } else {
       alert("Hmmm... I don't remember that. Try again");
@@ -37,10 +32,8 @@ class Login extends React.Component {
   }
   render() {
     return (
-      <form className="userForm" onSubmit={this.handleLogin}>
-        <h2>Log in</h2>
-        <p>Manage and create your cards!</p>
-        <input type="text" ref="email" placeholder="Millie@Snailephant.com" autofocus required/>
+      <form onSubmit={this.handleLogin}>
+        <input type="text" ref="email" placeholder="Millie@Snailephant.com" required/>
         <input type="password" ref="password" placeholder="password" required/>
         <input type="submit" value="login" required/>
         <Link to="register">Not a member? Sign Up</Link>
