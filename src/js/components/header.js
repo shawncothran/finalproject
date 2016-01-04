@@ -12,6 +12,8 @@ class Header extends React.Component {
 
 
   render() {
+    let { email } = JSON.parse(localStorage.getItem('header'));
+
     let LoginStatus;
     let UserStatus;
 
@@ -19,7 +21,8 @@ class Header extends React.Component {
         LoginStatus = <Link to="login">Login</Link>
         UserStatus = <Link to="register">Register</Link>
       } else {
-        LoginStatus = <Link to="subscription">ME!{this.props.email}</Link>
+
+        LoginStatus = <Link to="subscription">{ email }</Link>
         UserStatus = <Link to="/" onClick={() => {
           User.logout();
         }}>Log Out</Link>
