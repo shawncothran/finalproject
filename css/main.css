@@ -359,30 +359,19 @@ html {
 *, *::after, *::before {
   box-sizing: inherit; }
 
-html,
-body {
-  height: 100vh;
-  width: 100vw;
-  margin: 0;
-  padding: 0; }
-
 body {
   font-family: 'Raleway', 'Helvetica', 'Arial', sans-serif;
   font-weight: 100;
   font-size: 2vmin;
-  background: rgba(255, 255, 255, 0.6) fixed, #babec9 url("../assets/bg.jpg") left top no-repeat fixed;
+  background: rgba(255, 255, 255, 0.6) fixed, #babec9 url("../assets/bg1.jpg") left top no-repeat fixed;
   /* Old Browsers */
-  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.8) 0%, rgba(211, 211, 211, 0.6) 100%) fixed, #babec9 url("../assets/bg.jpg") left top no-repeat fixed;
   /* FF3.6+ */
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.8)), color-stop(100%, rgba(211, 211, 211, 0.6))) fixed, #babec9 url("../assets/bg.jpg") left top no-repeat fixed;
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.8)), color-stop(100%, rgba(211, 211, 211, 0.6))) fixed, #babec9 url("../assets/bg1.jpg") left top no-repeat fixed;
   /* Chrome, Safari4+ */
-  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.8) 0%, rgba(211, 211, 211, 0.6) 100%) fixed, #babec9 url("../assets/bg.jpg") left top no-repeat fixed;
   /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, rgba(255, 255, 255, 0.8) 0%, rgba(211, 211, 211, 0.6) 100%) fixed, #babec9 url("../assets/bg.jpg") left top no-repeat fixed;
   /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, rgba(255, 255, 255, 0.8) 0%, rgba(211, 211, 211, 0.6) 100%) fixed, #babec9 url("../assets/bg.jpg") left top no-repeat fixed;
   /* IE 10+ */
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8) 0%, rgba(211, 211, 211, 0.6) 100%) fixed, #babec9 url("../assets/bg.jpg") left top no-repeat fixed;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8) 0%, rgba(211, 211, 211, 0.6) 100%) fixed, #babec9 url("../assets/bg1.jpg") left top no-repeat fixed;
   /* W3C */
   background-size: cover; }
 
@@ -399,10 +388,18 @@ img {
     content: "";
     display: table; }
 
+.headBuffer {
+  display: block;
+  padding-top: 63px;
+  /* this is the height of your header */
+  margin-top: -63px;
+  /* this is again negative value of the height of your header */
+  visibility: hidden; }
+
 h1 {
   font-size: 3.5vmin;
   font-weight: 100;
-  text-shadow: 2px 2px 2px white; }
+  text-shadow: 1px 2px 2px white; }
 
 h2 {
   font-size: 3vmin;
@@ -425,15 +422,13 @@ h2 {
   -moz-border-radius-bottomleft: 1vmin;
   border-bottom-right-radius: 1vmin;
   border-bottom-left-radius: 1vmin;
-  -webkit-box-shadow: 0px 0px 35px 5px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0px 0px 35px 5px rgba(0, 0, 0, 0.3);
   box-shadow: 0px 0px 35px 5px rgba(0, 0, 0, 0.3); }
   .homeHeader a, .homeHeader span {
     vertical-align: top;
-    line-height: 7.6vmin; }
+    line-height: 8.5vmin; }
 
 .logo {
-  padding: 0 1.5vmin 0 0;
+  padding: 0;
   vertical-align: top;
   overflow: auto; }
 
@@ -471,7 +466,7 @@ a {
 .heroVideo {
   border: dotted 0.3vmin #777;
   display: block;
-  width: 84vmin;
+  width: 75vmin;
   margin: 0 auto 2vmin auto;
   clear: both; }
 
@@ -483,8 +478,6 @@ button, input {
   padding: 0.6vmin 1.2vmin;
   border: 0.18vmin solid #cccccc;
   background-color: #F0F0F0;
-  -webkit-box-shadow: 0px 0px 35px 5px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0px 0px 35px 5px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 0px 35px 5px rgba(0, 0, 0, 0.2);
   -webkit-transition: 0.2s;
   -moz-transition: 0.2s;
@@ -508,17 +501,13 @@ button, input {
     padding: 0;
     overflow: hidden; }
   .timeline .frame {
+    display: inline-block;
+    margin: 0;
     width: 48vmin;
     height: 32vmin;
     border: 0;
-    -ms-transform: scale(0.25);
-    -moz-transform: scale(0.25);
-    -o-transform: scale(0.25);
     -webkit-transform: scale(0.25);
     transform: scale(0.25);
-    -ms-transform-origin: 0 0;
-    -moz-transform-origin: 0 0;
-    -o-transform-origin: 0 0;
     -webkit-transform-origin: 0 0;
     transform-origin: 0 0; }
 
@@ -684,8 +673,6 @@ button, input {
   height: 42.5vmin;
   width: 62.5vmin;
   position: relative;
-  -webkit-box-shadow: 0px 0px 35px 5px rgba(0, 0, 0, 0.36);
-  -moz-box-shadow: 0px 0px 35px 5px rgba(0, 0, 0, 0.36);
   box-shadow: 0px 0px 35px 5px rgba(0, 0, 0, 0.36); }
   .preview h1 {
     position: absolute;
@@ -699,7 +686,6 @@ button, input {
     top: 50%;
     text-shadow: none;
     -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
     transform: translateY(-50%); }
 
 .toForm fieldset {
