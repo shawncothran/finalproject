@@ -36,8 +36,10 @@ class Header extends React.Component {
         <h1 className="headerTitle">
           Never forget to send a card.
         </h1>
-        {LoginStatus}
-        {UserStatus}
+        <nav className="usernav">
+          {LoginStatus}
+          {UserStatus}
+        </nav>
       </header>
     )
   }
