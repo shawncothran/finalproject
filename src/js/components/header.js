@@ -1,5 +1,4 @@
 import React from 'react';
-import $ from 'jquery';
 import { Link } from 'react-router';
 
 import User from '../models/user';
@@ -7,32 +6,30 @@ import User from '../models/user';
 class Header extends React.Component {
   constructor(props) {
     super(props);
-
   }
 
-
   render() {
-    let { email } = JSON.parse(localStorage.getItem('header'));
-
-    let LoginStatus;
-    let UserStatus;
+    let {email} = JSON.parse(localStorage.getItem('header')),
+        HomeStatus,
+        LoginStatus,
+        UserStatus;
 
       if (!User.access_token) {
+        HomeStatus = <Link to="/" className="logo"><img className="logoImg" src="../assets/snailephant.png" alt="@c;" title="@c;" /></Link>
         LoginStatus = <Link to="login">Login</Link>
         UserStatus = <Link to="register">Register</Link>
       } else {
-
+        HomeStatus = <Link to="dashboard" className="logo"><img className="logoImg" src="../assets/snailephant.png" alt="@c;" title="@c;" /></Link>
         LoginStatus = <Link to="subscription">{ email }</Link>
         UserStatus = <Link to="/" onClick={() => {
           User.logout();
         }}>Log Out</Link>
-
     }
+
     return (
       <header className="homeHeader">
-        <Link to="/" className="logo">
-          <img className="logoImg" src="../assets/snailephant.png" alt="@c;" title="@c;" />
-        </Link><span className="headerLogo">Snailephant!</span>
+        {HomeStatus}
+        <span className="headerLogo">Snailephant!</span>
         <h1 className="headerTitle">
           Never forget to send a card.
         </h1>
