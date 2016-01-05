@@ -153,28 +153,30 @@ button, input {
 }
 .timeline {
   padding: 7vmin 5vmin 5vmin 5vmin;
-  .wrap {
-    width: 12vmin;
-    height: 8vmin;
-    padding: 0;
-    overflow: hidden;
-  }
+  overflow: scroll;
+  // .cardWrapper {
+  //   height: 10vmin;
+  //   overflow: scroll;
+  //   white-space: nowrap;
+  //   overflow-x: auto;
+  // }
+  // .wrap {
+  //   width: 15vmin;
+  //   height: 10vmin;
+  //   margin: 1vmin;
+  //   padding: 0;
+  //   display: inline-block;
+  //   overflow: hidden;
+  // }
   .frame {
-    display: inline-block;
     margin: 0;
-    width: 48vmin;
-    height: 32vmin;
+    padding: 0;
+    width: 6.5in;
+    height: 4.5in;
     border: 0;
-    -ms-transform: scale(0.25);
-    -moz-transform: scale(0.25);
-    -o-transform: scale(0.25);
-    -webkit-transform: scale(0.25);
     transform: scale(0.25);
-    -ms-transform-origin: 0 0;
-    -moz-transform-origin: 0 0;
-    -o-transform-origin: 0 0;
-    -webkit-transform-origin: 0 0;
     transform-origin: 0 0;
+    overflow: hidden;
   }
 }
 .cardCreator {

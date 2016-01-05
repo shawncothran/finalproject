@@ -42,13 +42,13 @@ class Timeline extends React.Component {
   render() {
     let cards = this.state.cards.map(function (card) {
       console.log(API_ROOT + card.id);
-      return <iframe className="frame" key={card.id} src={API_ROOT + card.id} />
+      return <div className="wrap"><iframe className="frame" scrolling="no" key={card.id} src={API_ROOT + card.id} /></div>
     })
 
     return (
       <section className="timeline">
         <h1>Timeline</h1>
-        <div className="wrap">
+        <div className="cardWrapper">
           {cards}
         </div>
       </section>
