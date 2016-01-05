@@ -9,8 +9,12 @@ class Header extends React.Component {
   }
 
   render() {
-    let {email} = JSON.parse(localStorage.getItem('header')),
-        HomeStatus,
+    let user = JSON.parse(localStorage.getItem('header'));
+    let email;
+    if (user) {
+      email = user.email;
+    }
+    let HomeStatus,
         LoginStatus,
         UserStatus;
 
@@ -20,7 +24,7 @@ class Header extends React.Component {
         UserStatus = <Link to="register">Register</Link>
       } else {
         HomeStatus = <Link to="dashboard" className="logo"><img className="logoImg" src="../assets/snailephant.png" alt="@c;" title="@c;" /></Link>
-        LoginStatus = <Link to="subscription">{ email }</Link>
+        LoginStatus = <Link to="subscription">{ user }</Link>
         UserStatus = <Link to="/" onClick={() => {
           User.logout();
         }}>Log Out</Link>

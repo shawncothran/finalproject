@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import classNames from 'classnames';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import User from '../models/user';
 
@@ -15,7 +16,6 @@ class Subscription extends React.Component {
     };
     this.handlePaySubmit = this.handlePaySubmit.bind(this);
     this.stripeResponseHandler = this.stripeResponseHandler.bind(this);
-    this.handlePlanSelect = this.handlePlanSelect.bind(this);
     this.handleResults = this.handleResults.bind(this);
 
     Stripe.setPublishableKey('pk_test_eiTJaf9ETvML34B3RRoq2gRh');
@@ -29,9 +29,9 @@ class Subscription extends React.Component {
     Stripe.card.createToken(this.refs.form, this.stripeResponseHandler);
   };
 
-  handlePlanSelect (e) {
-  this.setState({
-    plan: e.target.value,
+  handlePlanSelect (plan) {
+    this.setState({
+      plan: plan,
     })
   }
 
@@ -71,6 +71,7 @@ render() {
   let cardVisible;
   if (this.state.plan) {
     let planClasses = classNames({
+      hide_until_plan_selected: true,
       solo: this.state.plan === 'solo',
       basic: this.state.plan === 'basic',
       premium: this.state.plan === 'premium',
@@ -78,32 +79,32 @@ render() {
     });
 
     cardVisible = (
-      <div className="hide_until_plan_selected">
-        <h3 id="selected_plan" className={planClasses}>{this.state.plan}</h3>
+      <div className={planClasses} key={this.state.plan}>
+        <h3 id="selected_plan">{this.state.plan}</h3>
         <div className="form-row">
           <label>
-            <span>Card Number</span>
+            <span className="cc">Card Number</span>
             <input type="text" size="20" data-stripe="number"/>
           </label>
         </div>
 
         <div className="form-row">
           <label>
-            <span>CVC</span>
+            <span className="cc">CVC</span>
             <input type="text" size="4" data-stripe="cvc"/>
           </label>
         </div>
 
         <div className="form-row">
-          <label>
-            <span>Expiration (MM/YYYY)</span>
+          <label className="float">
+            <span className="cc">Expiration (MM/YYYY)</span>
             <input type="text" size="2" data-stripe="exp-month"/>
           </label>
-          <span> / </span>
+          <span id="YYYY"> / </span>
           <input type="text" size="4" data-stripe="exp-year"/>
         </div>
 
-        <button type="submit" disabled={this.state.disableButton}>Submit Payment</button>
+        <button className="paymentSubmit" type="submit" disabled={this.state.disableButton}>Submit Payment</button>
       </div>
     )
   }
@@ -119,24 +120,24 @@ render() {
         <span ref="payment-errors">{this.state.errorMsg}</span>
           <div className="form-row">
           <h1>Choose Your SnailePlan</h1>
-          <article className="plan" id="solo">
-            <label>Individual Card for $2 Each</label>
-            <input onClick={this.handlePlanSelect} type="button" value="solo"/>
+          <article className="plan" id="solo" onClick={this.handlePlanSelect.bind(this, 'solo')}>
+            <p>solo</p>
+            <label>Individual Card for $2</label>
           </article>
-          <article className="plan" id="basic">
+          <article className="plan" id="basic" onClick={this.handlePlanSelect.bind(this, 'basic')}>
+            <p>basic</p>
             <label>3 Cards Each Month for $5/mo</label>
-            <input onClick={this.handlePlanSelect} type="button" value="basic"/>
           </article>
-          <article className="plan" id="premium">
+          <article className="plan" id="premium" onClick={this.handlePlanSelect.bind(this, 'premium')}>
+            <p>premium</p>
             <label>5 Cards Each Month for $8/mo</label>
-            <input onClick={this.handlePlanSelect} type="button" value="premium"/>
           </article>
-          <article className="plan" id="platinum">
+          <article className="plan" id="platinum" onClick={this.handlePlanSelect.bind(this, 'platinum')}>
+            <p>platinum</p>
             <label>10 Cards Each Month for $14/mo</label>
-            <input onClick={this.handlePlanSelect}  type="button" value="platinum"/>
           </article>
         </div>
-        {cardVisible}
+        <ReactCSSTransitionGroup transitionName="fancy" transitionEnterTimeout={500} transitionLeaveTimeout={500}>{cardVisible}</ReactCSSTransitionGroup>
       </form>
     )
   }
