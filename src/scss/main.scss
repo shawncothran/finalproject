@@ -425,9 +425,10 @@ button, input {
 }
 .subForm {
   font-size: 3.2vmin;
+  padding: 7vmin 5vmin 5vmin 5vmin;
+  overflow: scroll;
   h1 {
     position: relative;
-    margin-top: 10vmin;
     width: 100%;
     text-align: center;
     font-weight: 600;
@@ -444,24 +445,50 @@ button, input {
 
 .plan {
   margin-top: 5vmin;
-  margin-left: 2vmin;
   width: 21vmin;
   height: 40vmin;
   float: left;
+  border-radius: 3vw;
+  border-right: #000;
+  padding-top: 2vmin;
+  label {
+    display: inline-block;
+    margin-top: 7vmin;
+    width: 100%;
+    text-align: center;
+  }
   input {
     width: 100%;
   }
 }
 
-#individual {
-  background: pink;
+#solo {
+  background: #898989;
 }
 #basic {
-  background: dodgerblue;
+  background: #6036E3;
 }
 #premium {
-  background: orange;
+  background: #FF1747;
 }
-#platinum{
-  background: green;
+#platinum {
+  background: #E2E2E2;
+  border-right: none;
+}
+.solo {
+  color: #898989;
+}
+.basic {
+  color: #6036E3;
+}
+.premium {
+  color: #FF1747;
+}
+.platinum {
+  color: #E2E2E2;
+}
+
+.hide_until_plan_selected {
+  background-color: rgba(135, 213, 171, 0.75);
+
 }

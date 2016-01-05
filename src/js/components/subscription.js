@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import classNames from 'classnames';
 
 import User from '../models/user';
 
@@ -69,8 +70,16 @@ render() {
   let resultsMsg;
   let cardVisible;
   if (this.state.plan) {
+    let planClasses = classNames({
+      solo: this.state.plan === 'solo',
+      basic: this.state.plan === 'basic',
+      premium: this.state.plan === 'premium',
+      platinum: this.state.plan === 'platinum'
+    });
+
     cardVisible = (
       <div className="hide_until_plan_selected">
+        <h3 id="selected_plan" className={planClasses}>{this.state.plan}</h3>
         <div className="form-row">
           <label>
             <span>Card Number</span>
@@ -110,7 +119,7 @@ render() {
         <span ref="payment-errors">{this.state.errorMsg}</span>
           <div className="form-row">
           <h1>Choose Your SnailePlan</h1>
-          <article className="plan" id="individual">
+          <article className="plan" id="solo">
             <label>Individual Card for $2 Each</label>
             <input onClick={this.handlePlanSelect} type="button" value="solo"/>
           </article>
@@ -124,7 +133,7 @@ render() {
           </article>
           <article className="plan" id="platinum">
             <label>10 Cards Each Month for $14/mo</label>
-            <input onClick={this.handlePlanSelect} type="button" value="platinum"/>
+            <input onClick={this.handlePlanSelect}  type="button" value="platinum"/>
           </article>
         </div>
         {cardVisible}
