@@ -30,7 +30,6 @@ class Date extends React.Component {
 
   handlePostCard(e) {
     Card.postCard(this.props);
-    Timeline.getUserCards;
   }
 
   render() {

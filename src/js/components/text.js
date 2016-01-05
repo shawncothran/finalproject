@@ -64,9 +64,9 @@ class Text extends React.Component {
             <option value='Mountains of Christmas'>Mountains of Christmas</option>
           </select>
           <select className="fontSize" onChange={this.handleFontSize.bind(this)}>
-            <option value='2em'>Medium</option>
-            <option value='3em'>LARGE</option>
-            <option value='1.5em'>small</option>
+            <option value='2rem'>Medium</option>
+            <option value='3rem'>LARGE</option>
+            <option value='1.5rem'>small</option>
           </select>
         </section>
         <section className="fontColor">

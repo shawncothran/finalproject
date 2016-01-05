@@ -160,10 +160,11 @@ button, input {
   padding: 7vmin 5vmin 5vmin 5vmin;
   overflow: scroll;
   .cardWrapper {
-    height: 15.5vmin;
+    height: 110px;
     overflow: scroll;
     white-space: nowrap;
     overflow-x: auto;
+    overflow-y: hidden;
   }
   .wrap {
     // width: 15vmin;
@@ -176,8 +177,8 @@ button, input {
   .frame {
     margin: 0;
     padding: 0;
-    width: 21vmin;
-    height: 14vmin;
+    width: 150px;
+    height: 100px;
     border: dotted 2px #777;
     // transform: scale(0.25);
     // transform-origin: 0 0;

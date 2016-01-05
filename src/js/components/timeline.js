@@ -1,6 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 import { Link } from 'react-router';
+
 import User from '../models/user';
 
 const API_ROOT = 'http://snailephant.herokuapp.com/cards/';
@@ -33,7 +34,7 @@ class Timeline extends React.Component {
     }).then((response) => {
       let cards = response;
       this.setState({cards: cards})
-      console.log(cards);
+      console.log("You've got mail! " + cards);
     })
   }
 

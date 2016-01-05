@@ -38,11 +38,6 @@ class Dashboard extends React.Component {
     console.log(state);
   }
 
-  saveCard() {
-    var card = new Card();
-    card.postCard(this.state);
-  }
-
   render() {
     let views = [
       (<Background {...this.state} updateCard={this.handleUpdateCard}/>),
