@@ -21,8 +21,6 @@ class Timeline extends React.Component {
   getUserCards() {
     let headers = {};
 
-    console.log('hello', User.access_token);
-
     if (User.access_token) {
         headers['Authorization'] = 'Bearer ' + User.access_token;
     }
