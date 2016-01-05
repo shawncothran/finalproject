@@ -369,7 +369,7 @@ button, input {
 .preview {
   background-color: #dddddd;
   margin: 4vmin auto 0 auto;
-  padding: 2vmin;
+  padding: 1px;
   border: dotted 0.3vmin #777;
   height: 42.5vmin;
   width: 62.5vmin;
@@ -382,9 +382,9 @@ button, input {
     text-align: center;
     margin: 0;
     word-wrap:break-word;
-    width: 56vmin;
-    max-width: 56vmin;
-    max-height: 36vmin;
+    width: 62.5vmin;
+    max-width: 62.5vmin;
+    max-height: 42.5vmin;
     overflow: hidden;
     top: 50%;
     text-shadow: none;
@@ -425,13 +425,7 @@ button, input {
 }
 .subForm {
   font-size: 3.2vmin;
-  h1 {
-    position: relative;
-    margin-top: 10vmin;
-    width: 100%;
-    text-align: center;
-    font-weight: 600;
-  }
+  padding-top: 6vmin;
 }
 .form-row {
   @include outer-container(94vmin);
