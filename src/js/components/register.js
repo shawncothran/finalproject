@@ -27,7 +27,7 @@ class Register extends React.Component {
         })
       });
     } else {
-      alert("Type yo password twice yo and spell it the same both times. Try again, hen.")
+      alert("Type password identically both times. Try again!")
       this.refs.email.value = "",
       this.refs.password.value = "",
       this.refs.passconfirm.value = ""

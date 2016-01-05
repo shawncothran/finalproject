@@ -97,7 +97,7 @@ class Card {
     };
 
     $.ajax(options).done(response => {
-        done(null, response);
+        done();
     }).fail(error => {
       if (done) {
         done(error);

@@ -7,40 +7,8 @@ import User from '../models/user';
 const API_ROOT = 'http://snailephant.herokuapp.com/cards/';
 
 class Timeline extends React.Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      cards: []
-    };
-  }
-
-  componentWillMount() {
-    this.getUserCards.bind(this)();
-  }
-
-  getUserCards() {
-    let headers = {};
-
-    if (User.access_token) {
-        headers['Authorization'] = 'Bearer ' + User.access_token;
-    }
-
-    $.ajax({
-      url: API_ROOT,
-      headers: headers,
-      type: 'GET',
-      dataType: "json"
-    }).then((response) => {
-      let cards = response;
-      this.setState({cards: cards})
-      console.log("You've got mail! " + cards);
-    })
-  }
-
   render() {
-    let cards = this.state.cards.map(function (card) {
-      console.log(API_ROOT + card.id);
+    let cards = this.props.cards.map(function (card) {
       return <div className="wrap"><iframe className="frame" scrolling="no" key={card.id} src={API_ROOT + card.id} /></div>
     })
 

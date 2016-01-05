@@ -7,18 +7,11 @@ class ToForm extends React.Component {
     super(props);
   }
 
-  componentDidMount(){
-      findDOMNode(this.refs.name).focus();
-      // let node = findDOMNode(this);
-      // node.scrollTop = node.scrollHeight;
-  };
-
   handleToFormSubmit (e) {
     let data = _.reduce(this.refs, (total, element, key) => {
       total[key] = element.value;
       return total;
     }, {});
-
 
     this.props.updateCard({
       to: data

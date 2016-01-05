@@ -29,7 +29,7 @@ class Date extends React.Component {
   };
 
   handlePostCard(e) {
-    Card.postCard(this.props);
+    Card.postCard(this.props, this.props.getUserCards);
   }
 
   render() {
