@@ -20,7 +20,6 @@ class App extends React.Component {
   }
 
   render () {
-    console.log('state', this.state);
     let childrenWithProps = React.Children.map(this.props.children, child => {
       return React.cloneElement(child)
     })

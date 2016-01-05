@@ -8,12 +8,6 @@ class Text extends React.Component {
     super(props);
   }
 
-  componentDidMount(){
-      findDOMNode(this.refs.text).focus();
-      // let node = findDOMNode(this);
-      // node.scrollTop = node.scrollHeight;
-  };
-
   handleText(event) {
     this.props.updateCard({
       front: {
