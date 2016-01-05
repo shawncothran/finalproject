@@ -23,10 +23,41 @@ class Card {
           h1{display:block;word-wrap:break-word;text-align:center;font-family:'${fontFamily}';font-weight:400;font-size:${fontSize};color:${color};margin:0;position:relative;top:50%;transform:translateY(-50%);}
         </style>
         <style media="screen">
-          *,*:before,*:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
-          body{margin:0;padding:0;background-color:${background};}
-          #safe-area{position:absolute;width:21vmin;height:14vmin;left:0;top:0;}
-          h1{display:block;word-wrap:break-word;text-align:center;font-family:'${fontFamily}';font-weight:400;font-size:.9em;color:${color};margin:0;position:relative;top:50%;transform:translateY(-50%);}
+          *, *:before, *:after {
+            box-sizing:border-box;
+            -moz-box-sizing:border-box;
+            -webkit-box-sizing:border-box;
+          }
+          html {
+            font-size: 33.3%;
+          }
+          body {
+            background-color:${background};
+            margin:0;
+            padding:0;
+            font-size: 4px;
+          }
+          #safe-area {
+            height:100px;
+            width:150px;
+            position: relative;
+          }
+          h1 {
+            color:${color};
+            display:block;
+            font-family:${fontFamily};
+            font-size:${fontSize};
+            font-weight:400;
+            width: 100%;
+            margin:0;
+            position:absolute;
+            text-align:center;
+            top:50%;
+            transform:translateY(-50%);
+            -webkit-transform: translateY(-50%);
+           -ms-transform: translateY(-50%);
+            word-wrap:break-word;
+          }
         </style>
       </head>
       <body>
@@ -65,11 +96,8 @@ class Card {
       }
     };
 
-    $.ajax(options).then(response => {
-      if (done) {
+    $.ajax(options).done(response => {
         done(null, response);
-      }
-
     }).fail(error => {
       if (done) {
         done(error);
