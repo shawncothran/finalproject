@@ -445,25 +445,33 @@ button, input {
 
 .plan {
   margin-top: 5vmin;
+  margin-right: 1vmin;
   width: 21vmin;
   height: 40vmin;
   float: left;
-  border-radius: 3vw;
-  border-right: #000;
+  border-radius: 1vw;
+  border: 2px solid #000;
+  border-right: none;
   padding-top: 2vmin;
+  cursor: pointer;
+  opacity: .9;
+  &:hover {
+    opacity: 1;
+  }
   label {
+    cursor: pointer;
     display: inline-block;
     margin-top: 7vmin;
     width: 100%;
     text-align: center;
   }
-  input {
-    width: 100%;
+  p {
+    text-align: center;
   }
 }
 
 #solo {
-  background: #898989;
+  background: #FE9901;
 }
 #basic {
   background: #6036E3;
@@ -473,22 +481,87 @@ button, input {
 }
 #platinum {
   background: #E2E2E2;
-  border-right: none;
+  border-right: 2px solid #000;
+}
+
+.paymentSubmit {
+    width: 100%;
+    margin-top: 3vmin;
 }
 .solo {
-  color: #898989;
+  h3 {
+    color: #FE9901
+  }
+  .paymentSubmit {
+    background: #FE9901;
+  }
 }
 .basic {
-  color: #6036E3;
+  h3 {
+    color: #6036E3;
+  }
+  .paymentSubmit {
+    background: #6036E3;
+  }
+
 }
 .premium {
-  color: #FF1747;
+  h3 {
+    color: #FF1747;
+  }
+  .paymentSubmit {
+    background: #FF1747;
+  }
 }
-.platinum {
-  color: #E2E2E2;
+.platinum  {
+  h3 {
+    color: #E2E2E2;
+  }
+
+  .paymentSubmit {
+    background: #E2E2E2;
+  }
 }
 
 .hide_until_plan_selected {
   background-color: rgba(135, 213, 171, 0.75);
+  border-radius: .5vw;
+  border: .2vw solid #000;
+  h3 {
+    display: block;
+    text-align: center;
+    background: rgba(21, 39, 67, 0.87);
+    margin: 0;
+    padding-bottom: 1vmin;
+    margin-bottom: 1vmin;
+  }
+  .float {
+    display: inherit;
+    text-align: left;
+    float: left;
+  }
+  span {
+    float: left;
+  }
+}
 
+.fancy-enter {
+  opacity: 0.01;
+}
+
+.fancy-enter.fancy-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.fancy-leave {
+  opacity: 0;
+}
+
+.fancy-leave.fancy-leave-active {
+  opacity: 0;
+}
+
+.cc {
+  margin-left: 8vmin;
 }
