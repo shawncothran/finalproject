@@ -93,7 +93,7 @@ h2 {
 }
 .headerLogo {
   font-family: 'Great Vibes', 'Helvetica', 'Arial', sans-serif; // logo //
-  font-size: 5vmin;
+  font-size: 3vmin;
   padding: 0 2vmin 0 0;
   line-height: 7.6vmin;
   vertical-align: text-bottom;
@@ -101,16 +101,21 @@ h2 {
 .headerTitle {
   display: inline-block;
   line-height: 7.6vmin;
+  font-size: 3vmin;
   text-align: center;
   vertical-align: top;
   margin: 0;
 }
 a {
   font-family: 'Annie Use Your Telescope', 'Helvetica', 'Arial', sans-serif; // logo //
-  font-size: 3.2vmin;
+  font-size: 2.7vmin;
   color: #003BB4;
   text-decoration: none;
   padding-left: 2vmin;
+}
+header, .usernav {
+  float: right;
+  margin-right: 1vmin;
 }
 .hero {
   padding: 7vmin 2vmin 2vmin 2vmin;
@@ -418,6 +423,13 @@ button, input {
 }
 .subForm {
   font-size: 3.2vmin;
+  h1 {
+    position: relative;
+    margin-top: 10vmin;
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+  }
 }
 .form-row {
   @include outer-container(94vmin);
@@ -426,4 +438,28 @@ button, input {
     // @include omega();
     margin-bottom: 3vmin;
   }
+}
+
+.plan {
+  margin-top: 5vmin;
+  margin-left: 2vmin;
+  width: 21vmin;
+  height: 40vmin;
+  float: left;
+  input {
+    width: 100%;
+  }
+}
+
+#individual {
+  background: pink;
+}
+#basic {
+  background: dodgerblue;
+}
+#premium {
+  background: orange;
+}
+#platinum{
+  background: green;
 }

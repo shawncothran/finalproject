@@ -109,22 +109,22 @@ render() {
         <div className="response" id="response"> { resultsMsg } </div>
         <span ref="payment-errors">{this.state.errorMsg}</span>
           <div className="form-row">
-          <h1>Choose Your Plan</h1>
-          <article>
+          <h1>Choose Your SnailePlan</h1>
+          <article className="plan" id="individual">
+            <label>Individual Card for $2 Each</label>
             <input onClick={this.handlePlanSelect} type="button" value="solo"/>
-            <label>Individual Card for $2</label>
           </article>
-          <article>
-            <input onClick={this.handlePlanSelect} type="button" value="basic"/>
+          <article className="plan" id="basic">
             <label>3 Cards Each Month for $5/mo</label>
+            <input onClick={this.handlePlanSelect} type="button" value="basic"/>
           </article>
-          <article>
-            <input onClick={this.handlePlanSelect} type="button" value="premium"/>
+          <article className="plan" id="premium">
             <label>5 Cards Each Month for $8/mo</label>
+            <input onClick={this.handlePlanSelect} type="button" value="premium"/>
           </article>
-          <article>
-            <input onClick={this.handlePlanSelect} type="button" value="platinum"/>
+          <article className="plan" id="platinum">
             <label>10 Cards Each Month for $14/mo</label>
+            <input onClick={this.handlePlanSelect} type="button" value="platinum"/>
           </article>
         </div>
         {cardVisible}
