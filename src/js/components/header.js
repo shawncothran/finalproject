@@ -1,5 +1,4 @@
 import React from 'react';
-import $ from 'jquery';
 import { Link } from 'react-router';
 
 import User from '../models/user';
@@ -7,9 +6,7 @@ import User from '../models/user';
 class Header extends React.Component {
   constructor(props) {
     super(props);
-
   }
-
 
   render() {
     let {email} = JSON.parse(localStorage.getItem('header')),
@@ -28,7 +25,7 @@ class Header extends React.Component {
           User.logout();
         }}>Log Out</Link>
     }
-    
+
     return (
       <header className="homeHeader">
         {HomeStatus}
