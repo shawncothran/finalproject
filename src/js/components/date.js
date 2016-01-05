@@ -1,6 +1,8 @@
 import React from 'react';
 import moment from 'moment';
+
 import Card from '../models/card';
+import Timeline from './timeline';
 
 class Date extends React.Component {
   constructor(props) {
@@ -27,8 +29,8 @@ class Date extends React.Component {
   };
 
   handlePostCard(e) {
-    console.log(this.props);
     Card.postCard(this.props);
+    Timeline.getUserCards;
   }
 
   render() {
