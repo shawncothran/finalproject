@@ -438,7 +438,7 @@ h2 {
 
 .headerLogo {
   font-family: 'Great Vibes', 'Helvetica', 'Arial', sans-serif;
-  font-size: 5vmin;
+  font-size: 3vmin;
   padding: 0 2vmin 0 0;
   line-height: 7.6vmin;
   vertical-align: text-bottom; }
@@ -446,16 +446,21 @@ h2 {
 .headerTitle {
   display: inline-block;
   line-height: 7.6vmin;
+  font-size: 3vmin;
   text-align: center;
   vertical-align: top;
   margin: 0; }
 
 a {
   font-family: 'Annie Use Your Telescope', 'Helvetica', 'Arial', sans-serif;
-  font-size: 3.2vmin;
+  font-size: 2.7vmin;
   color: #003BB4;
   text-decoration: none;
   padding-left: 2vmin; }
+
+header, .usernav {
+  float: right;
+  margin-right: 1vmin; }
 
 .hero {
   padding: 7vmin 2vmin 2vmin 2vmin;
@@ -494,22 +499,25 @@ button, input {
   height: 100vmin; }
 
 .timeline {
-  padding: 7vmin 5vmin 5vmin 5vmin; }
+  padding: 7vmin 5vmin 5vmin 5vmin;
+  overflow: scroll; }
+  .timeline .cardWrapper {
+    height: 110px;
+    overflow: scroll;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden; }
   .timeline .wrap {
-    width: 12vmin;
-    height: 8vmin;
+    margin: 0.75vmin;
     padding: 0;
-    overflow: hidden; }
+    display: inline-block; }
   .timeline .frame {
-    display: inline-block;
     margin: 0;
-    width: 48vmin;
-    height: 32vmin;
-    border: 0;
-    -webkit-transform: scale(0.25);
-    transform: scale(0.25);
-    -webkit-transform-origin: 0 0;
-    transform-origin: 0 0; }
+    padding: 0;
+    width: 150px;
+    height: 100px;
+    border: dotted 2px #777;
+    overflow: hidden; }
 
 .cardCreator {
   position: relative;
@@ -668,7 +676,7 @@ button, input {
 .preview {
   background-color: #dddddd;
   margin: 4vmin auto 0 auto;
-  padding: 2vmin;
+  padding: 1px;
   border: dotted 0.3vmin #777;
   height: 42.5vmin;
   width: 62.5vmin;
@@ -679,9 +687,9 @@ button, input {
     text-align: center;
     margin: 0;
     word-wrap: break-word;
-    width: 56vmin;
-    max-width: 56vmin;
-    max-height: 36vmin;
+    width: 62.5vmin;
+    max-width: 62.5vmin;
+    max-height: 42.5vmin;
     overflow: hidden;
     top: 50%;
     text-shadow: none;
@@ -717,7 +725,13 @@ button, input {
   cursor: default; }
 
 .subForm {
-  font-size: 3.2vmin; }
+  font-size: 3.2vmin;
+  padding: 7vmin 5vmin 5vmin 5vmin;
+  overflow: scroll; }
+  .subForm h1 {
+    position: relative;
+    width: 100%;
+    text-align: center; }
 
 .form-row {
   max-width: 94vmin;
@@ -729,3 +743,101 @@ button, input {
     display: table; }
   .form-row article {
     margin-bottom: 3vmin; }
+
+.plan {
+  margin-top: 5vmin;
+  margin-right: 1vmin;
+  width: 21vmin;
+  height: 40vmin;
+  float: left;
+  border-radius: 1vw;
+  border: 2px solid #000;
+  border-right: none;
+  padding-top: 2vmin;
+  cursor: pointer;
+  opacity: .9; }
+  .plan:hover {
+    opacity: 1; }
+  .plan label {
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 7vmin;
+    width: 100%;
+    text-align: center; }
+  .plan p {
+    text-align: center; }
+
+#solo {
+  background: #FE9901; }
+
+#basic {
+  background: #6036E3; }
+
+#premium {
+  background: #FF1747; }
+
+#platinum {
+  background: #E2E2E2;
+  border-right: 2px solid #000; }
+
+.paymentSubmit {
+  width: 100%;
+  margin-top: 3vmin; }
+
+.solo h3 {
+  color: #FE9901; }
+
+.solo .paymentSubmit {
+  background: #FE9901; }
+
+.basic h3 {
+  color: #6036E3; }
+
+.basic .paymentSubmit {
+  background: #6036E3; }
+
+.premium h3 {
+  color: #FF1747; }
+
+.premium .paymentSubmit {
+  background: #FF1747; }
+
+.platinum h3 {
+  color: #E2E2E2; }
+
+.platinum .paymentSubmit {
+  background: #E2E2E2; }
+
+.hide_until_plan_selected {
+  background-color: rgba(135, 213, 171, 0.75);
+  border-radius: .5vw;
+  border: .2vw solid #000; }
+  .hide_until_plan_selected h3 {
+    display: block;
+    text-align: center;
+    background: rgba(21, 39, 67, 0.87);
+    margin: 0;
+    padding-bottom: 1vmin;
+    margin-bottom: 1vmin; }
+  .hide_until_plan_selected .float {
+    display: inherit;
+    text-align: left;
+    float: left; }
+  .hide_until_plan_selected span {
+    float: left; }
+
+.fancy-enter {
+  opacity: 0.01; }
+
+.fancy-enter.fancy-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in; }
+
+.fancy-leave {
+  opacity: 0; }
+
+.fancy-leave.fancy-leave-active {
+  opacity: 0; }
+
+.cc {
+  margin-left: 8vmin; }
