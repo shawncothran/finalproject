@@ -29,9 +29,6 @@ img {
 #app {
   @include outer-container(100vmin);
   height: 100vmin;
-  > div {
-    // height: 100vmax;
-  }
 }
 .headBuffer {
    display: block;
@@ -549,6 +546,24 @@ button, input {
   margin-left: 8vmin;
 }
 
+.successMsg {
+  background-color: rgba(135, 213, 171, 0.75);
+  button {
+    float: right;
+  }
+  p {
+    clear: both;
+  }
+}
+
+.failMsg {
+  background-color: rgba(255, 23, 71, 0.75);
+  button {
+    float: right;
+  }
+  p {
+    clear: both;
+  }
 @mixin tablet {
   @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
     @content;
@@ -1096,5 +1111,4 @@ button, input {
     .cc {
       margin-left: 8vmin;
     }
-  }
-}
+}}}
