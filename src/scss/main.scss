@@ -141,6 +141,10 @@ button, input {
 .userForm {
   padding: 10vmin 0.5vmin 0.5vmin 0.5vmin;
 }
+
+.registerSuccess {
+  background-color: rgba(135, 213, 171, 0.75);
+}
 .dashboard {
   height: 100vmin;
 }
@@ -548,6 +552,7 @@ button, input {
 
 .successMsg {
   background-color: rgba(135, 213, 171, 0.75);
+  margin-top: 3vmin;
   button {
     float: right;
   }
@@ -558,6 +563,8 @@ button, input {
 
 .failMsg {
   background-color: rgba(255, 23, 71, 0.75);
+  margin-top: 3vmin;
+
   button {
     float: right;
   }

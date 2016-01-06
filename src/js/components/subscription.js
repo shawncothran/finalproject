@@ -26,7 +26,7 @@ class Subscription extends React.Component {
 
   handlePaySubmit(e) {
     e.preventDefault();
-    this.setState({disableButton: true})
+    this.setState({disableButton: true, error: null, errorMsg: ''})
     Stripe.card.createToken(this.refs.form, this.stripeResponseHandler);
   };
 
@@ -64,6 +64,10 @@ class Subscription extends React.Component {
         });
 
       }
+      this.refs.cc.value = "",
+      this.refs.cvc.value = "",
+      this.refs.mo.value = "",
+      this.refs.yr.value = ""
     }
 
     hideResults(e) {
@@ -91,24 +95,24 @@ render() {
         <div className="form-row">
           <label>
             <span className="cc">Card Number</span>
-            <input type="text" size="20" data-stripe="number"/>
+            <input type="text" ref="cc" size="20" data-stripe="number"/>
           </label>
         </div>
 
         <div className="form-row">
           <label>
             <span className="cc">CVC</span>
-            <input type="text" size="4" data-stripe="cvc"/>
+            <input type="text" ref="cvc" size="4" data-stripe="cvc"/>
           </label>
         </div>
 
         <div className="form-row">
           <label className="float">
             <span className="cc">Expiration (MM/YYYY)</span>
-            <input type="text" size="2" data-stripe="exp-month"/>
+            <input type="text" ref="mo" size="2" data-stripe="exp-month"/>
           </label>
           <span id="YYYY"> / </span>
-          <input type="text" size="4" data-stripe="exp-year"/>
+          <input type="text" ref="yr" size="4" data-stripe="exp-year"/>
         </div>
 
         <button className="paymentSubmit" type="submit" disabled={this.state.disableButton}>Submit Payment</button>
@@ -123,8 +127,6 @@ render() {
 
     return (
       <form className="subForm" ref="form" onSubmit={this.handlePaySubmit}>
-        <div className="response" id="response"> { resultsMsg } </div>
-        <span ref="payment-errors">{this.state.errorMsg}</span>
           <div className="form-row">
           <h1>Choose Your Snailscription Plan</h1>
           <article className="plan" id="solo" onClick={this.handlePlanSelect.bind(this, 'solo')}>
@@ -144,6 +146,8 @@ render() {
             <label>10 Cards Each Month for $14/mo</label>
           </article>
         </div>
+        <div className="response" id="response"> { resultsMsg } </div>
+        <div  className="failMsg"ref="payment-errors">{this.state.errorMsg}</div>
         <ReactCSSTransitionGroup transitionName="fancy" transitionEnterTimeout={500} transitionLeaveTimeout={500}>{cardVisible}</ReactCSSTransitionGroup>
       </form>
     )
