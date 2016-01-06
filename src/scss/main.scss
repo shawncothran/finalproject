@@ -557,3 +557,23 @@ button, input {
 .cc {
   margin-left: 8vmin;
 }
+
+.successMsg {
+  background-color: rgba(135, 213, 171, 0.75);
+  button {
+    float: right;
+  }
+  p {
+    clear: both;
+  }
+}
+
+.failMsg {
+  background-color: rgba(255, 23, 71, 0.75);
+  button {
+    float: right;
+  }
+  p {
+    clear: both;
+  }
+}
