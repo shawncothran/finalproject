@@ -9,7 +9,7 @@ class Subscription extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      success: null,
+      error: null,
       disableButton: false,
       errorMsg: "",
       plan: ""
@@ -17,6 +17,7 @@ class Subscription extends React.Component {
     this.handlePaySubmit = this.handlePaySubmit.bind(this);
     this.stripeResponseHandler = this.stripeResponseHandler.bind(this);
     this.handleResults = this.handleResults.bind(this);
+    this.hideResults = this.hideResults.bind(this);
 
     Stripe.setPublishableKey('pk_test_eiTJaf9ETvML34B3RRoq2gRh');
   }
@@ -25,7 +26,7 @@ class Subscription extends React.Component {
 
   handlePaySubmit(e) {
     e.preventDefault();
-    this.setState({disableButton: true})
+    this.setState({disableButton: true, error: null, errorMsg: ''})
     Stripe.card.createToken(this.refs.form, this.stripeResponseHandler);
   };
 
@@ -54,15 +55,25 @@ class Subscription extends React.Component {
     handleResults(results) {
       if (!results) {
         this.setState({
-          success: false
+          error: true
         });
 
       } else {
         this.setState({
-          success: true
+          error: false
         });
 
       }
+      this.refs.cc.value = "",
+      this.refs.cvc.value = "",
+      this.refs.mo.value = "",
+      this.refs.yr.value = ""
+    }
+
+    hideResults(e) {
+      this.setState({
+        error: null
+      });
     }
 
 
@@ -84,42 +95,40 @@ render() {
         <div className="form-row">
           <label>
             <span className="cc">Card Number</span>
-            <input type="text" size="20" data-stripe="number"/>
+            <input type="text" ref="cc" size="20" data-stripe="number"/>
           </label>
         </div>
 
         <div className="form-row">
           <label>
             <span className="cc">CVC</span>
-            <input type="text" size="4" data-stripe="cvc"/>
+            <input type="text" ref="cvc" size="4" data-stripe="cvc"/>
           </label>
         </div>
 
         <div className="form-row">
           <label className="float">
             <span className="cc">Expiration (MM/YYYY)</span>
-            <input type="text" size="2" data-stripe="exp-month"/>
+            <input type="text" ref="mo" size="2" data-stripe="exp-month"/>
           </label>
           <span id="YYYY"> / </span>
-          <input type="text" size="4" data-stripe="exp-year"/>
+          <input type="text" ref="yr" size="4" data-stripe="exp-year"/>
         </div>
 
         <button className="paymentSubmit" type="submit" disabled={this.state.disableButton}>Submit Payment</button>
       </div>
     )
   }
-  if (this.state.success) {
-    resultsMsg = <p>You're all set! <Link to="dashboard">Head to your Dashboard</Link></p>
-  } else if(this.state.success === false){
-    resultsMsg = <p>Oops, something flubbed! Try again. If the error persists, email us at support@snailephant.com and we can walk you through it.</p>
+  if (this.state.error === false) {
+    resultsMsg = <div className="successMsg"><button onClick={this.hideResults}>X</button><p>You're all set! <Link to="dashboard">Head to your Dashboard</Link></p></div>
+  } else if (this.state.error === true){
+    resultsMsg = <div className="failMsg"><button onClick={this.hideResults}>X</button><p>Oops, something flubbed! Try again. If the error persists, email us at support@snailephant.com and we can walk you through it.</p></div>
   }
 
     return (
       <form className="subForm" ref="form" onSubmit={this.handlePaySubmit}>
-        <div className="response" id="response"> { resultsMsg } </div>
-        <span ref="payment-errors">{this.state.errorMsg}</span>
           <div className="form-row">
-          <h1>Choose Your SnailePlan</h1>
+          <h1>Choose Your Snailscription Plan</h1>
           <article className="plan" id="solo" onClick={this.handlePlanSelect.bind(this, 'solo')}>
             <p>solo</p>
             <label>Individual Card for $2</label>
@@ -137,6 +146,8 @@ render() {
             <label>10 Cards Each Month for $14/mo</label>
           </article>
         </div>
+        <div className="response" id="response"> { resultsMsg } </div>
+        <div  className="failMsg"ref="payment-errors">{this.state.errorMsg}</div>
         <ReactCSSTransitionGroup transitionName="fancy" transitionEnterTimeout={500} transitionLeaveTimeout={500}>{cardVisible}</ReactCSSTransitionGroup>
       </form>
     )

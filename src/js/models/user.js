@@ -2,6 +2,7 @@ import $ from "jquery";
 
 class User {
   constructor() {
+    this.listeners = [];
     this.access_token = null;
     this.token_bearer = null;
     this.refresh_token = null;
@@ -25,6 +26,23 @@ class User {
       this.token_created = token_created
     }
   }
+
+  // Create a function that lets us listen for changes and subscribe to them.
+  // Pass in callback so that we can apply to other areas of our application.
+  subscribe(callback) {
+    this.listeners.push(callback);
+
+    // unsubscribe function, so that we can turn off what is being listened.
+    return () => {
+      return this.listeners.filter(listener => listener != callback);
+    }
+  }
+
+  dispatch() {
+    this.listeners.forEach((callback) => callback());
+    // Keep rerendering so that all changes are captured.
+  }
+
 
   isLoggedIn() {
     return this.access_token !== null;
@@ -77,13 +95,19 @@ class User {
         expires_in,
         created_at
       }));
-      done(null, response);
+
+      this.dispatch();
+
+      this.checkloginstatus(() => {
+        done(null, response);
+      });
     }).fail(error => {
       done(error);
     });
   }
 
-  checkloginstatus(done, email) {
+  checkloginstatus(done) {
+    console.log('hi')
     $.ajax({
       url: 'http://snailephant.herokuapp.com/users',
       headers: {
@@ -99,6 +123,11 @@ class User {
       localStorage.setItem('header', JSON.stringify({
         email
       }));
+
+      if (done) {
+        done(null, response);
+        this.dispatch();
+      }
     });
   }
 
@@ -131,6 +160,7 @@ class User {
     this.created_at = null;
     this.email = null;
     localStorage.removeItem('auth');
+    localStorage.removeItem('header');
   }
 }
 
