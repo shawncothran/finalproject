@@ -10,6 +10,7 @@ import Background from './background';
 import Text from './text';
 import Date from './date';
 import ToForm from './toform';
+import End from './end';
 import Card from '../models/card';
 
 const API_ROOT = 'http://snailephant.herokuapp.com/cards/';
@@ -68,7 +69,8 @@ class Dashboard extends React.Component {
       (<Background {...this.state} updateCard={this.handleUpdateCard}/>),
       (<Text {...this.state} updateCard={this.handleUpdateCard}/>),
       (<ToForm {...this.state} updateCard={this.handleUpdateCard}/>),
-      (<Date {...this.state} getUserCards={this.getUserCards} updateCard={this.handleUpdateCard}/>)];
+      (<Date {...this.state} getUserCards={this.getUserCards} updateCard={this.handleUpdateCard}/>),
+      (<End {...this.state} updateCard={this.handleUpdateCard}/>)];
     return (
       <section className="dashboard">
         <Timeline cards={this.state.cards}/>

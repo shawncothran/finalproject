@@ -13,7 +13,6 @@ let cards = null
 
 class Timeline extends React.Component {
   render() {
-    console.log(Moment('1912-12-12').format("MMM Do YY"));
     let cards = this.props.cards.map(function (card) {
       return (
         <div className="outerwrap">
