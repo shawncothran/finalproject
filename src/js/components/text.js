@@ -47,7 +47,7 @@ class Text extends React.Component {
   render() {
     return (
       <section>
-        <h1>Pick your styles & craft your message!</h1>
+        <h1>Pick your styles & your message!</h1>
         <textarea className="cardText" ref="text" maxLength="140" placeholder="Type your message here!" onChange={this.handleText.bind(this)} value={this.props.front.text} autofocus></textarea>
         <section className="fontSelects">
           <select className="fontFamily" onChange={this.handleFontFamily.bind(this)}>
