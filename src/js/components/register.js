@@ -37,7 +37,7 @@ class Register extends React.Component {
     let successMsg;
     if (this.state.email) {
         successMsg = (
-        <p className="registerSuccess">,@c; {this.state.email}, I'll Remember that
+        <p className="registerSuccess">Millie: "{this.state.email}, I'll Remember that"
           <Link to="dashboard">Continue to the Dashboard to create your first card!</Link>
         </p>
       )
