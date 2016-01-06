@@ -359,9 +359,12 @@ html {
 *, *::after, *::before {
   box-sizing: inherit; }
 
+html {
+  font-size: 62.5%; }
+
 body {
   font-family: 'Raleway', 'Helvetica', 'Arial', sans-serif;
-  font-weight: 100;
+  font-weight: 200;
   font-size: 2vmin;
   background: rgba(255, 255, 255, 0.6) fixed, #babec9 url("../assets/bg1.jpg") left top no-repeat fixed;
   /* Old Browsers */
@@ -397,17 +400,17 @@ img {
   visibility: hidden; }
 
 h1 {
-  font-size: 3.5vmin;
-  font-weight: 100;
+  font-size: 6vmin;
+  font-weight: 200;
   text-shadow: 1px 2px 2px white; }
 
 h2 {
-  font-size: 3vmin;
-  font-weight: 100; }
+  font-size: 5vmin;
+  font-weight: 200; }
 
 .homeHeader {
   padding: 0;
-  height: 7.6vmin;
+  height: 10vmin;
   position: fixed;
   z-index: 11;
   top: 0;
@@ -425,7 +428,7 @@ h2 {
   box-shadow: 0px 0px 35px 5px rgba(0, 0, 0, 0.3); }
   .homeHeader a, .homeHeader span {
     vertical-align: top;
-    line-height: 8.5vmin; }
+    line-height: 11.5vmin; }
 
 .logo {
   padding: 0;
@@ -433,18 +436,18 @@ h2 {
   overflow: auto; }
 
 .logoImg {
-  width: 8vmin;
-  margin: 0.7vmin; }
+  width: 11.5vmin;
+  margin: 0.5vmin; }
 
 .headerLogo {
   font-family: 'Great Vibes', 'Helvetica', 'Arial', sans-serif;
-  font-size: 3vmin;
-  padding: 0 2vmin 0 0;
+  font-size: 6.6vmin;
+  padding: 0;
   line-height: 7.6vmin;
   vertical-align: text-bottom; }
 
 .headerTitle {
-  display: inline-block;
+  display: none;
   line-height: 7.6vmin;
   font-size: 3vmin;
   text-align: center;
@@ -453,17 +456,17 @@ h2 {
 
 a {
   font-family: 'Annie Use Your Telescope', 'Helvetica', 'Arial', sans-serif;
-  font-size: 2.7vmin;
+  font-size: 4.5vmin;
   color: #003BB4;
   text-decoration: none;
-  padding-left: 2vmin; }
+  padding-left: 1.3vmin; }
 
 header, .usernav {
   float: right;
   margin-right: 1vmin; }
 
 .hero {
-  padding: 7vmin 2vmin 2vmin 2vmin;
+  padding: 10vmin 0.5vmin 0.5vmin 0.5vmin;
   text-align: center; }
   .hero h2 {
     margin-bottom: 1vmin; }
@@ -493,7 +496,7 @@ button, input {
   background-color: #4A4F5C; }
 
 .userForm {
-  padding: 7vmin 2vmin 2vmin 2vmin; }
+  padding: 10vmin 0.5vmin 0.5vmin 0.5vmin; }
 
 .dashboard {
   height: 100vmin; }
