@@ -365,7 +365,7 @@ html {
 body {
   font-family: 'Raleway', 'Helvetica', 'Arial', sans-serif;
   font-weight: 200;
-  font-size: 2vmin;
+  font-size: 3.8vmin;
   background: rgba(255, 255, 255, 0.6) fixed, #babec9 url("../assets/bg1.jpg") left top no-repeat fixed;
   /* Old Browsers */
   /* FF3.6+ */
@@ -377,6 +377,9 @@ body {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8) 0%, rgba(211, 211, 211, 0.6) 100%) fixed, #babec9 url("../assets/bg1.jpg") left top no-repeat fixed;
   /* W3C */
   background-size: cover; }
+  @media screen and (min-width: 800px) {
+    body {
+      font-size: 2.8vmin; } }
 
 img {
   max-width: 100vmin; }
@@ -391,22 +394,20 @@ img {
     content: "";
     display: table; }
 
-.headBuffer {
-  display: block;
-  padding-top: 63px;
-  /* this is the height of your header */
-  margin-top: -63px;
-  /* this is again negative value of the height of your header */
-  visibility: hidden; }
-
 h1 {
   font-size: 6vmin;
   font-weight: 200;
-  text-shadow: 1px 2px 2px white; }
+  text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.9); }
+  @media screen and (min-width: 800px) {
+    h1 {
+      font-size: 3.5vmin; } }
 
 h2 {
   font-size: 5vmin;
   font-weight: 200; }
+  @media screen and (min-width: 800px) {
+    h2 {
+      font-size: 3vmin; } }
 
 .homeHeader {
   padding: 0;
@@ -419,16 +420,20 @@ h2 {
   border-right: solid 0.2vmin #777;
   border-left: solid 0.2vmin #777;
   border-bottom: solid 0.2vmin #777;
-  -webkit-border-bottom-right-radius: 1vmin;
-  -webkit-border-bottom-left-radius: 1vmin;
-  -moz-border-radius-bottomright: 1vmin;
-  -moz-border-radius-bottomleft: 1vmin;
   border-bottom-right-radius: 1vmin;
   border-bottom-left-radius: 1vmin;
-  box-shadow: 0px 0px 35px 5px rgba(0, 0, 0, 0.3); }
-  .homeHeader a, .homeHeader span {
+  box-shadow: 0 0 35px 5px rgba(0, 0, 0, 0.3); }
+  @media screen and (min-width: 800px) {
+    .homeHeader {
+      height: 7.6vmin; } }
+  .homeHeader a,
+  .homeHeader span {
     vertical-align: top;
     line-height: 11.5vmin; }
+    @media screen and (min-width: 800px) {
+      .homeHeader a,
+      .homeHeader span {
+        line-height: 8.5vmin; } }
 
 .logo {
   padding: 0;
@@ -438,6 +443,10 @@ h2 {
 .logoImg {
   width: 11.5vmin;
   margin: 0.5vmin; }
+  @media screen and (min-width: 800px) {
+    .logoImg {
+      width: 8vmin;
+      margin: 0.7vmin; } }
 
 .headerLogo {
   font-family: 'Great Vibes', 'Helvetica', 'Arial', sans-serif;
@@ -445,14 +454,22 @@ h2 {
   padding: 0;
   line-height: 7.6vmin;
   vertical-align: text-bottom; }
+  @media screen and (min-width: 800px) {
+    .headerLogo {
+      font-size: 3.5vmin;
+      padding: 0 2vmin 0 0;
+      line-height: 7.6vmin; } }
 
 .headerTitle {
   display: none;
   line-height: 7.6vmin;
-  font-size: 3vmin;
+  font-size: 2.8vmin;
   text-align: center;
   vertical-align: top;
   margin: 0; }
+  @media screen and (min-width: 800px) {
+    .headerTitle {
+      display: inline-block; } }
 
 a {
   font-family: 'Annie Use Your Telescope', 'Helvetica', 'Arial', sans-serif;
@@ -460,13 +477,17 @@ a {
   color: #003BB4;
   text-decoration: none;
   padding-left: 1.3vmin; }
+  @media screen and (min-width: 800px) {
+    a {
+      font-size: 2.7vmin; } }
 
-header, .usernav {
+header,
+.usernav {
   float: right;
   margin-right: 1vmin; }
 
 .hero {
-  padding: 10vmin 0.5vmin 0.5vmin 0.5vmin;
+  padding: 10vmin 0.5vmin 0.5vmin;
   text-align: center; }
   .hero h2 {
     margin-bottom: 1vmin; }
@@ -475,10 +496,11 @@ header, .usernav {
   border: dotted 0.3vmin #777;
   display: block;
   width: 75vmin;
-  margin: 0 auto 2vmin auto;
+  margin: 0 auto 2vmin;
   clear: both; }
 
-button, input {
+button,
+input {
   font-family: 'Annie Use Your Telescope', 'Helvetica', 'Arial', sans-serif; }
 
 .button {
@@ -486,7 +508,7 @@ button, input {
   padding: 0.6vmin 1.2vmin;
   border: 0.18vmin solid #cccccc;
   background-color: #F0F0F0;
-  box-shadow: 0px 0px 35px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 35px 5px rgba(0, 0, 0, 0.2);
   -webkit-transition: 0.2s;
   -moz-transition: 0.2s;
   -o-transition: 0.2s; }
@@ -496,13 +518,13 @@ button, input {
   background-color: #4A4F5C; }
 
 .userForm {
-  padding: 10vmin 0.5vmin 0.5vmin 0.5vmin; }
+  padding: 10vmin 0.5vmin 0.5vmin; }
 
 .dashboard {
   height: 100vmin; }
 
 .timeline {
-  padding: 7.5vmin 5vmin 5vmin 5vmin;
+  padding: 7.5vmin 5vmin 5vmin;
   overflow: scroll; }
   .timeline .cardWrapper {
     height: 110px;
@@ -557,12 +579,16 @@ button, input {
 
 .bgSelector .colorPicker {
   cursor: pointer;
-  margin: 1vmin;
+  margin: 0.5vmin;
+  width: 21.5vmin;
   height: 13vmin;
-  width: 13vmin;
   float: left;
   border: solid 0.3vmin #777;
   border-radius: 3vmin; }
+  @media screen and (min-width: 800px) {
+    .bgSelector .colorPicker {
+      margin: 1vmin;
+      width: 13vmin; } }
 
 .bgSelector .one {
   background-color: #ffffff; }
@@ -645,7 +671,8 @@ button, input {
     clear: both;
     content: "";
     display: block; }
-  .fontSelects .fontSize, .fontSelects .fontFamily {
+  .fontSelects .fontSize,
+  .fontSelects .fontFamily {
     margin: 1vmin; }
 
 .fontColor {
@@ -657,12 +684,17 @@ button, input {
     display: block; }
   .fontColor .fontColorPicker {
     cursor: pointer;
-    margin: 0.6vmin;
-    height: 6vmin;
-    width: 6vmin;
+    margin: 1vmin;
+    height: 12vmin;
+    width: 12vmin;
     border: solid 0.25vmin #777;
     border-radius: 1.5vmin;
     display: inline-block; }
+    @media screen and (min-width: 800px) {
+      .fontColor .fontColorPicker {
+        margin: 0.6vmin;
+        height: 6vmin;
+        width: 6vmin; } }
   .fontColor .one {
     background-color: #000000; }
   .fontColor .two {
@@ -678,13 +710,13 @@ button, input {
 
 .preview {
   background-color: #dddddd;
-  margin: 4vmin auto 0 auto;
+  margin: 4vmin auto 0;
   padding: 1px;
   border: dotted 0.3vmin #777;
   height: 42.5vmin;
   width: 62.5vmin;
   position: relative;
-  box-shadow: 0px 0px 35px 5px rgba(0, 0, 0, 0.36); }
+  box-shadow: 0 0 35px 5px rgba(0, 0, 0, 0.36); }
   .preview h1 {
     position: absolute;
     text-align: center;
@@ -702,13 +734,19 @@ button, input {
 .toForm fieldset {
   margin: 0 auto;
   border: none;
-  width: 44vmin; }
+  width: 66vmin; }
+  @media screen and (min-width: 800px) {
+    .toForm fieldset {
+      width: 44vmin; } }
 
 .toForm .form {
   font-family: 'Annie Use Your Telescope', 'Helvetica', 'Arial', sans-serif;
   margin: 0.5vmin;
-  width: 22vmin;
+  width: 37.3vmin;
   float: left; }
+  @media screen and (min-width: 800px) {
+    .toForm .form {
+      width: 22vmin; } }
 
 .toForm span {
   float: left; }
@@ -717,19 +755,21 @@ button, input {
   float: left;
   text-align: right;
   margin-right: 1.2vmin;
-  width: 11vmin; }
+  width: 20.5vmin; }
+  @media screen and (min-width: 800px) {
+    .toForm label {
+      width: 15.4vmin; } }
 
 .submitCard {
   display: block;
   font-size: 4vmin;
   width: 30vmin;
   opacity: 0;
-  margin: 6vmin auto 0 auto;
+  margin: 6vmin auto 0;
   cursor: default; }
 
 .subForm {
-  font-size: 3.2vmin;
-  padding: 7.5vmin 5vmin 5vmin 5vmin;
+  padding: 7.5vmin 5vmin 5vmin;
   overflow: scroll; }
   .subForm h1 {
     position: relative;
@@ -747,25 +787,28 @@ button, input {
   .form-row article {
     margin-bottom: 3vmin; }
 
-.plan {
+article.plan {
   margin: 0.75vmin;
-  width: 21vmin;
-  height: 40vmin;
+  width: 43.5vmin;
+  height: 43.5vmin;
   float: left;
   border-radius: 1vw;
-  border: .2vmin solid #777;
+  border: 0.2vmin solid #777;
   padding-top: 2vmin;
   cursor: pointer;
-  opacity: .9; }
-  .plan:hover {
+  opacity: 0.9; }
+  @media screen and (min-width: 800px) {
+    article.plan {
+      width: 21vmin; } }
+  article.plan:hover {
     opacity: 1; }
-  .plan label {
+  article.plan label {
     cursor: pointer;
     display: inline-block;
     margin-top: 7vmin;
     width: 100%;
     text-align: center; }
-  .plan p {
+  article.plan p {
     text-align: center; }
 
 #solo {
@@ -810,8 +853,8 @@ button, input {
 
 .hide_until_plan_selected {
   background-color: rgba(135, 213, 171, 0.75);
-  border-radius: .5vw;
-  border: .2vw solid #000; }
+  border-radius: 0.5vw;
+  border: 0.2vw solid #000; }
   .hide_until_plan_selected h3 {
     display: block;
     text-align: center;
