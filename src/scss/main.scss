@@ -327,6 +327,12 @@ input {
     left: -100%;
     transition: left 400ms ease-in, opacity 400ms linear;
   }
+  h1 {
+    @include media(min-width 800px) {
+      margin: 0.67em;
+    }
+    margin: 0.4vmin;
+  }
 }
 .cardText {
   margin: 0 auto;

@@ -107,7 +107,6 @@ class User {
   }
 
   checkloginstatus(done) {
-    console.log('hi')
     $.ajax({
       url: 'http://snailephant.herokuapp.com/users',
       headers: {
