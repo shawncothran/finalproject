@@ -499,7 +499,7 @@ button, input {
   height: 100vmin; }
 
 .timeline {
-  padding: 7vmin 5vmin 5vmin 5vmin;
+  padding: 7.5vmin 5vmin 5vmin 5vmin;
   overflow: scroll; }
   .timeline .cardWrapper {
     height: 110px;
@@ -726,7 +726,7 @@ button, input {
 
 .subForm {
   font-size: 3.2vmin;
-  padding: 7vmin 5vmin 5vmin 5vmin;
+  padding: 7.5vmin 5vmin 5vmin 5vmin;
   overflow: scroll; }
   .subForm h1 {
     position: relative;
@@ -745,14 +745,12 @@ button, input {
     margin-bottom: 3vmin; }
 
 .plan {
-  margin-top: 5vmin;
-  margin-right: 1vmin;
+  margin: 0.75vmin;
   width: 21vmin;
   height: 40vmin;
   float: left;
   border-radius: 1vw;
-  border: 2px solid #000;
-  border-right: none;
+  border: .2vmin solid #777;
   padding-top: 2vmin;
   cursor: pointer;
   opacity: .9; }
@@ -777,8 +775,7 @@ button, input {
   background: #FF1747; }
 
 #platinum {
-  background: #E2E2E2;
-  border-right: 2px solid #000; }
+  background: #E2E2E2; }
 
 .paymentSubmit {
   width: 100%;
