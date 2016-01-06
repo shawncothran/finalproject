@@ -157,7 +157,7 @@ button, input {
   height: 100vmin;
 }
 .timeline {
-  padding: 7vmin 5vmin 5vmin 5vmin;
+  padding: 7.5vmin 5vmin 5vmin 5vmin;
   overflow: scroll;
   .cardWrapper {
     height: 110px;
@@ -426,7 +426,7 @@ button, input {
 }
 .subForm {
   font-size: 3.2vmin;
-  padding: 7vmin 5vmin 5vmin 5vmin;
+  padding: 7.5vmin 5vmin 5vmin 5vmin;
   overflow: scroll;
   h1 {
     position: relative;
@@ -437,21 +437,16 @@ button, input {
 .form-row {
   @include outer-container(94vmin);
   article {
-    // @include span-columns(4);
-    // @include omega();
     margin-bottom: 3vmin;
   }
 }
-
 .plan {
-  margin-top: 5vmin;
-  margin-right: 1vmin;
+  margin: 0.75vmin;
   width: 21vmin;
   height: 40vmin;
   float: left;
   border-radius: 1vw;
-  border: 2px solid #000;
-  border-right: none;
+  border: .2vmin solid #777;
   padding-top: 2vmin;
   cursor: pointer;
   opacity: .9;
@@ -481,9 +476,7 @@ button, input {
 }
 #platinum {
   background: #E2E2E2;
-  border-right: 2px solid #000;
 }
-
 .paymentSubmit {
     width: 100%;
     margin-top: 3vmin;
@@ -503,7 +496,6 @@ button, input {
   .paymentSubmit {
     background: #6036E3;
   }
-
 }
 .premium {
   h3 {
