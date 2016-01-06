@@ -25,11 +25,11 @@ class Login extends React.Component {
           this.setState({email: email});
           this.props.history.pushState(null, "dashboard");
         } else {
-          alert('Hmm. login failed. Try again.');
+          alert("Hmmm... I don't remember that one. Try again");
         }
       })
     } else {
-      alert("Hmmm... I don't remember that. Try again");
+      alert("Hmmm... I don't remember that one. Try again");
       this.refs.email.value = "",
       this.refs.password.value = ""
     }
