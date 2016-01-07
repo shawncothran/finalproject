@@ -11,17 +11,14 @@ class Success extends React.Component {
     };
   }
 
-  handleReset(e) {
-    this.setState({
-    });
-  };
-
   render() {
     return (
       <section className="headPadding">
-        <h1>Your card is scheduled!</h1>
-        <p>Be sure you have an active subscription to send it.</p>
-        <Link className="dashButton" to="dashboard">Start a new card!</Link>
+        <div className="preview">
+          <h1>Your card is scheduled!</h1>
+          <Link className="subButton" to="dashboard">Manage Subscription</Link>
+          <Link className="successButton" to="dashboard">Start a new card!!</Link>
+        </div>
       </section>
     )
   }
