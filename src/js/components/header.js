@@ -27,7 +27,7 @@ class Header extends React.Component {
         LoginStatus = <Link to="subscription">{ email }</Link>
         UserStatus = <Link to="/" onClick={() => {
           User.logout();
-        }}>Log Out</Link>
+        }}>logout</Link>
     }
 
     return (
