@@ -812,6 +812,29 @@ input {
   .form-row article {
     margin-bottom: 3vmin; }
 
+.subButton {
+  display: inline-block;
+  text-align: center;
+  padding: 28vmin 0 0 0;
+  float: left;
+  width: 30vmin; }
+  @media screen and (min-width: 800px) {
+    .subButton {
+      padding: 37vmin 0 0 0;
+      float: left; } }
+
+.successButton {
+  display: inline-block;
+  text-align: center;
+  padding: 31vmin 0 0 0;
+  float: right;
+  width: 30vmin; }
+  @media screen and (min-width: 800px) {
+    .successButton {
+      padding: 37vmin 0 0 0;
+      float: right;
+      width: 22vmin; } }
+
 article.plan {
   margin: 0.75vmin;
   width: 43.5vmin;
