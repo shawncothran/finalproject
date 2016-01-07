@@ -82,8 +82,8 @@ h2 {
     width: 8vmin;
     margin: 0.7vmin
   }
-  width: 11.5vmin;
-  margin: 0.5vmin;
+  width: 11vmin;
+  margin: 0.8vmin;
 }
 .headerLogo {
   @include media(min-width 800px) {
@@ -92,7 +92,7 @@ h2 {
     line-height: 7.6vmin;
   }
   font-family: 'Great Vibes', 'Helvetica', 'Arial', sans-serif; // logo //
-  font-size: 6.6vmin;
+  font-size: 6vmin;
   padding: 0;
   line-height: 7.6vmin;
   vertical-align: text-bottom;
@@ -165,11 +165,11 @@ input {
   height: 100vmin;
 }
 .timeline {
-  padding: 7.5vmin 5vmin 5vmin;
+  padding: 7.5vmin 5vmin 0.8vmin 5vmin;
   overflow: scroll;
   .cardWrapper {
     box-shadow: inset 0 0 35px 5px rgba(0,0,0,0.36);
-    border: solid 0.3vmin #777;
+    border: solid 0.2vmin #777;
     height: 145px;
     overflow: scroll;
     white-space: nowrap;
