@@ -20,13 +20,13 @@ gulp.task('lint', function() {
 
 gulp.task('babel', function () {
   browserify({
-    debug: false
+    debug: true
   })
   .require('./src/js/index.js', { entry: true })
     .transform(babelify)
     .bundle()
     .pipe(source('bundle.js'))
-    .pipe(streamify(uglify()))
+    // .pipe(streamify(uglify()))
     .pipe(gulp.dest('./dist/js'));
 });
 

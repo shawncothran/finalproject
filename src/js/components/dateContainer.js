@@ -4,12 +4,15 @@ import moment from 'moment';
 import Card from '../models/card';
 import Timeline from './timeline';
 
-class Date extends React.Component {
-  constructor(props) {
+class DateContainer extends React.Component {
+  constructor(props, context) {
     super(props);
+    console.log('props', this.props);
     this.state = {
       disabled: "disabled"
     };
+
+    this.handleSuccess = this.handleSuccess.bind(this)
   }
 
   handleDate(e) {
@@ -28,8 +31,13 @@ class Date extends React.Component {
     });
   };
 
+  handleSuccess() {
+    this.props.history.pushState({}, '/success');
+    this.props.getUserCards();
+  }
+
   handlePostCard(e) {
-    Card.postCard(this.props, this.props.getUserCards);
+    Card.postCard(this.props, this.handleSuccess);
   }
 
   render() {
@@ -48,4 +56,4 @@ class Date extends React.Component {
   }
 }
 
-export default Date;
+export default DateContainer;

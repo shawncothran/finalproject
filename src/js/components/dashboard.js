@@ -8,9 +8,8 @@ import Timeline from './timeline';
 import CardCreator from './cardcreator';
 import Background from './background';
 import Text from './text';
-import Date from './date';
+import DateContainer from './dateContainer';
 import ToForm from './toform';
-import End from './end';
 import Card from '../models/card';
 
 const API_ROOT = 'http://snailephant.herokuapp.com/cards/';
@@ -65,16 +64,19 @@ class Dashboard extends React.Component {
   }
 
   render() {
+    // <CardCreator {...this.state}  views = {views}/>
     let views = [
       (<Background {...this.state} updateCard={this.handleUpdateCard}/>),
       (<Text {...this.state} updateCard={this.handleUpdateCard}/>),
       (<ToForm {...this.state} updateCard={this.handleUpdateCard}/>),
-      (<Date {...this.state} getUserCards={this.getUserCards} updateCard={this.handleUpdateCard}/>),
-      (<End {...this.state} updateCard={this.handleUpdateCard}/>)];
+      (<DateContainer {...this.state} history={this.props.history} getUserCards={this.getUserCards} updateCard={this.handleUpdateCard}/>)];
+    let childrenWithProps = React.Children.map(this.props.children, child => {
+      return React.cloneElement(child, {...this.state, views})
+    })
     return (
       <section className="dashboard">
         <Timeline cards={this.state.cards}/>
-        <CardCreator {...this.state}  views = {views}/>
+        {childrenWithProps}
       </section>
     )
   }

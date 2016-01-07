@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import {Router, Route, IndexRoute, Link} from 'react-router';
+import {browserHistory, Router, Route, IndexRoute, Link} from 'react-router';
 
 import App from './components/app';
 import Home from './components/home';
@@ -9,6 +9,8 @@ import Register from './components/register';
 import Dashboard from './components/dashboard';
 import ToForm from './components/toform';
 import Subscription from './components/subscription';
+import CardCreator from './components/cardcreator';
+import Success from './components/success';
 
 let NotFound = () => {
   return (
@@ -22,12 +24,15 @@ let NotFound = () => {
 }
 
 render((
-  <Router>
+  <Router history={browserHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={Home} />
         <Route path="login" component={Login} />
         <Route path="register" component={Register} />
-        <Route path="dashboard" component={Dashboard} />
+        <Route path="dashboard" component={Dashboard}>
+          <IndexRoute component={CardCreator}/>
+        </Route>
+        <Route path="/success" component={Success}/>
         <Route path="toform" component={ToForm} />
         <Route path="subscription" component={Subscription} />
     </Route>

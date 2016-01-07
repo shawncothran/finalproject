@@ -252,6 +252,10 @@ input {
     }
   }
 }
+.headPadding {
+  padding: 7.5vmin 5vmin 5vmin;
+  overflow: scroll;
+}
 .bgSelector {
   .colorPicker {
     @include media(min-width 800px) {
