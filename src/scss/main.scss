@@ -169,6 +169,7 @@ input {
   overflow: scroll;
   .cardWrapper {
     box-shadow: inset 0 0 35px 5px rgba(0,0,0,0.36);
+    border: solid 0.3vmin #777;
     height: 145px;
     overflow: scroll;
     white-space: nowrap;
