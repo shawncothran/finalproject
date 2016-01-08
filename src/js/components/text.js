@@ -43,7 +43,7 @@ class Text extends React.Component {
   render() {
     return (
       <section>
-        <h1>Pick your styles & your message!</h1>
+        <h1>Pick your message & style!</h1>
         <textarea className="cardText" ref="text" maxLength="140" placeholder="Type your message here!" onChange={this.handleText.bind(this)} value={this.props.front.text} autofocus></textarea>
         <section className="fontSelects">
           <select className="fontFamily" onChange={this.handleFontFamily.bind(this)}>
@@ -56,7 +56,7 @@ class Text extends React.Component {
           <select className="fontSize" onChange={this.handleFontSize.bind(this)}>
             <option value='2rem'>Medium</option>
             <option value='3rem'>LARGE</option>
-            <option value='1.5rem'>small</option>
+            <option value='1.3rem'>small</option>
           </select>
         </section>
         <section className="fontColor">
