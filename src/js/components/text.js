@@ -13,7 +13,6 @@ class Text extends React.Component {
       front: {
         text: event.target.value
       }
-
     });
   };
 
@@ -22,7 +21,6 @@ class Text extends React.Component {
       front: {
         fontFamily: event.target.value
       }
-
     });
   };
 
@@ -31,7 +29,6 @@ class Text extends React.Component {
       front: {
         fontSize: event.target.value
       }
-
     });
   };
 
@@ -40,7 +37,6 @@ class Text extends React.Component {
       front: {
         color
       }
-
     });
   };
 
