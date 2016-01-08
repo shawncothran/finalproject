@@ -778,11 +778,6 @@ input {
     text-shadow: none;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%); }
-    @media screen and (min-width: 640px) {
-      .preview h1 {
-        width: 31rem;
-        max-width: 31rem;
-        max-height: 20.4rem; } }
 
 .toForm fieldset {
   margin: 0 auto;
