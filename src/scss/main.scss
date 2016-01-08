@@ -4,7 +4,7 @@
 @import '../../dist/bower_components/neat/app/assets/stylesheets/neat';
 
 html {
-  font-size: 62.5%;
+  font-size: 20.5px; // maintains consistent size between rem size on app and rem size on thumbnails //
 }
 body {
   @include media(min-width 800px) {

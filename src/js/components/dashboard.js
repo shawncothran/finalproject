@@ -23,7 +23,7 @@ class Dashboard extends React.Component {
         background: "#dddddd",
         fontFamily: "Annie Use Your Telescope",
         color: "#000",
-        fontSize: "2.7rem"
+        fontSize: "2rem"
       },
       to: {
         address_line2: "(optional)"
