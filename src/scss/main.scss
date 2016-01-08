@@ -441,11 +441,6 @@ input {
   position: relative;
   box-shadow: 0 0 35px 5px rgba(0,0,0,0.36);
   h1 {
-    @include media(min-width 640px) {
-      width: 31rem;
-      max-width: 31rem;
-      max-height: 20.4rem;
-    }
     position: absolute;
     text-align: center;
     margin: 0;
