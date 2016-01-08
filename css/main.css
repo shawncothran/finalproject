@@ -360,7 +360,13 @@ html {
   box-sizing: inherit; }
 
 html {
-  font-size: 20.5px; }
+  font-size: 19.2px; }
+  @media screen and (min-width: 500px) and (max-width: 799px) {
+    html {
+      font-size: 26px; } }
+  @media screen and (min-width: 800px) {
+    html {
+      font-size: 33px; } }
 
 body {
   font-family: 'Raleway', 'Helvetica', 'Arial', sans-serif;
@@ -380,6 +386,9 @@ body {
   @media screen and (min-width: 800px) {
     body {
       font-size: 2.8vmin; } }
+  @media screen and (min-width: 640px) and (max-width: 799px) {
+    body {
+      font-size: 3vmin; } }
 
 img {
   max-width: 100vmin; }
@@ -532,11 +541,14 @@ input {
   .timeline .cardWrapper {
     box-shadow: inset 0 0 35px 5px rgba(0, 0, 0, 0.36);
     border: solid 0.2vmin #777;
-    height: 145px;
+    height: 133px;
     overflow: scroll;
     white-space: nowrap;
     overflow-x: auto;
     overflow-y: hidden; }
+    @media screen and (min-width: 500px) {
+      .timeline .cardWrapper {
+        height: 153px; } }
   .timeline .outerwrap {
     display: inline-block; }
   .timeline .wrap {
@@ -548,7 +560,7 @@ input {
       display: block; }
       @media screen and (min-width: 800px) {
         .timeline .wrap date {
-          font-size: 2vmin; } }
+          font-size: 2.2vmin; } }
   .timeline .frame {
     margin: 0;
     padding: 0;
@@ -561,39 +573,6 @@ input {
   clear: both;
   display: inline-block; }
 
-.cardCreator {
-  position: relative;
-  height: 91.8vmin;
-  padding-top: 0.5vmin;
-  text-align: center; }
-  .cardCreator .slide {
-    position: absolute;
-    width: 100vmin; }
-  .cardCreator .prevSlide {
-    left: -100%; }
-  .cardCreator .currentSlide {
-    width: 90vmin;
-    left: 5vmin; }
-  .cardCreator .nextSlide {
-    left: 100%; }
-  .cardCreator .controls {
-    position: absolute;
-    z-index: 5;
-    width: 100vmin;
-    top: 45vmin; }
-    .cardCreator .controls .controlBtn {
-      font-family: 'Annie Use Your Telescope', 'Helvetica', 'Arial', sans-serif;
-      position: absolute;
-      background: none;
-      font-size: 8vmin;
-      border: none;
-      color: #003BB4;
-      outline: none; }
-    .cardCreator .controls .previous {
-      left: 0; }
-    .cardCreator .controls .next {
-      right: 0; }
-
 .headPadding {
   padding: 7.5vmin 5vmin 5vmin;
   overflow: scroll; }
@@ -602,14 +581,15 @@ input {
   cursor: pointer;
   margin: 0.5vmin;
   width: 21.5vmin;
-  height: 13vmin;
+  height: 21.5vmin;
   float: left;
   border: solid 0.3vmin #777;
   border-radius: 3vmin; }
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 500px) {
     .bgSelector .colorPicker {
-      margin: 1vmin;
-      width: 13vmin; } }
+      margin: 0.75vmin;
+      width: 13.5vmin;
+      height: 13.5vmin; } }
 
 .bgSelector .one {
   background-color: #ffffff; }
@@ -648,8 +628,46 @@ input {
   background-color: #00ccff; }
 
 .cardCreator {
+  position: relative;
+  height: 125.4vmin;
+  padding-top: 0.5vmin;
+  text-align: center;
   /** Previous Button is Clicked **/
   /** Next Button is Clicked **/ }
+  @media screen and (min-width: 800px) {
+    .cardCreator {
+      height: 98.6vmin; } }
+  @media screen and (min-width: 500px) and (max-width: 799px) {
+    .cardCreator {
+      height: 110.2vmin; } }
+  .cardCreator .slide {
+    position: absolute;
+    width: 100vmin; }
+  .cardCreator .prevSlide {
+    left: -100%; }
+  .cardCreator .currentSlide {
+    width: 90vmin;
+    left: 5vmin; }
+  .cardCreator .nextSlide {
+    left: 100%; }
+  .cardCreator .controls {
+    position: absolute;
+    z-index: 5;
+    width: 100vmin;
+    top: 45vmin; }
+    .cardCreator .controls .controlBtn {
+      font-family: 'Annie Use Your Telescope', 'Helvetica', 'Arial', sans-serif;
+      position: absolute;
+      background: none;
+      padding: 0.1vmin;
+      font-size: 8vmin;
+      border: none;
+      color: #003BB4;
+      outline: none; }
+    .cardCreator .controls .previous {
+      left: 0; }
+    .cardCreator .controls .next {
+      right: 0; }
   .cardCreator .card__previous-enter {
     left: -100%;
     opacity: 0; }
@@ -736,30 +754,40 @@ input {
 
 .preview {
   background-color: #dddddd;
+  box-sizing: content-box;
   margin: 4vmin auto 0;
-  padding: 1px;
-  border: dotted 0.3vmin #777;
-  height: 42.5vmin;
-  width: 62.5vmin;
+  padding: 0;
+  border: dotted 0.37vmin #777;
+  width: 15.5rem;
+  height: 10.2rem;
   position: relative;
   box-shadow: 0 0 35px 5px rgba(0, 0, 0, 0.36); }
+  @media screen and (min-width: 800px) {
+    .preview {
+      border: dotted 0.3vmin #777; } }
   .preview h1 {
     position: absolute;
     text-align: center;
     margin: 0;
     word-wrap: break-word;
-    width: 62.5vmin;
-    max-width: 62.5vmin;
-    max-height: 42.5vmin;
+    width: 15.5rem;
+    max-width: 15.5rem;
+    max-height: 10.2rem;
     overflow: hidden;
     top: 50%;
     text-shadow: none;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%); }
+    @media screen and (min-width: 640px) {
+      .preview h1 {
+        width: 31rem;
+        max-width: 31rem;
+        max-height: 20.4rem; } }
 
 .toForm fieldset {
   margin: 0 auto;
   border: none;
+  padding-bottom: 0;
   width: 66vmin; }
   @media screen and (min-width: 800px) {
     .toForm fieldset {
@@ -816,24 +844,16 @@ input {
 .subButton {
   display: inline-block;
   text-align: center;
-  padding: 28vmin 0 0 0;
   float: left;
   width: 30vmin; }
-  @media screen and (min-width: 800px) {
-    .subButton {
-      padding: 37vmin 0 0 0;
-      float: left; } }
 
 .successButton {
   display: inline-block;
   text-align: center;
-  padding: 31vmin 0 0 0;
   float: right;
   width: 30vmin; }
   @media screen and (min-width: 800px) {
     .successButton {
-      padding: 37vmin 0 0 0;
-      float: right;
       width: 22vmin; } }
 
 article.plan {
