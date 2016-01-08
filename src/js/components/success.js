@@ -16,9 +16,9 @@ class Success extends React.Component {
       <section className="headPadding">
         <div className="preview">
           <h1>Your card is scheduled!</h1>
-          <Link className="subButton" to="dashboard">Manage Subscription</Link>
-          <Link className="successButton" to="dashboard">Start a new card!!</Link>
         </div>
+        <Link className="subButton" to="subscription">Manage Subscription</Link>
+        <Link className="successButton" to="dashboard">Start a new card!!</Link>
       </section>
     )
   }

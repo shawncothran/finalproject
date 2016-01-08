@@ -20,7 +20,7 @@ gulp.task('lint', function() {
 
 gulp.task('babel', function () {
   browserify({
-    debug: true
+    debug: false
   })
   .require('./src/js/index.js', { entry: true })
     .transform(babelify)

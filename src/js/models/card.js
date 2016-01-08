@@ -17,10 +17,43 @@ class Card {
         <title>Snailephant 4x6 Postcard Front</title>
         <link href='https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope|Great+Vibes|Playfair+Display:700|Raleway:900,300,200|Mountains+of+Christmas' rel='stylesheet' type='text/css'>
         <style media="print">
-          *,*:before,*:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
-          body{width:6.25in;height:4.25in;margin:0;padding:0;background-color:${background};background-size:6.25in 4.25in;background-repeat:no-repeat;}
-          #safe-area{position:absolute;width:5.875in;height:3.875in;left:.1875in;top:.1875in;}
-          h1{display:block;word-wrap:break-word;text-align:center;font-family:'${fontFamily}';font-weight:400;font-size:${fontSize};color:${color};margin:0;position:relative;top:50%;transform:translateY(-50%);}
+          *,*:before,*:after {
+            -webkit-box-sizing:border-box;
+            -moz-box-sizing:border-box;
+            box-sizing:border-box;
+          }
+          html {
+            font-size: 36.28px;
+          }
+          body {
+            width:6.25in;
+            height:4.25in;
+            margin:0;
+            padding:0;
+            background-color:${background};
+            background-size:6.25in 4.25in;
+            background-repeat:no-repeat;
+          }
+          #safe-area {
+            position:absolute;
+            width:5.875in;
+            height:3.875in;
+            left:.1875in;
+            top:.1875in;
+          }
+          h1 {
+            display:block;
+            word-wrap:break-word;
+            text-align:center;
+            font-family:'${fontFamily}';
+            font-weight:400;
+            font-size:${fontSize};
+            color:${color};
+            margin:0;
+            position:relative;
+            top:50%;
+            transform:translateY(-50%);
+          }
         </style>
         <style media="screen">
           *, *:before, *:after {
@@ -29,7 +62,7 @@ class Card {
             -webkit-box-sizing:border-box;
           }
           html {
-            font-size: 33.3%;
+            font-size: 9.6px;
           }
           body {
             background-color:${background};
@@ -62,9 +95,7 @@ class Card {
       </head>
       <body>
         <div id='safe-area'>
-          <div class='text'>
-            <h1>${text}</h1>
-          </div>
+          <h1>${text}</h1>
         </div>
       </body>
     </html>`

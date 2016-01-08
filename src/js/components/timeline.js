@@ -18,7 +18,7 @@ class Timeline extends React.Component {
         <div className="outerwrap">
           <div className="wrap">
             <iframe className="frame" scrolling="no" key={card.id} src={API_ROOT + card.id} />
-            <date>{Moment(card.date).format("MMM Do YY")}</date>
+            <date>{Moment(card.date).format("MMM Do YYYY")}</date>
             </div>
           </div>
         )
