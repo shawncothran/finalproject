@@ -1,6 +1,4 @@
 import React from 'react';
-import $ from 'jquery';
-import { Link } from 'react-router';
 
 import Dashboard from './dashboard';
 import Hero from './hero';
