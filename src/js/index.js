@@ -19,7 +19,7 @@ let NotFound = () => {
       <h1 className="error">
         404 ERROR: There is nothing here for you!
       </h1>
-      <Link to="/">Start over.</Link>
+      <Link className="anchor" to="/">Start over.</Link>
     </div>
   )
 }

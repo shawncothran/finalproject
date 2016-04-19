@@ -42,7 +42,7 @@ class Login extends React.Component {
         <input type="text" ref="email" placeholder="Millie@Snailephant.com" autofocus required/>
         <input type="password" ref="password" placeholder="password" required/>
         <input type="submit" value="login" required/>
-        <Link to="register">Not a member? Sign Up</Link>
+        <Link className="anchor" to="register">Not a member? Sign Up</Link>
       </form>
     )
   }
