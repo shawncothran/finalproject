@@ -38,7 +38,7 @@ class Register extends React.Component {
     if (this.state.email) {
         successMsg = (
         <p className="registerSuccess">Millie: "{this.state.email}, I'll Remember that"
-          <Link to="dashboard">Continue to the Dashboard to create your first card!</Link>
+          <Link className="anchor" to="dashboard">Continue to the Dashboard to create your first card!</Link>
         </p>
       )
     }
@@ -51,7 +51,7 @@ class Register extends React.Component {
         <input type="password" ref="password" placeholder="secret passcode" required/>
         <input type="password" ref="passconfirm" placeholder="wait, what was that?" required/>
         <input type="submit" value="sign up"/>
-        <Link to="login">Already a member? Login</Link>
+        <Link className="anchor" to="login">Already a member? Login</Link>
       </form>
     )
   }

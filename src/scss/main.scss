@@ -2,7 +2,6 @@
 @import '../../dist/bower_components/bourbon/app/assets/stylesheets/bourbon';
 // $visual-grid: true;
 @import '../../dist/bower_components/neat/app/assets/stylesheets/neat';
-
 html {
   font-size: 19.2px; // maintains consistent size between rem size on app and rem size on thumbnails //
   @include media(min-width 500px max-width 799px) {
@@ -22,8 +21,8 @@ body {
   font-family: 'Raleway', 'Helvetica', 'Arial', sans-serif; // logo //
   font-weight: 200;
   font-size: 3.8vmin;
-  background: rgba(255,255,255,0.6) fixed, #babec9 url("https://s3.amazonaws.com/snailephant/bg1.jpg") left top no-repeat fixed;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.8) 0%, rgba(211,211,211,0.6) 100%) fixed, #babec9 url("https://s3.amazonaws.com/snailephant/bg1.jpg") left top no-repeat fixed;
+  background: rgba(255,255,255,0.6) fixed, #babec9 url(https://s3.amazonaws.com/snailephant/bg1.jpg) left top no-repeat fixed;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.8) 0%, rgba(211,211,211,0.6) 100%) fixed, #babec9 url(https://s3.amazonaws.com/snailephant/bg1.jpg) left top no-repeat fixed;
   background-size: cover;
 }
 img {
@@ -81,10 +80,10 @@ h2 {
 }
 .logoImg {
   @include media(min-width 800px) {
-    width: 8vmin;
-    margin: 0.7vmin
+    width: 30vmin;
+    margin: 0.7vmin;
   }
-  width: 11vmin;
+  width: 41vmin;
   margin: 0.8vmin;
 }
 .headerLogo {
@@ -104,21 +103,29 @@ h2 {
     display: inline-block;
   }
   display: none;
-  line-height: 7.6vmin;
+  line-height: 8.8vmin;
   font-size: 2.8vmin;
   text-align: center;
   vertical-align: top;
   margin: 0;
 }
-a {
+.anchor {
+  font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 900;
+  font-size: 4.5vmin;
+  color: #044860;
+  text-decoration: none;
+  padding-left: 1.3vmin;
+  transition: all 250ms ease-in;
+
   @include media(min-width 800px) {
     font-size: 2.7vmin;
   }
-  font-family: 'Annie Use Your Telescope', 'Helvetica', 'Arial', sans-serif; // logo //
-  font-size: 4.5vmin;
-  color: #003BB4;
-  text-decoration: none;
-  padding-left: 1.3vmin;
+
+  &:hover {
+    -webkit-filter: brightness(150%);
+    transition: all 250ms ease-in;
+  }
 }
 header,
 .usernav {
@@ -136,19 +143,26 @@ header,
   border: dotted 0.3vmin #777;
   display: block;
   width: 75vmin;
-  margin: 0 auto 2vmin;
+  margin: 2vmin auto;
   clear: both;
 }
 button,
 input {
-  font-family: 'Annie Use Your Telescope', 'Helvetica', 'Arial', sans-serif; // logo //
+  font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
 }
 .button {
-  font-family: 'Annie Use Your Telescope', 'Helvetica', 'Arial', sans-serif; // logo //
-  padding: 0.6vmin 1.2vmin;
-  border: 0.18vmin solid #cccccc;
-  background-color: #F0F0F0;
-  box-shadow: 0 0 35px 5px rgba(0,0,0,0.20);
+  font-size: 14px;
+  font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 600;
+  padding: 10px 29px;
+  background: -webkit-linear-gradient(top, #F98645, #ED491E);
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  text-decoration: none;
+  &:hover {
+    background: -webkit-linear-gradient(top, #ED491E, #F98645);
+  }
 }
 .button:active {
   border: 0.1vmin solid #ffffff;
@@ -164,7 +178,7 @@ input {
   height: 100vmin;
 }
 .timeline {
-  padding: 7.5vmin 5vmin 0.8vmin 5vmin;
+  padding: 7.5vmin 5vmin 0.8vmin;
   overflow: scroll;
   .cardWrapper {
     @include media(min-width 500px) {
@@ -181,7 +195,6 @@ input {
   .outerwrap {
     display: inline-block;
   }
-
   .wrap {
     margin: 0.75vmin;
     padding: 0;
@@ -205,8 +218,8 @@ input {
 }
 .userForm {
   a {
-  clear: both;
-  display: inline-block;
+    clear: both;
+    display: inline-block;
   }
 }
 .headPadding {
@@ -296,7 +309,7 @@ input {
     width: 100vmin;
     top: 45vmin;
     .controlBtn {
-      font-family: 'Annie Use Your Telescope', 'Helvetica', 'Arial', sans-serif; // logo //
+      font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
       position: absolute;
       background: none;
       padding: 0.1vmin;
@@ -455,7 +468,7 @@ input {
     }
   }
   .form {
-    font-family: 'Annie Use Your Telescope', 'Helvetica', 'Arial', sans-serif; // logo //
+    font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
     margin: 0.5vmin;
     width: 37.3vmin;
     @include media(min-width 800px) {
@@ -499,20 +512,10 @@ input {
     margin-bottom: 3vmin;
   }
 }
-.subButton {
-  display: inline-block;
-  text-align: center;
-  float: left;
-  width: 30vmin;
-}
 .successButton {
-  @include media(min-width 800px) {
-    width: 22vmin;
-  }
   display: inline-block;
-  text-align: center;
-  float: right;
-  width: 30vmin;
+  margin: 0 3vmin;
+  width: 27vmin;
 }
 article.plan {
   @include media(min-width 800px) {
@@ -639,7 +642,6 @@ article.plan {
 .failMsg {
   background-color: rgba(255, 23, 71, 0.75);
   margin-top: 3vmin;
-
   button {
     float: right;
   }
@@ -655,11 +657,10 @@ article.plan {
   bottom: 0;
   left: 0;
   overflow: hidden;
-  background: #fff url("https://s3.amazonaws.com/snailephant/mailbox-web.jpg") left top no-repeat fixed;
+  background: #fff url(https://s3.amazonaws.com/snailephant/mailbox-web.jpg) left top no-repeat fixed;
   background-size: 50vw;
   clear: left;
   font: 14px Helvetica, Arial, sans-serif;
-
   label {
     display: block;
     font-weight: 900;
@@ -668,29 +669,24 @@ article.plan {
     font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
   }
 }
-
 .subscribe-form {
   left: 50vw;
   padding: 25px;
   position: relative;
   width: 380px;
 }
-
 .getLogo {
   width: 200px;
-  margin: 3px 0px 32px 0px;
+  margin: 3px 0 32px;
 }
-
 .getText {
   margin-bottom: 17px;
   font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
   letter-spacing: -0.37px;
-
   &:first-of-type {
     margin-top: 0;
   }
 }
-
 .hashtag {
   color: #044860;
   margin-bottom: 8px;
@@ -699,28 +695,11 @@ article.plan {
   font-size: 20px;
   letter-spacing: -0.9px;
 }
-#mc-embedded-subscribe {
-  font-size: 14px;
-  font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
-  font-weight: 600;
-  padding: 10px 0px;
-  background: -webkit-linear-gradient(top, #F98645, #ED491E);
-  border: none;
-  border-radius: 6px;
-  color: #fff;
-  text-decoration: none;
-  width: 130px;
-  transition: 0.2s;
-
-  &:hover {
-    background: -webkit-linear-gradient(top, #ED491E, #F98645);
-  }
-}
 #mce-EMAIL {
   background: #fff;
   border-radius: 5px;
   border: solid 1px #ddd;
-  box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.5);
   padding: 4px 14px;
   font-size: 14px;
   font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
@@ -728,4 +707,11 @@ article.plan {
   line-height: 25px;
   margin-bottom: 24px;
   width: 300px;
+}
+.-full {
+  width: 75vmin;
+  display: inline-block;
+}
+.-centered {
+  text-align: center;
 }

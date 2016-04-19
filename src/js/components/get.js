@@ -2,11 +2,26 @@ import React from 'react';
 import { Link } from 'react-router';
 
 class Get extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+
+    this.state = {
+      email: null
+    }
+  }
+
+  handleChange(event) {
+    this.setState({
+      email: event.target.value
+    });
+  }
+
   render() {
     return (
       <section id="mc_embed_signup">
         <article className="subscribe-form">
-          <img className="getLogo" src="https://s3.amazonaws.com/snailephant/snailephant-logo.svg" alt="snailephant logo" />
+          <img className="getLogo" src="https://s3.amazonaws.com/snailephant/snailephant-logo.svg" alt="snailephant logo"/>
 
           <h2 className="hashtag">#ThatFeelingWhen</h2>
 
@@ -28,10 +43,24 @@ class Get extends React.Component {
             <section id="mc_embed_signup_scroll">
               <label htmlFor="mce-EMAIL">Enter your email below to get started</label>
 
-            <input type="email" value="" name="EMAIL" className="email" id="mce-EMAIL" placeholder="ex. helga@snailephant.com" required/>
+              <input
+                type="email"
+                value={this.state.value}
+                onChange={this.handleChange}
+                name="EMAIL"
+                className="email"
+                id="mce-EMAIL"
+                placeholder="ex. helga@snailephant.com"
+                required
+              />
 
               <div style={{position: 'absolute', left: '-5000px'}} aria-hidden="true">
-                <input type="text" name="b_d3512d4f3f484cc6509b89451_f936622257" tabIndex="-1" value=""/>
+                <input
+                  type="text"
+                  name="b_d3512d4f3f484cc6509b89451_f936622257"
+                  tabIndex="-1"
+                  value=""
+                />
               </div>
 
               <div className="clear">

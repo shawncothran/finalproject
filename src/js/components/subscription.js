@@ -120,7 +120,7 @@ render() {
     )
   }
   if (this.state.error === false) {
-    resultsMsg = <div className="successMsg"><button onClick={this.hideResults}>X</button><p>You're all set! <Link to="dashboard">Head to your Dashboard</Link></p></div>
+    resultsMsg = <div className="successMsg"><button onClick={this.hideResults}>X</button><p>You're all set! <Link className="anchor" to="dashboard">Head to your Dashboard</Link></p></div>
   } else if (this.state.error === true){
     resultsMsg = <div className="failMsg"><button onClick={this.hideResults}>X</button><p>Oops, something flubbed! Try again. If the error persists, email us at support@snailephant.com and we can walk you through it.</p></div>
   }
