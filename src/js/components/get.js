@@ -37,7 +37,7 @@ class Get extends React.Component {
             id="mc-embedded-subscribe-form"
             name="mc-embedded-subscribe-form"
             className="validate"
-            target="_blank"
+            target="_self"
             noValidate
           >
             <section id="mc_embed_signup_scroll">
