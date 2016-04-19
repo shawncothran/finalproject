@@ -49869,11 +49869,6 @@ var Header = (function (_React$Component) {
         { className: 'homeHeader' },
         HomeStatus,
         _react2['default'].createElement(
-          'h1',
-          { className: 'headerTitle' },
-          'Never forget to send a card.'
-        ),
-        _react2['default'].createElement(
           'nav',
           { className: 'usernav' },
           LoginStatus,
