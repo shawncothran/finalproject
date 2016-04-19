@@ -19,11 +19,11 @@ class Header extends React.Component {
         UserStatus;
 
       if (!User.access_token) {
-        HomeStatus = <Link to="/" className="logo"><img className="logoImg" src="../assets/snailephant.png" alt="@c;" title="@c;" /></Link>
+        HomeStatus = <Link to="/" className="logo"><img className="logoImg" src="https://s3.amazonaws.com/snailephant/snailephant.png" alt="@c;" title="@c;" /></Link>
         LoginStatus = <Link to="login">Login</Link>
         UserStatus = <Link to="register">Register</Link>
       } else {
-        HomeStatus = <Link to="dashboard" className="logo"><img className="logoImg" src="../assets/snailephant.png" alt="@c;" title="@c;" /></Link>
+        HomeStatus = <Link to="dashboard" className="logo"><img className="logoImg" src="https://s3.amazonaws.com/snailephant/snailephant.png" alt="@c;" title="@c;" /></Link>
         LoginStatus = <Link to="subscription">{ email }</Link>
         UserStatus = <Link to="/" onClick={() => {
           User.logout();
