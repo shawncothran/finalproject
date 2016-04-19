@@ -19,13 +19,23 @@ class Header extends React.Component {
         UserStatus;
 
       if (!User.access_token) {
-        HomeStatus = <Link to="/" className="logo"><img className="logoImg" src="https://s3.amazonaws.com/snailephant/snailephant.png" alt="@c;" title="@c;" /></Link>
-        LoginStatus = <Link to="login">Login</Link>
-        UserStatus = <Link to="register">Register</Link>
+        HomeStatus = <Link className="logo" to="/">
+                       <img className="logoImg"
+                            src="https://s3.amazonaws.com/snailephant/snailephant-logo.svg"
+                            alt="snailephant logo"
+                            title="snailephant" />
+                     </Link>
+        LoginStatus = <Link className="anchor" to="login">Login</Link>
+        UserStatus = <Link className="anchor" to="register">Register</Link>
       } else {
-        HomeStatus = <Link to="dashboard" className="logo"><img className="logoImg" src="https://s3.amazonaws.com/snailephant/snailephant.png" alt="@c;" title="@c;" /></Link>
-        LoginStatus = <Link to="subscription">{ email }</Link>
-        UserStatus = <Link to="/" onClick={() => {
+        HomeStatus = <Link className="logo" to="dashboard">
+                       <img className="logoImg"
+                            src="https://s3.amazonaws.com/snailephant/snailephant-logo.svg"
+                            alt="snailephant logo"
+                            title="snailephant" />
+                       </Link>
+        LoginStatus = <Link className="anchor" to="subscription">{ email }</Link>
+        UserStatus = <Link className="anchor" to="/" onClick={() => {
           User.logout();
         }}>logout</Link>
     }
@@ -33,7 +43,6 @@ class Header extends React.Component {
     return (
       <header className="homeHeader">
         {HomeStatus}
-        <span className="headerLogo">Snailephant!</span>
         <h1 className="headerTitle">
           Never forget to send a card.
         </h1>
