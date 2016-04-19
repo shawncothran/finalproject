@@ -371,18 +371,7 @@ html {
 body {
   font-family: 'Raleway', 'Helvetica', 'Arial', sans-serif;
   font-weight: 200;
-  font-size: 3.8vmin;
-  background: rgba(255, 255, 255, 0.6) fixed, #babec9 url("../assets/bg1.jpg") left top no-repeat fixed;
-  /* Old Browsers */
-  /* FF3.6+ */
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.8)), color-stop(100%, rgba(211, 211, 211, 0.6))) fixed, #babec9 url("../assets/bg1.jpg") left top no-repeat fixed;
-  /* Chrome, Safari4+ */
-  /* Chrome10+,Safari5.1+ */
-  /* Opera 11.10+ */
-  /* IE 10+ */
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8) 0%, rgba(211, 211, 211, 0.6) 100%) fixed, #babec9 url("../assets/bg1.jpg") left top no-repeat fixed;
-  /* W3C */
-  background-size: cover; }
+  font-size: 3.8vmin; }
   @media screen and (min-width: 800px) {
     body {
       font-size: 2.8vmin; } }
@@ -450,11 +439,11 @@ h2 {
   overflow: auto; }
 
 .logoImg {
-  width: 11vmin;
+  width: 41vmin;
   margin: 0.8vmin; }
   @media screen and (min-width: 800px) {
     .logoImg {
-      width: 8vmin;
+      width: 30vmin;
       margin: 0.7vmin; } }
 
 .headerLogo {
@@ -471,7 +460,7 @@ h2 {
 
 .headerTitle {
   display: none;
-  line-height: 7.6vmin;
+  line-height: 8.8vmin;
   font-size: 2.8vmin;
   text-align: center;
   vertical-align: top;
@@ -480,15 +469,20 @@ h2 {
     .headerTitle {
       display: inline-block; } }
 
-a {
-  font-family: 'Annie Use Your Telescope', 'Helvetica', 'Arial', sans-serif;
+.anchor {
+  font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 900;
   font-size: 4.5vmin;
-  color: #003BB4;
+  color: #044860;
   text-decoration: none;
-  padding-left: 1.3vmin; }
+  padding-left: 1.3vmin;
+  transition: all 250ms ease-in; }
   @media screen and (min-width: 800px) {
-    a {
+    .anchor {
       font-size: 2.7vmin; } }
+  .anchor:hover {
+    -webkit-filter: brightness(150%);
+    transition: all 250ms ease-in; }
 
 header,
 .usernav {
@@ -505,22 +499,25 @@ header,
   border: dotted 0.3vmin #777;
   display: block;
   width: 75vmin;
-  margin: 0 auto 2vmin;
+  margin: 2vmin auto;
   clear: both; }
 
 button,
 input {
-  font-family: 'Annie Use Your Telescope', 'Helvetica', 'Arial', sans-serif; }
+  font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif; }
 
 .button {
-  font-family: 'Annie Use Your Telescope', 'Helvetica', 'Arial', sans-serif;
-  padding: 0.6vmin 1.2vmin;
-  border: 0.18vmin solid #cccccc;
-  background-color: #F0F0F0;
-  box-shadow: 0 0 35px 5px rgba(0, 0, 0, 0.2);
-  -webkit-transition: 0.2s;
-  -moz-transition: 0.2s;
-  -o-transition: 0.2s; }
+  font-size: 14px;
+  font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 600;
+  padding: 10px 29px;
+  background: -webkit-linear-gradient(top, #F98645, #ED491E);
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  text-decoration: none; }
+  .button:hover {
+    background: -webkit-linear-gradient(top, #ED491E, #F98645); }
 
 .button:active {
   border: 0.1vmin solid #ffffff;
@@ -536,7 +533,7 @@ input {
   height: 100vmin; }
 
 .timeline {
-  padding: 7.5vmin 5vmin 0.8vmin 5vmin;
+  padding: 7.5vmin 5vmin 0.8vmin;
   overflow: scroll; }
   .timeline .cardWrapper {
     box-shadow: inset 0 0 35px 5px rgba(0, 0, 0, 0.36);
@@ -656,7 +653,7 @@ input {
     width: 100vmin;
     top: 45vmin; }
     .cardCreator .controls .controlBtn {
-      font-family: 'Annie Use Your Telescope', 'Helvetica', 'Arial', sans-serif;
+      font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
       position: absolute;
       background: none;
       padding: 0.1vmin;
@@ -789,7 +786,7 @@ input {
       width: 44vmin; } }
 
 .toForm .form {
-  font-family: 'Annie Use Your Telescope', 'Helvetica', 'Arial', sans-serif;
+  font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
   margin: 0.5vmin;
   width: 37.3vmin;
   float: left; }
@@ -836,20 +833,10 @@ input {
   .form-row article {
     margin-bottom: 3vmin; }
 
-.subButton {
-  display: inline-block;
-  text-align: center;
-  float: left;
-  width: 30vmin; }
-
 .successButton {
   display: inline-block;
-  text-align: center;
-  float: right;
-  width: 30vmin; }
-  @media screen and (min-width: 800px) {
-    .successButton {
-      width: 22vmin; } }
+  margin: 0 3vmin;
+  width: 27vmin; }
 
 article.plan {
   margin: 0.75vmin;
@@ -964,3 +951,66 @@ article.plan {
     float: right; }
   .failMsg p {
     clear: both; }
+
+#mc_embed_signup {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  background: #fff url(https://s3.amazonaws.com/snailephant/mailbox-web.jpg) left top no-repeat fixed;
+  background-size: 50vw;
+  clear: left;
+  font: 14px Helvetica, Arial, sans-serif; }
+  #mc_embed_signup label {
+    display: block;
+    font-weight: 900;
+    margin-bottom: 23px;
+    letter-spacing: -0.37px;
+    font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif; }
+
+.subscribe-form {
+  left: 50vw;
+  padding: 25px;
+  position: relative;
+  width: 380px; }
+
+.getLogo {
+  width: 200px;
+  margin: 3px 0 32px; }
+
+.getText {
+  margin-bottom: 17px;
+  font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
+  letter-spacing: -0.37px; }
+  .getText:first-of-type {
+    margin-top: 0; }
+
+.hashtag {
+  color: #044860;
+  margin-bottom: 8px;
+  font-weight: 900;
+  font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
+  font-size: 20px;
+  letter-spacing: -0.9px; }
+
+#mce-EMAIL {
+  background: #fff;
+  border-radius: 5px;
+  border: solid 1px #ddd;
+  box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.5);
+  padding: 4px 14px;
+  font-size: 14px;
+  font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 100;
+  line-height: 25px;
+  margin-bottom: 24px;
+  width: 300px; }
+
+.-full {
+  width: 75vmin;
+  display: inline-block; }
+
+.-centered {
+  text-align: center; }

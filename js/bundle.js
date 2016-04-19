@@ -49169,7 +49169,7 @@ var App = (function (_React$Component) {
 exports['default'] = App;
 module.exports = exports['default'];
 
-},{"../models/user":237,"./header":224,"./toform":234,"react":218,"react-router":50}],220:[function(require,module,exports){
+},{"../models/user":238,"./header":225,"./toform":235,"react":218,"react-router":50}],220:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -49371,7 +49371,7 @@ var CardCreator = (function (_React$Component) {
 exports['default'] = CardCreator;
 module.exports = exports['default'];
 
-},{"./preview":228,"jquery":26,"react":218,"react-addons-css-transition-group":29,"react-router":50}],222:[function(require,module,exports){
+},{"./preview":229,"jquery":26,"react":218,"react-addons-css-transition-group":29,"react-router":50}],222:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -49521,7 +49521,7 @@ var Dashboard = (function (_React$Component) {
 exports['default'] = Dashboard;
 module.exports = exports['default'];
 
-},{"../models/card":236,"../models/user":237,"./background":220,"./cardcreator":221,"./dateContainer":223,"./text":232,"./timeline":233,"./toform":234,"jquery":26,"lodash":27,"react":218,"react-router":50}],223:[function(require,module,exports){
+},{"../models/card":237,"../models/user":238,"./background":220,"./cardcreator":221,"./dateContainer":223,"./text":233,"./timeline":234,"./toform":235,"jquery":26,"lodash":27,"react":218,"react-router":50}],223:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -49629,7 +49629,152 @@ var DateContainer = (function (_React$Component) {
 exports['default'] = DateContainer;
 module.exports = exports['default'];
 
-},{"../models/card":236,"./timeline":233,"moment":28,"react":218}],224:[function(require,module,exports){
+},{"../models/card":237,"./timeline":234,"moment":28,"react":218}],224:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouter = require('react-router');
+
+var Get = (function (_React$Component) {
+  _inherits(Get, _React$Component);
+
+  function Get(props) {
+    _classCallCheck(this, Get);
+
+    _get(Object.getPrototypeOf(Get.prototype), 'constructor', this).call(this, props);
+    this.handleChange = this.handleChange.bind(this);
+
+    this.state = {
+      email: null
+    };
+  }
+
+  _createClass(Get, [{
+    key: 'handleChange',
+    value: function handleChange(event) {
+      this.setState({
+        email: event.target.value
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2['default'].createElement(
+        'section',
+        { id: 'mc_embed_signup' },
+        _react2['default'].createElement(
+          'article',
+          { className: 'subscribe-form' },
+          _react2['default'].createElement('img', { className: 'getLogo', src: 'https://s3.amazonaws.com/snailephant/snailephant-logo.svg', alt: 'snailephant logo' }),
+          _react2['default'].createElement(
+            'h2',
+            { className: 'hashtag' },
+            '#ThatFeelingWhen'
+          ),
+          _react2['default'].createElement(
+            'p',
+            { className: 'getText' },
+            'Few things feel worse than forgetting to send your mother a birthday card. SHE\'S YOUR MOM!'
+          ),
+          _react2['default'].createElement(
+            'p',
+            { className: 'getText' },
+            'Worst of all, your grandma will never forgive you for failing to remember her favorite holiday: Arbor day.'
+          ),
+          _react2['default'].createElement(
+            'p',
+            { className: 'getText' },
+            'Lucky for you, we can help you will all of this.'
+          ),
+          _react2['default'].createElement(
+            'p',
+            { className: 'getText' },
+            _react2['default'].createElement(
+              'strong',
+              null,
+              'Never forget to send a card again.'
+            )
+          ),
+          _react2['default'].createElement(
+            'p',
+            { className: 'getText' },
+            'Snailephant lets you create and mial your own cards! Just pick the date you want it to arrive and let us do the work.'
+          ),
+          _react2['default'].createElement(
+            'form',
+            {
+              action: '//snailephant.us13.list-manage.com/subscribe/post?u=d3512d4f3f484cc6509b89451&id=f936622257',
+              method: 'post',
+              id: 'mc-embedded-subscribe-form',
+              name: 'mc-embedded-subscribe-form',
+              className: 'validate',
+              target: '_self',
+              noValidate: true
+            },
+            _react2['default'].createElement(
+              'section',
+              { id: 'mc_embed_signup_scroll' },
+              _react2['default'].createElement(
+                'label',
+                { htmlFor: 'mce-EMAIL' },
+                'Enter your email below to get started'
+              ),
+              _react2['default'].createElement('input', {
+                type: 'email',
+                value: this.state.value,
+                onChange: this.handleChange,
+                name: 'EMAIL',
+                className: 'email',
+                id: 'mce-EMAIL',
+                placeholder: 'ex. helga@snailephant.com',
+                required: true
+              }),
+              _react2['default'].createElement(
+                'div',
+                { style: { position: 'absolute', left: '-5000px' }, 'aria-hidden': 'true' },
+                _react2['default'].createElement('input', {
+                  type: 'text',
+                  name: 'b_d3512d4f3f484cc6509b89451_f936622257',
+                  tabIndex: '-1',
+                  value: ''
+                })
+              ),
+              _react2['default'].createElement(
+                'div',
+                { className: 'clear' },
+                _react2['default'].createElement('input', { type: 'submit', value: 'Sign me up!', name: 'subscribe', id: 'mc-embedded-subscribe', className: 'button' })
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return Get;
+})(_react2['default'].Component);
+
+exports['default'] = Get;
+module.exports = exports['default'];
+
+},{"react":218,"react-router":50}],225:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -49680,33 +49825,39 @@ var Header = (function (_React$Component) {
       if (!_modelsUser2['default'].access_token) {
         HomeStatus = _react2['default'].createElement(
           _reactRouter.Link,
-          { to: '/', className: 'logo' },
-          _react2['default'].createElement('img', { className: 'logoImg', src: '../assets/snailephant.png', alt: '@c;', title: '@c;' })
+          { className: 'logo', to: '/' },
+          _react2['default'].createElement('img', { className: 'logoImg',
+            src: 'https://s3.amazonaws.com/snailephant/snailephant-logo.svg',
+            alt: 'snailephant logo',
+            title: 'snailephant' })
         );
         LoginStatus = _react2['default'].createElement(
           _reactRouter.Link,
-          { to: 'login' },
+          { className: 'anchor', to: 'login' },
           'Login'
         );
         UserStatus = _react2['default'].createElement(
           _reactRouter.Link,
-          { to: 'register' },
+          { className: 'anchor', to: 'register' },
           'Register'
         );
       } else {
         HomeStatus = _react2['default'].createElement(
           _reactRouter.Link,
-          { to: 'dashboard', className: 'logo' },
-          _react2['default'].createElement('img', { className: 'logoImg', src: '../assets/snailephant.png', alt: '@c;', title: '@c;' })
+          { className: 'logo', to: 'dashboard' },
+          _react2['default'].createElement('img', { className: 'logoImg',
+            src: 'https://s3.amazonaws.com/snailephant/snailephant-logo.svg',
+            alt: 'snailephant logo',
+            title: 'snailephant' })
         );
         LoginStatus = _react2['default'].createElement(
           _reactRouter.Link,
-          { to: 'subscription' },
+          { className: 'anchor', to: 'subscription' },
           email
         );
         UserStatus = _react2['default'].createElement(
           _reactRouter.Link,
-          { to: '/', onClick: function () {
+          { className: 'anchor', to: '/', onClick: function () {
               _modelsUser2['default'].logout();
             } },
           'logout'
@@ -49717,11 +49868,6 @@ var Header = (function (_React$Component) {
         'header',
         { className: 'homeHeader' },
         HomeStatus,
-        _react2['default'].createElement(
-          'span',
-          { className: 'headerLogo' },
-          'Snailephant!'
-        ),
         _react2['default'].createElement(
           'h1',
           { className: 'headerTitle' },
@@ -49743,7 +49889,7 @@ var Header = (function (_React$Component) {
 exports['default'] = Header;
 module.exports = exports['default'];
 
-},{"../models/user":237,"react":218,"react-router":50}],225:[function(require,module,exports){
+},{"../models/user":238,"react":218,"react-router":50}],226:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -49784,14 +49930,14 @@ var Hero = (function (_React$Component) {
         _react2['default'].createElement(
           'h2',
           null,
-          'You make it. We mail it. Create the card on your time. Snailephant will never forget to snail mail the card at the appropriate time!'
+          'You make it. We mail it. Create a card on your time. Snailephant never forgets to snail mail the card at the right time!'
         ),
-        _react2['default'].createElement('img', { className: 'heroVideo', src: '../assets/heroVidOpt.gif', alt: 'demo', title: 'demo' }),
         _react2['default'].createElement(
           _reactRouter.Link,
-          { to: 'register', className: 'button' },
+          { to: 'register', className: 'button -full' },
           'Create a card!'
-        )
+        ),
+        _react2['default'].createElement('img', { className: 'heroVideo', src: 'https://s3.amazonaws.com/snailephant/heroVidOpt.gif', alt: 'demo', title: 'demo' })
       );
     }
   }]);
@@ -49802,7 +49948,7 @@ var Hero = (function (_React$Component) {
 exports['default'] = Hero;
 module.exports = exports['default'];
 
-},{"react":218,"react-router":50}],226:[function(require,module,exports){
+},{"react":218,"react-router":50}],227:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -49822,12 +49968,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== 'function' 
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
-
-var _jquery = require('jquery');
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-var _reactRouter = require('react-router');
 
 var _dashboard = require('./dashboard');
 
@@ -49866,7 +50006,7 @@ var Home = (function (_React$Component) {
 exports['default'] = Home;
 module.exports = exports['default'];
 
-},{"./dashboard":222,"./hero":225,"jquery":26,"react":218,"react-router":50}],227:[function(require,module,exports){
+},{"./dashboard":222,"./hero":226,"react":218}],228:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -49952,7 +50092,7 @@ var Login = (function (_React$Component) {
         _react2['default'].createElement('input', { type: 'submit', value: 'login', required: true }),
         _react2['default'].createElement(
           _reactRouter.Link,
-          { to: 'register' },
+          { className: 'anchor', to: 'register' },
           'Not a member? Sign Up'
         )
       );
@@ -49965,7 +50105,7 @@ var Login = (function (_React$Component) {
 exports['default'] = Login;
 module.exports = exports['default'];
 
-},{"../models/user":237,"react":218,"react-router":50}],228:[function(require,module,exports){
+},{"../models/user":238,"react":218,"react-router":50}],229:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -50027,7 +50167,7 @@ var Preview = (function (_React$Component) {
 exports['default'] = Preview;
 module.exports = exports['default'];
 
-},{"jquery":26,"react":218,"react-router":50}],229:[function(require,module,exports){
+},{"jquery":26,"react":218,"react-router":50}],230:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -50103,7 +50243,7 @@ var Register = (function (_React$Component) {
           ', I\'ll Remember that"',
           _react2['default'].createElement(
             _reactRouter.Link,
-            { to: 'dashboard' },
+            { className: 'anchor', to: 'dashboard' },
             'Continue to the Dashboard to create your first card!'
           )
         );
@@ -50132,7 +50272,7 @@ var Register = (function (_React$Component) {
         _react2['default'].createElement('input', { type: 'submit', value: 'sign up' }),
         _react2['default'].createElement(
           _reactRouter.Link,
-          { to: 'login' },
+          { className: 'anchor', to: 'login' },
           'Already a member? Login'
         )
       );
@@ -50145,7 +50285,7 @@ var Register = (function (_React$Component) {
 exports['default'] = Register;
 module.exports = exports['default'];
 
-},{"../models/user":237,"react":218,"react-router":50}],230:[function(require,module,exports){
+},{"../models/user":238,"react":218,"react-router":50}],231:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -50346,7 +50486,7 @@ var Subscription = (function (_React$Component) {
             'You\'re all set! ',
             _react2['default'].createElement(
               _reactRouter.Link,
-              { to: 'dashboard' },
+              { className: 'anchor', to: 'dashboard' },
               'Head to your Dashboard'
             )
           )
@@ -50463,7 +50603,7 @@ var Subscription = (function (_React$Component) {
 exports['default'] = Subscription;
 module.exports = exports['default'];
 
-},{"../models/user":237,"classnames":2,"react":218,"react-addons-css-transition-group":29,"react-router":50}],231:[function(require,module,exports){
+},{"../models/user":238,"classnames":2,"react":218,"react-addons-css-transition-group":29,"react-router":50}],232:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -50519,14 +50659,18 @@ var Success = (function (_React$Component) {
           )
         ),
         _react2['default'].createElement(
-          _reactRouter.Link,
-          { className: 'subButton', to: 'subscription' },
-          'Manage Subscription'
-        ),
-        _react2['default'].createElement(
-          _reactRouter.Link,
-          { className: 'successButton', to: 'dashboard' },
-          'Start a new card!!'
+          'section',
+          { className: 'subForm -centered' },
+          _react2['default'].createElement(
+            _reactRouter.Link,
+            { className: 'button successButton', to: 'subscription' },
+            'Manage Subscription'
+          ),
+          _react2['default'].createElement(
+            _reactRouter.Link,
+            { className: 'button successButton', to: 'dashboard' },
+            'Start a new card!!'
+          )
         )
       );
     }
@@ -50538,7 +50682,7 @@ var Success = (function (_React$Component) {
 exports['default'] = Success;
 module.exports = exports['default'];
 
-},{"moment":28,"react":218,"react-router":50}],232:[function(require,module,exports){
+},{"moment":28,"react":218,"react-router":50}],233:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -50696,7 +50840,7 @@ var Text = (function (_React$Component) {
 exports['default'] = Text;
 module.exports = exports['default'];
 
-},{"jquery":26,"react":218,"react-dom":30,"react-router":50}],233:[function(require,module,exports){
+},{"jquery":26,"react":218,"react-dom":30,"react-router":50}],234:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -50798,7 +50942,7 @@ var Timeline = (function (_React$Component) {
 exports['default'] = Timeline;
 module.exports = exports['default'];
 
-},{"../models/card":236,"../models/user":237,"jquery":26,"moment":28,"react":218,"react-router":50}],234:[function(require,module,exports){
+},{"../models/card":237,"../models/user":238,"jquery":26,"moment":28,"react":218,"react-router":50}],235:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -51196,7 +51340,7 @@ var ToForm = (function (_React$Component) {
 exports['default'] = ToForm;
 module.exports = exports['default'];
 
-},{"lodash":27,"react":218,"react-dom":30}],235:[function(require,module,exports){
+},{"lodash":27,"react":218,"react-dom":30}],236:[function(require,module,exports){
 'use strict';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -51245,6 +51389,10 @@ var _componentsSuccess = require('./components/success');
 
 var _componentsSuccess2 = _interopRequireDefault(_componentsSuccess);
 
+var _componentsGet = require('./components/get');
+
+var _componentsGet2 = _interopRequireDefault(_componentsGet);
+
 var NotFound = function NotFound() {
   return _react2['default'].createElement(
     'div',
@@ -51256,7 +51404,7 @@ var NotFound = function NotFound() {
     ),
     _react2['default'].createElement(
       _reactRouter.Link,
-      { to: '/' },
+      { className: 'anchor', to: '/' },
       'Start over.'
     )
   );
@@ -51280,10 +51428,11 @@ var NotFound = function NotFound() {
     _react2['default'].createElement(_reactRouter.Route, { path: 'toform', component: _componentsToform2['default'] }),
     _react2['default'].createElement(_reactRouter.Route, { path: 'subscription', component: _componentsSubscription2['default'] })
   ),
+  _react2['default'].createElement(_reactRouter.Route, { path: 'get', component: _componentsGet2['default'] }),
   _react2['default'].createElement(_reactRouter.Route, { path: '*', component: NotFound })
 ), document.getElementById('app'));
 
-},{"./components/app":219,"./components/cardcreator":221,"./components/dashboard":222,"./components/home":226,"./components/login":227,"./components/register":229,"./components/subscription":230,"./components/success":231,"./components/toform":234,"react":218,"react-dom":30,"react-router":50}],236:[function(require,module,exports){
+},{"./components/app":219,"./components/cardcreator":221,"./components/dashboard":222,"./components/get":224,"./components/home":227,"./components/login":228,"./components/register":230,"./components/subscription":231,"./components/success":232,"./components/toform":235,"react":218,"react-dom":30,"react-router":50}],237:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -51364,7 +51513,7 @@ var Card = (function () {
 exports["default"] = new Card();
 module.exports = exports["default"];
 
-},{"./user":237,"jquery":26}],237:[function(require,module,exports){
+},{"./user":238,"jquery":26}],238:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -51572,4 +51721,4 @@ var User = (function () {
 exports['default'] = new User();
 module.exports = exports['default'];
 
-},{"jquery":26}]},{},[235]);
+},{"jquery":26}]},{},[236]);
