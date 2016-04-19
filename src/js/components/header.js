@@ -43,9 +43,6 @@ class Header extends React.Component {
     return (
       <header className="homeHeader">
         {HomeStatus}
-        <h1 className="headerTitle">
-          Never forget to send a card.
-        </h1>
         <nav className="usernav">
           {LoginStatus}
           {UserStatus}
