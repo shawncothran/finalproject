@@ -26,7 +26,6 @@ gulp.task('babel', function () {
     .transform(babelify)
     .bundle()
     .pipe(source('bundle.js'))
-    // .pipe(streamify(uglify()))
     .pipe(gulp.dest('./dist/js'));
 });
 
@@ -58,13 +57,10 @@ gulp.task('copy', function () {
     .pipe(gulp.dest('dist'));
 });
 
-
-
 gulp.task('deploy', function() {
   return gulp.src('./dist/**/*')
     .pipe(ghPages());
 });
-
 
 gulp.task('default', [
   'watch',

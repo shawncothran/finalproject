@@ -11,6 +11,7 @@ import ToForm from './components/toform';
 import Subscription from './components/subscription';
 import CardCreator from './components/cardcreator';
 import Success from './components/success';
+import Get from './components/get';
 
 let NotFound = () => {
   return (
@@ -27,15 +28,16 @@ render((
   <Router history={browserHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={Home} />
-        <Route path="login" component={Login} />
-        <Route path="register" component={Register} />
-        <Route path="dashboard" component={Dashboard}>
-          <IndexRoute component={CardCreator}/>
-        </Route>
-        <Route path="/success" component={Success}/>
-        <Route path="toform" component={ToForm} />
-        <Route path="subscription" component={Subscription} />
+      <Route path="login" component={Login} />
+      <Route path="register" component={Register} />
+      <Route path="dashboard" component={Dashboard}>
+        <IndexRoute component={CardCreator}/>
+      </Route>
+      <Route path="/success" component={Success}/>
+      <Route path="toform" component={ToForm} />
+      <Route path="subscription" component={Subscription} />
     </Route>
+    <Route path="get" component={Get} />
     <Route path='*' component={NotFound} />
   </Router>
 ), document.getElementById('app'));
