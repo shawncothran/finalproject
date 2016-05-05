@@ -10,6 +10,7 @@ class ToForm extends React.Component {
   handleToFormSubmit (e) {
     let data = _.reduce(this.refs, (total, element, key) => {
       total[key] = element.value;
+
       return total;
     }, {});
 
@@ -22,15 +23,20 @@ class ToForm extends React.Component {
     return (
       <section className="toForm">
         <h1>Pick your recipient!</h1>
-        <fieldset>
+
+      <fieldset>
           <label htmlFor="name">NAME</label>
           <input className='form' ref='name' name='name' type='text' placeholder='Mommy Momephant' onChange={this.handleToFormSubmit.bind(this)} value={this.props.to.name} required/><span className='required'>*</span>
+
           <label htmlFor="address_line1">ADDRESS</label>
           <input className='form' ref='address_line1' name='address_line1' type='text' placeholder='123 Snail Way' onChange={this.handleToFormSubmit.bind(this)} value={this.props.to.address_line1} required/><span className='required'>*</span>
+
           <label htmlFor="address_line2">ADDRESS 2</label>
           <input className='form' ref='address_line2' name='address_line2' type='text' placeholder='(optional)' onChange={this.handleToFormSubmit.bind(this)} value={this.props.to.address_line2} /><span> </span>
+
           <label htmlFor="address_city">CITY</label>
           <input className='form'  ref='address_city' name='address_city' type='text' placeholder='Nashville' onChange={this.handleToFormSubmit.bind(this)} value={this.props.to.address_city} required/><span className='required'>*</span>
+
           <label htmlFor="address_state">STATE</label>
           <select className='form' ref='address_state' name='address_state' onChange={this.handleToFormSubmit.bind(this)} value={this.props.to.address_state} required>
             <option value='TN'>Tennessee</option>
@@ -85,6 +91,7 @@ class ToForm extends React.Component {
             <option value='WI'>Wisconsin</option>
             <option value='WY'>Wyoming</option>
           </select>	<span className='required'>*</span>
+
           <label htmlFor="address_zip">ZIP CODE</label>
           <input className='form' ref='address_zip' name='address_zip' type='text' placeholder='Zip Code' onChange={this.handleToFormSubmit.bind(this)} value={this.props.to.address_zip} required/><span className='required'>*</span>
         </fieldset>

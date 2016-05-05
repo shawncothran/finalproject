@@ -7,6 +7,7 @@ class Home extends React.Component {
 
   render() {
     var layout;
+
     if (false) {
       layout = <Dashboard />;
     } else {

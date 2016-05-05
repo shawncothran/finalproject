@@ -13,9 +13,11 @@ class Account extends React.Component {
       url: 'https://twittertiy.herokuapp.com/users'
     })
   }
+
   render() {
     return (
       <Link className="anchor" to="dashboard">Dashboard</Link>
+
       <form>
         <input type="text" placeholder="finish me!"/>
       </form>

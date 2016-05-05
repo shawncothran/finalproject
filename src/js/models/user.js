@@ -43,13 +43,11 @@ class User {
     // Keep rerendering so that all changes are captured.
   }
 
-
   isLoggedIn() {
     return this.access_token !== null;
   }
 
   register({email, password}, done) {
-
     $.ajax({
       url: 'http://snailephant.herokuapp.com/users',
       type: 'POST',
@@ -130,25 +128,24 @@ class User {
     });
   }
 
-
   pay ({token, plan}, done) {
-      $.ajax({
-        url: 'http://snailephant.herokuapp.com/charges',
-        headers: {
-          'Authorization': 'Bearer ' + this.access_token
-        },
-        type: 'POST',
-        data: {
-            stripeToken: token,
-            plan: plan
-        },
-        dataType: "json"
-      })
-      .then((results) => {
-        done(results);
-      })
-      .fail((err) => {
-      })
+    $.ajax({
+      url: 'http://snailephant.herokuapp.com/charges',
+      headers: {
+        'Authorization': 'Bearer ' + this.access_token
+      },
+      type: 'POST',
+      data: {
+        stripeToken: token,
+        plan: plan
+      },
+      dataType: "json"
+    })
+    .then((results) => {
+      done(results);
+    })
+    .fail((err) => {
+    })
   }
 
   logout() {

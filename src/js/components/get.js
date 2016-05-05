@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 class Get extends React.Component {
   constructor(props) {
     super(props);
+
     this.handleChange = this.handleChange.bind(this);
 
     this.state = {
@@ -29,7 +30,7 @@ class Get extends React.Component {
           <p className="getText">Worst of all, your grandma will never forgive you for failing to remember her favorite holiday: Arbor day.</p>
           <p className="getText">Lucky for you, we can help you will all of this.</p>
           <p className="getText"><strong>Never forget to send a card again.</strong></p>
-          <p className="getText">Snailephant lets you create and mial your own cards! Just pick the date you want it to arrive and let us do the work.</p>
+          <p className="getText">Snailephant lets you create and mail your own cards! Just pick the date you want it to arrive and let us do the work.</p>
 
           <form
             action="//snailephant.us13.list-manage.com/subscribe/post?u=d3512d4f3f484cc6509b89451&amp;id=f936622257"
