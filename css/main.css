@@ -489,6 +489,13 @@ header,
   float: right;
   margin-right: 1vmin; }
 
+.usernav a:first-child {
+  max-width: 40vw;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
 .hero {
   padding: 10vmin 0.5vmin 0.5vmin;
   text-align: center; }
@@ -507,7 +514,6 @@ input {
   font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif; }
 
 .button {
-  font-size: 14px;
   font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
   font-weight: 600;
   padding: 10px 29px;
@@ -656,7 +662,7 @@ input {
       font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
       position: absolute;
       background: none;
-      padding: 0.1vmin;
+      padding: 0.5vmin;
       font-size: 8vmin;
       border: none;
       color: #003BB4;
@@ -808,8 +814,6 @@ input {
 
 .submitCard {
   display: block;
-  font-size: 4vmin;
-  width: 30vmin;
   opacity: 0;
   margin: 6vmin auto 0;
   cursor: default; }
@@ -836,7 +840,8 @@ input {
 .successButton {
   display: inline-block;
   margin: 0 3vmin;
-  width: 27vmin; }
+  padding: 10px;
+  width: 34vmin; }
 
 article.plan {
   margin: 0.75vmin;
@@ -958,9 +963,8 @@ article.plan {
   right: 0;
   bottom: 0;
   left: 0;
-  overflow: hidden;
-  background: #fff url(https://s3.amazonaws.com/snailephant/mailbox-web.jpg) left top no-repeat fixed;
-  background-size: 50vw;
+  overflow: scroll;
+  background: none;
   clear: left;
   font: 14px Helvetica, Arial, sans-serif; }
   #mc_embed_signup label {
@@ -969,31 +973,59 @@ article.plan {
     margin-bottom: 23px;
     letter-spacing: -0.37px;
     font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif; }
+  #mc_embed_signup .button {
+    width: 100%; }
+  @media screen and (min-width: 800px) {
+    #mc_embed_signup {
+      background: #fff url(https://s3.amazonaws.com/snailephant/mailbox-web.jpg) left top no-repeat fixed;
+      background-size: 50vw;
+      overflow: hidden; }
+      #mc_embed_signup .button {
+        width: auto; } }
 
 .subscribe-form {
-  left: 50vw;
-  padding: 25px;
+  left: 0;
+  padding: 15px;
   position: relative;
-  width: 380px; }
+  width: 300px;
+  margin: 0 auto; }
+  @media screen and (min-width: 800px) {
+    .subscribe-form {
+      margin: 0;
+      left: 50vw;
+      padding: 25px;
+      width: 380px; } }
 
 .getLogo {
-  width: 200px;
-  margin: 3px 0 32px; }
+  width: 150px;
+  margin: 3px 0 0; }
+  @media screen and (min-width: 800px) {
+    .getLogo {
+      margin: 3px 0 32px;
+      width: 200px; } }
 
 .getText {
-  margin-bottom: 17px;
+  margin-bottom: 14px;
   font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
   letter-spacing: -0.37px; }
   .getText:first-of-type {
     margin-top: 0; }
+  @media screen and (min-width: 800px) {
+    .getText {
+      margin-bottom: 17px; } }
 
 .hashtag {
   color: #044860;
   margin-bottom: 8px;
+  margin-top: 10px;
   font-weight: 900;
   font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
   font-size: 20px;
   letter-spacing: -0.9px; }
+  @media screen and (min-width: 800px) {
+    .hashtag {
+      margin-top: 15px;
+      font-size: 20px; } }
 
 #mce-EMAIL {
   background: #fff;
@@ -1006,7 +1038,10 @@ article.plan {
   font-weight: 100;
   line-height: 25px;
   margin-bottom: 24px;
-  width: 300px; }
+  width: 270px; }
+  @media screen and (min-width: 800px) {
+    #mce-EMAIL {
+      width: 300px; } }
 
 .-full {
   width: 75vmin;
