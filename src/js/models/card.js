@@ -6,10 +6,10 @@ class Card {
   cardFront(data) {
     let {
       background,
-      fontFamily,
       color,
+      fontFamily,
       fontSize,
-      text
+      text,
     } = data;
 
     return `<html>
@@ -26,13 +26,13 @@ class Card {
             font-size: 36.28px;
           }
           body {
-            width:6.25in;
+            background-color:${background};
+            background-repeat:no-repeat;
+            background-size:6.25in 4.25in;
             height:4.25in;
             margin:0;
             padding:0;
-            background-color:${background};
-            background-size:6.25in 4.25in;
-            background-repeat:no-repeat;
+            width:6.25in;
           }
           #safe-area {
             position:absolute;
@@ -42,17 +42,17 @@ class Card {
             top:.1875in;
           }
           h1 {
-            display:block;
-            word-wrap:break-word;
-            text-align:center;
-            font-family:'${fontFamily}';
-            font-weight:400;
-            font-size:${fontSize};
             color:${color};
+            display:block;
+            font-family:'${fontFamily}';
+            font-size:${fontSize};
+            font-weight:400;
             margin:0;
             position:relative;
+            text-align:center;
             top:50%;
             transform:translateY(-50%);
+            word-wrap:break-word;
           }
         </style>
         <style media="screen">
@@ -81,14 +81,14 @@ class Card {
             font-family:${fontFamily};
             font-size:${fontSize};
             font-weight:400;
-            width: 100%;
             margin:0;
             position:absolute;
             text-align:center;
             top:50%;
+            width: 100%;
             transform:translateY(-50%);
             -webkit-transform: translateY(-50%);
-           -ms-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
             word-wrap:break-word;
           }
         </style>
@@ -115,7 +115,7 @@ class Card {
       address_state: data.to.address_state,
       address_zip: data.to.address_zip,
       back: "<html></html>",
-      date: data.date
+      date: data.date,
     }
 
     let options = {
@@ -124,7 +124,7 @@ class Card {
       data: {card: reqData},
       headers: {
         "Authorization": "Bearer " + User.access_token
-      }
+      },
     };
 
     $.ajax(options).done(response => {
@@ -137,4 +137,4 @@ class Card {
   }
 }
 
-  export default new Card();
+export default new Card();

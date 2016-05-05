@@ -3,14 +3,14 @@ import React from 'react';
 import $ from 'jquery';
 import { Link } from 'react-router';
 
-import User from "../models/user";
-import Timeline from './timeline';
-import CardCreator from './cardcreator';
 import Background from './background';
-import Text from './text';
-import DateContainer from './dateContainer';
-import ToForm from './toform';
 import Card from '../models/card';
+import CardCreator from './cardcreator';
+import DateContainer from './dateContainer';
+import Text from './text';
+import Timeline from './timeline';
+import ToForm from './toform';
+import User from "../models/user";
 
 const API_ROOT = 'http://snailephant.herokuapp.com/cards/';
 
@@ -23,13 +23,13 @@ class Dashboard extends React.Component {
         background: "#dddddd",
         fontFamily: "Annie Use Your Telescope",
         color: "#000",
-        fontSize: "2rem"
+        fontSize: "1.6rem",
       },
       to: {
         address_line2: "(optional)"
       },
       date: {},
-      cards: []
+      cards: [],
     }
 
     this.handleUpdateCard = this.handleUpdateCard.bind(this)
@@ -49,7 +49,7 @@ class Dashboard extends React.Component {
     let headers = {};
 
     if (User.access_token) {
-        headers['Authorization'] = 'Bearer ' + User.access_token;
+      headers['Authorization'] = 'Bearer ' + User.access_token;
     }
 
     $.ajax({
@@ -66,16 +66,21 @@ class Dashboard extends React.Component {
   render() {
     // <CardCreator {...this.state}  views = {views}/>
     let views = [
-      (<Background {...this.state} updateCard={this.handleUpdateCard}/>),
-      (<Text {...this.state} updateCard={this.handleUpdateCard}/>),
-      (<ToForm {...this.state} updateCard={this.handleUpdateCard}/>),
-      (<DateContainer {...this.state} history={this.props.history} getUserCards={this.getUserCards} updateCard={this.handleUpdateCard}/>)];
+      (<Background {...this.state}    updateCard={this.handleUpdateCard}/>),
+      (<Text {...this.state}          updateCard={this.handleUpdateCard}/>),
+      (<ToForm {...this.state}        updateCard={this.handleUpdateCard}/>),
+      (<DateContainer {...this.state} history={this.props.history}
+                                      getUserCards={this.getUserCards}
+                                      updateCard={this.handleUpdateCard}/>),
+    ];
     let childrenWithProps = React.Children.map(this.props.children, child => {
       return React.cloneElement(child, {...this.state, views})
     })
+
     return (
       <section className="dashboard">
         <Timeline cards={this.state.cards}/>
+
         {childrenWithProps}
       </section>
     )

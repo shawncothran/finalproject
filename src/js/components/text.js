@@ -44,7 +44,9 @@ class Text extends React.Component {
     return (
       <section>
         <h1>Pick your message & style!</h1>
-        <textarea className="cardText" ref="text" maxLength="140" placeholder="Type your message here!" onChange={this.handleText.bind(this)} value={this.props.front.text} autofocus></textarea>
+
+        <textarea className="cardText" ref="text" maxLength="130" placeholder="Type your message here!" onChange={this.handleText.bind(this)} value={this.props.front.text} autofocus></textarea>
+
         <section className="fontSelects">
           <select className="fontFamily" onChange={this.handleFontFamily.bind(this)}>
             <option value='Annie Use Your Telescope'>Annie Use Your Telescope</option>
@@ -53,12 +55,14 @@ class Text extends React.Component {
             <option value='Raleway'>Raleway</option>
             <option value='Mountains of Christmas'>Mountains of Christmas</option>
           </select>
+
           <select className="fontSize" onChange={this.handleFontSize.bind(this)}>
-            <option value='2rem'>Medium</option>
-            <option value='3rem'>LARGE</option>
-            <option value='1.3rem'>small</option>
+            <option value='1.6rem'>Medium</option>
+            <option value='2.2rem'>LARGE</option>
+            <option value='1rem'>small</option>
           </select>
         </section>
+
         <section className="fontColor">
           <div className="fontColorPicker one" onClick={this.handleColor.bind(this, '#000000')}></div>
           <div className="fontColorPicker two" onClick={this.handleColor.bind(this, '#505050')}></div>

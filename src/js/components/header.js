@@ -11,41 +11,44 @@ class Header extends React.Component {
   render() {
     let user = JSON.parse(localStorage.getItem('header'));
     let email;
+    let homeStatus;
+    let loginStatus;
+    let userStatus;
+
     if (user) {
       email = user.email
     }
-    let HomeStatus,
-        LoginStatus,
-        UserStatus;
 
-      if (!User.access_token) {
-        HomeStatus = <Link className="logo" to="/">
-                       <img className="logoImg"
-                            src="https://s3.amazonaws.com/snailephant/snailephant-logo.svg"
-                            alt="snailephant logo"
-                            title="snailephant" />
-                     </Link>
-        LoginStatus = <Link className="anchor" to="login">Login</Link>
-        UserStatus = <Link className="anchor" to="register">Register</Link>
-      } else {
-        HomeStatus = <Link className="logo" to="dashboard">
-                       <img className="logoImg"
-                            src="https://s3.amazonaws.com/snailephant/snailephant-logo.svg"
-                            alt="snailephant logo"
-                            title="snailephant" />
-                       </Link>
-        LoginStatus = <Link className="anchor" to="subscription">{ email }</Link>
-        UserStatus = <Link className="anchor" to="/" onClick={() => {
-          User.logout();
-        }}>logout</Link>
+    if (!User.access_token) {
+      homeStatus = <Link className="logo" to="/">
+                     <img className="logoImg"
+                          src="https://s3.amazonaws.com/snailephant/snailephant-logo.svg"
+                          alt="snailephant logo"
+                          title="snailephant" />
+                   </Link>
+      loginStatus = <Link className="anchor" to="login">Login</Link>
+      userStatus = <Link className="anchor" to="register">Register</Link>
+    } else {
+      homeStatus = <Link className="logo" to="dashboard">
+                     <img className="logoImg"
+                          src="https://s3.amazonaws.com/snailephant/snailephant-logo.svg"
+                          alt="snailephant logo"
+                          title="snailephant" />
+                   </Link>
+      loginStatus = <Link className="anchor" to="subscription">{ email }</Link>
+      userStatus = <Link className="anchor" to="/" onClick={() => {
+        User.logout();
+      }}>logout</Link>
     }
 
     return (
       <header className="homeHeader">
-        {HomeStatus}
+        {homeStatus}
+
         <nav className="usernav">
-          {LoginStatus}
-          {UserStatus}
+          {loginStatus}
+
+          {userStatus}
         </nav>
       </header>
     )

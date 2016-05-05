@@ -18,11 +18,13 @@ class Timeline extends React.Component {
         <div className="outerwrap">
           <div className="wrap">
             <iframe className="frame" scrolling="no" key={card.id} src={API_ROOT + card.id} />
+
             <date>{Moment(card.date).format("MMM Do YYYY")}</date>
-            </div>
           </div>
-        )
+        </div>
+      )
     });
+
     if (!cards.length) {
       cards = (<h1 className="timeline_nocards">Your Cards Will Appear Here.</h1>)
     }
@@ -30,6 +32,7 @@ class Timeline extends React.Component {
     return (
       <section className="timeline">
         <h1>Timeline</h1>
+
         <div className="cardWrapper">
           {cards}
         </div>
