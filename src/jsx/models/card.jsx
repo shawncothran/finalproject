@@ -1,22 +1,22 @@
-import $ from "jquery";
+import $ from 'jquery';
 
-import User from "./user";
+import User from './user';
 
 class Card {
   cardFront(data) {
-    let {
+    const {
       background,
-      fontFamily,
       color,
+      fontFamily,
       fontSize,
-      text
+      text,
     } = data;
 
     return `<html>
       <head>
         <title>Snailephant 4x6 Postcard Front</title>
         <link href='https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope|Great+Vibes|Playfair+Display:700|Raleway:900,300,200|Mountains+of+Christmas' rel='stylesheet' type='text/css'>
-        <style media="print">
+        <style media='print'>
           *,*:before,*:after {
             -webkit-box-sizing:border-box;
             -moz-box-sizing:border-box;
@@ -26,13 +26,13 @@ class Card {
             font-size: 36.28px;
           }
           body {
-            width:6.25in;
+            background-color:${background};
+            background-repeat:no-repeat;
+            background-size:6.25in 4.25in;
             height:4.25in;
             margin:0;
             padding:0;
-            background-color:${background};
-            background-size:6.25in 4.25in;
-            background-repeat:no-repeat;
+            width:6.25in;
           }
           #safe-area {
             position:absolute;
@@ -42,20 +42,20 @@ class Card {
             top:.1875in;
           }
           h1 {
-            display:block;
-            word-wrap:break-word;
-            text-align:center;
-            font-family:'${fontFamily}';
-            font-weight:400;
-            font-size:${fontSize};
             color:${color};
+            display:block;
+            font-family:'${fontFamily}';
+            font-size:${fontSize};
+            font-weight:400;
             margin:0;
             position:relative;
+            text-align:center;
             top:50%;
             transform:translateY(-50%);
+            word-wrap:break-word;
           }
         </style>
-        <style media="screen">
+        <style media='screen'>
           *, *:before, *:after {
             box-sizing:border-box;
             -moz-box-sizing:border-box;
@@ -81,14 +81,14 @@ class Card {
             font-family:${fontFamily};
             font-size:${fontSize};
             font-weight:400;
-            width: 100%;
             margin:0;
             position:absolute;
             text-align:center;
             top:50%;
+            width: 100%;
             transform:translateY(-50%);
             -webkit-transform: translateY(-50%);
-           -ms-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
             word-wrap:break-word;
           }
         </style>
@@ -98,38 +98,34 @@ class Card {
           <h1>${text}</h1>
         </div>
       </body>
-    </html>`
+    </html>`;
   }
 
   postCard(data, done) {
-    let url = "http://snailephant.herokuapp.com/cards";
-    let front = this.cardFront(data.front);
-
-    let reqData = {
+    const url = 'http://snailephant.herokuapp.com/cards';
+    const front = this.cardFront(data.front);
+    const reqData = {
       front,
       name: data.to.name,
       address_line1: data.to.address_line1,
       address_line2: data.to.address_line2,
       address_city: data.to.address_city,
-      address_country: "US",
+      address_country: 'US',
       address_state: data.to.address_state,
       address_zip: data.to.address_zip,
-      back: "<html></html>",
-      date: data.date
-    }
-
-    let options = {
-      url: url,
-      method: "POST",
-      data: {card: reqData},
-      headers: {
-        "Authorization": "Bearer " + User.access_token
-      }
+      back: '<html></html>',
+      date: data.date,
+    };
+    const options = {
+      url,
+      method: 'POST',
+      data: { card: reqData },
+      headers: { Authorization: `Bearer ${User.accessToken}` },
     };
 
-    $.ajax(options).done(response => {
-        done();
-    }).fail(error => {
+    $.ajax(options).done(() => {
+      done();
+    }).fail((error) => {
       if (done) {
         done(error);
       }
@@ -137,4 +133,4 @@ class Card {
   }
 }
 
-  export default new Card();
+export default new Card();
