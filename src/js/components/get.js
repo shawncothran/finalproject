@@ -23,13 +23,12 @@ class Get extends React.Component {
         <article className="subscribe-form">
           <img className="getLogo" src="https://s3.amazonaws.com/snailephant/snailephant-logo.svg" alt="snailephant logo"/>
 
-          <h2 className="hashtag">#ThatFeelingWhen</h2>
-
-          <p className="getText">Few things feel worse than forgetting to send your mother a birthday card. SHE'S YOUR MOM!</p>
-          <p className="getText">Worst of all, your grandma will never forgive you for failing to remember her favorite holiday: Arbor day.</p>
-          <p className="getText">Lucky for you, we can help you will all of this.</p>
+          <h2 className="hashtag">#ForgettingBirthdayCards</h2>
           <p className="getText"><strong>Never forget to send a card again.</strong></p>
-          <p className="getText">Snailephant lets you create and mial your own cards! Just pick the date you want it to arrive and let us do the work.</p>
+          <p className="getText">Stop forgetting to buy a your mother a birthday day card.</p>
+          <p className="getText">In 3 minutes you can create and send a card.</p>
+          <p className="getText">All from your computer.</p>
+          <p className="getText">You just pick the date you want the card to arrive and we will do the rest.</p>
 
           <form
             action="//snailephant.us13.list-manage.com/subscribe/post?u=d3512d4f3f484cc6509b89451&amp;id=f936622257"

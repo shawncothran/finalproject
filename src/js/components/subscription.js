@@ -131,19 +131,19 @@ render() {
           <h1>Choose Your Snailscription Plan</h1>
           <article className="plan" id="solo" onClick={this.handlePlanSelect.bind(this, 'solo')}>
             <p>solo</p>
-            <label>Individual Card for $2</label>
+            <label>Individual Card for $4.99</label>
           </article>
           <article className="plan" id="basic" onClick={this.handlePlanSelect.bind(this, 'basic')}>
             <p>basic</p>
-            <label>3 Cards Each Month for $5/mo</label>
+            <label>Coming soon!</label>
           </article>
           <article className="plan" id="premium" onClick={this.handlePlanSelect.bind(this, 'premium')}>
             <p>premium</p>
-            <label>5 Cards Each Month for $8/mo</label>
+            <label>Coming soon!</label>
           </article>
           <article className="plan" id="platinum" onClick={this.handlePlanSelect.bind(this, 'platinum')}>
             <p>platinum</p>
-            <label>10 Cards Each Month for $14/mo</label>
+            <label>Coming soon!</label>
           </article>
         </div>
         <div className="response" id="response"> { resultsMsg } </div>

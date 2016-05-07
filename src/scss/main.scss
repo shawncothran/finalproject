@@ -664,19 +664,21 @@ article.plan {
     margin-bottom: 23px;
     letter-spacing: -0.37px;
     font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
+    font-size: 1vw
   }
 }
 .subscribe-form {
   left: 50vw;
   padding: 25px;
   position: relative;
-  width: 380px;
+  width: 400px;
 }
 .getLogo {
   width: 200px;
   margin: 3px 0 32px;
 }
 .getText {
+  font-size: 1vw;
   margin-bottom: 17px;
   font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
   letter-spacing: -0.37px;
@@ -689,7 +691,7 @@ article.plan {
   margin-bottom: 8px;
   font-weight: 900;
   font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
-  font-size: 20px;
+  font-size: 1.1vw;
   letter-spacing: -0.9px;
 }
 #mce-EMAIL {
@@ -698,7 +700,7 @@ article.plan {
   border: solid 1px #ddd;
   box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.5);
   padding: 4px 14px;
-  font-size: 14px;
+  font-size: 1vw;
   font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
   font-weight: 100;
   line-height: 25px;
