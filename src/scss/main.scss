@@ -671,7 +671,7 @@ article.plan {
     margin-bottom: 23px;
     letter-spacing: -0.37px;
     font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
-    font-size: 1.4em;
+    font-size: 1.3em;
   }
 
   .button {
@@ -683,6 +683,7 @@ article.plan {
     overflow: hidden;
     .button {
       width: auto;
+      font-size: 1.2em;
     }
   }
 }
@@ -706,8 +707,8 @@ article.plan {
 
   @include media(min-width 800px) {
     margin: 3px 0 32px;
-    width: 200px;
-  }
+    width: 300px;
+    }
 }
 .getText {
   font-size: 1.6em;

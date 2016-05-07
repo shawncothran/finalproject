@@ -27,7 +27,7 @@ class Get extends React.Component {
           <h2 className="hashtag">#ForgettingTheCard</h2>
           <p className="getText headline"><strong>Never forget to send a card again.</strong></p>
           <p className="getText">Stop forgetting to buy a your mother a birthday day card.</p>
-          <p className="getText">In 3 minutes you can create and send a card.</p>
+          <Link className="logo" to="/"><p className="getText">In 3 minutes you can create and send a card.</p></Link>
           <p className="getText">All from your computer.</p>
           <p className="getText">You just pick the date you want the card to arrive and we will do the rest.</p>
           <p className="getText">Just pick the date you want it to arrive and let us do the work.</p>
