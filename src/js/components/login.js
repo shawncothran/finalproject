@@ -6,12 +6,19 @@ import User from '../models/user';
 class Login extends React.Component {
   constructor(props){
     super(props)
+
     this.handleLogin = this.handleLogin.bind(this);
 
     this.state = {
       email: null
     }
   }
+
+  // isLoggedIn() {
+  //   if (User.access_token) {
+  //     this.props.history.pushState(null, "dashboard");
+  //   }
+  // }();
 
   handleLogin(e) {
     e.preventDefault();
@@ -30,18 +37,22 @@ class Login extends React.Component {
       })
     } else {
       alert("Hmmm... I don't remember that one. Try again");
-      this.refs.email.value = "",
-      this.refs.password.value = ""
+      this.refs.email.value = "";
+      this.refs.password.value = "";
     }
   }
+
   render() {
     return (
       <form className="userForm" onSubmit={this.handleLogin}>
         <h2>Log in</h2>
+
         <p>Manage and create your cards!</p>
-        <input type="text" ref="email" placeholder="Millie@Snailephant.com" autofocus required/>
-        <input type="password" ref="password" placeholder="password" required/>
-        <input type="submit" value="login" required/>
+
+        <input className="-full" type="text" ref="email" placeholder="Millie@Snailephant.com" autofocus required/>
+        <input className="-full" type="password" ref="password" placeholder="password" required/>
+        <input className="button -full" type="submit" value="login" required/>
+
         <Link className="anchor" to="register">Not a member? Sign Up</Link>
       </form>
     )

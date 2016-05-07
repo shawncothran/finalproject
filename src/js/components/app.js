@@ -8,10 +8,11 @@ import ToForm from './toform';
 class App extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       toform: "",
       date: "",
-      html: ""
+      html: "",
     }
   }
 
@@ -27,6 +28,7 @@ class App extends React.Component {
     return (
       <div>
         <Header />
+
         {childrenWithProps}
       </div>
     )

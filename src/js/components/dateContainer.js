@@ -7,7 +7,7 @@ import Timeline from './timeline';
 class DateContainer extends React.Component {
   constructor(props, context) {
     super(props);
-    console.log('props', this.props);
+
     this.state = {
       disabled: "disabled"
     };
@@ -43,11 +43,15 @@ class DateContainer extends React.Component {
   render() {
     let minTime = moment().add(7, "d").format('YYYY-MM-DD');
     let maxTime = moment().add(373, "d").format('YYYY-MM-DD');
+    let validTime = function( current ){
+      return current.isBetween(minTime, maxTime);
+    };
+
     return (
       <section>
         <h1>Pick when your card will arrive!</h1>
         <input type="date" min={minTime} max={maxTime} onChange={this.handleDate.bind(this)} />
-        <button className="button submitCard"
+        <button className="button submitCard -full"
                 style={this.state.style}
                 disabled={this.state.disabled}
                 onClick={this.handlePostCard.bind(this)}>Schedule your card!</button>

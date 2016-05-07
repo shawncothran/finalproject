@@ -6,6 +6,7 @@ import User from '../models/user';
 class Register extends React.Component {
   constructor(props) {
     super(props);
+
     this.handleSubmit = this.handleSubmit.bind(this);
 
     this.state = {
@@ -28,29 +29,37 @@ class Register extends React.Component {
       });
     } else {
       alert("Type password identically both times. Try again!")
-      this.refs.email.value = "",
-      this.refs.password.value = "",
-      this.refs.passconfirm.value = ""
+
+      this.refs.email.value = "";
+      this.refs.password.value = "";
+      this.refs.passconfirm.value = "";
     }
   }
+
   render() {
     let successMsg;
+
     if (this.state.email) {
-        successMsg = (
-        <p className="registerSuccess">Millie: "{this.state.email}, I'll Remember that"
+      successMsg = (
+        <p className="registerSuccess">{this.state.email}, I'll Remember that
           <Link className="anchor" to="dashboard">Continue to the Dashboard to create your first card!</Link>
         </p>
       )
     }
+
     return (
       <form className="userForm" onSubmit={this.handleSubmit}>
         <h2>Sign Up for Free</h2>
+
         <p>Make your first card in seconds!</p>
+
         <div id="success">{successMsg}</div>
-        <input type="text" ref="email" placeholder="Millie@Snailephant.com" autofocus required/>
-        <input type="password" ref="password" placeholder="secret passcode" required/>
-        <input type="password" ref="passconfirm" placeholder="wait, what was that?" required/>
-        <input type="submit" value="sign up"/>
+
+        <input className="-full" type="text" ref="email" placeholder="Millie@Snailephant.com" autofocus required/>
+        <input className="-full" type="password" ref="password" placeholder="secret passcode" required/>
+        <input className="-full" type="password" ref="passconfirm" placeholder="wait, what was that?" required/>
+        <input className="button -full" type="submit" value="sign up"/>
+
         <Link className="anchor" to="login">Already a member? Login</Link>
       </form>
     )
