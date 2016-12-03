@@ -12,7 +12,7 @@ class Hero extends React.Component {
 
         <Link to="register" className="button -full">Create a card!</Link>
 
-        <img className="heroVideo" src="https://s3.amazonaws.com/snailephant/heroVidOpt.gif"  alt="demo" title="demo" />
+        <img className="heroVideo" src="https://s3.amazonaws.com/snailephant/heroVidOpt.gif"  alt="demo" title="demo">
       </section>
     )
   }

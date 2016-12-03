@@ -12,8 +12,8 @@ class Subscription extends React.Component {
     this.state = {
       error: null,
       disableButton: false,
-      errorMsg: "",
-      plan: "",
+      errorMsg: '',
+      plan: '',
     };
 
     this.handlePaySubmit = this.handlePaySubmit.bind(this);
@@ -27,19 +27,18 @@ class Subscription extends React.Component {
   handlePaySubmit(e) {
     e.preventDefault();
 
-    this.setState({disableButton: true, error: null, errorMsg: ''})
+    this.setState({ disableButton: true, error: null, errorMsg: '' });
 
     Stripe.card.createToken(this.refs.form, this.stripeResponseHandler);
-  };
-
-  handlePlanSelect (plan) {
-    this.setState({
-      plan: plan,
-    })
   }
 
-  stripeResponseHandler (code, response) {
-    let errorMsg;
+  handlePlanSelect(plan) {
+    this.setState({
+      plan,
+    });
+  }
+
+  stripeResponseHandler(code, response) {
     let token;
     let plan;
 
@@ -47,36 +46,30 @@ class Subscription extends React.Component {
       this.setState({
         errorMsg: response.error.message,
         disableButton: false,
-      })
+      });
     } else {
-      let token = response.id;
-      let plan = this.state.plan;
+      token = response.id;
+      plan = this.state.plan;
 
-      User.pay({token, plan}, this.handleResults);
+      User.pay({ token, plan }, this.handleResults);
     }
   }
 
   handleResults(results) {
     if (!results) {
-      this.setState({
-        error: true
-      });
+      this.setState({ error: true });
     } else {
-      this.setState({
-        error: false
-      });
+      this.setState({ error: false });
     }
 
-    this.refs.cc.value = "";
-    this.refs.cvc.value = "";
-    this.refs.mo.value = "";
-    this.refs.yr.value = "";
+    this.refs.cc.value = '';
+    this.refs.cvc.value = '';
+    this.refs.mo.value = '';
+    this.refs.yr.value = '';
   }
 
-  hideResults(e) {
-    this.setState({
-      error: null
-    });
+  hideResults() {
+    this.setState({ error: null });
   }
 
   render() {
@@ -84,7 +77,7 @@ class Subscription extends React.Component {
     let cardVisible;
 
     if (this.state.plan) {
-      let planClasses = classNames({
+      const planClasses = classNames({
         hide_until_plan_selected: true,
         solo: this.state.plan === 'solo',
         basic: this.state.plan === 'basic',
@@ -96,42 +89,68 @@ class Subscription extends React.Component {
         <div className={planClasses} key={this.state.plan}>
           <h3 id="selected_plan">{this.state.plan}</h3>
           <div className="form-row">
-            <label>
+            <label htmlFor="cc">
               <span className="cc">Card Number</span>
-              <input type="text" ref="cc" size="20" data-stripe="number"/>
+              <input
+                type="text"
+                ref="cc"
+                name="cc"
+                size="20"
+                data-stripe="number"
+              />
             </label>
           </div>
 
           <div className="form-row">
-            <label>
+            <label htmlFor="cvc">
               <span className="cc">CVC</span>
-              <input type="text" ref="cvc" size="4" data-stripe="cvc"/>
+              <input type="text" ref="cvc" name="cvc" size="4" data-stripe="cvc" />
             </label>
           </div>
 
           <div className="form-row">
-            <label className="float">
+            <label className="float" htmlFor="mo">
               <span className="cc">Expiration (MM/YYYY)</span>
-              <input type="text" ref="mo" size="2" data-stripe="exp-month"/>
+              <input type="text" ref="mo" name="mo" size="2" data-stripe="exp-month" />
             </label>
             <span id="YYYY"> / </span>
-            <input type="text" ref="yr" size="4" data-stripe="exp-year"/>
+            <input type="text" ref="yr" size="4" data-stripe="exp-year" />
           </div>
 
-          <button className="paymentSubmit" type="submit" disabled={this.state.disableButton}>Submit Payment</button>
+          <button
+            className="paymentSubmit"
+            type="submit"
+            disabled={this.state.disableButton}
+          >
+            Submit Payment
+          </button>
         </div>
-      )
+      );
     }
 
     if (this.state.error === false) {
-      resultsMsg = <div className="successMsg"><button onClick={this.hideResults}>X</button><p>You're all set! <Link className="anchor" to="dashboard">Head to your Dashboard</Link></p></div>
-    } else if (this.state.error === true){
-      resultsMsg = <div className="failMsg"><button onClick={this.hideResults}>X</button><p>Oops, something flubbed! Try again. If the error persists, email us at support@snailephant.com and we can walk you through it.</p></div>
+      resultsMsg = (
+        <div className="successMsg">
+          <button onClick={this.hideResults}>X</button>
+          <p>You're all set! <Link className="anchor" to="dashboard">
+            Head to your Dashboard</Link>
+          </p>
+        </div>);
+    } else if (this.state.error === true) {
+      resultsMsg = (
+        <div className="failMsg">
+          <button onClick={this.hideResults}>X</button>
+          <p>
+            Oops, something flubbed! Try again
+            . If the error persists
+            , email us at support@snailephant.com and we can walk you through it.
+          </p>
+        </div>);
     }
 
     return (
       <form className="subForm" ref="form" onSubmit={this.handlePaySubmit}>
-          <div className="form-row">
+        <div className="form-row">
           <h1>Choose Your Snailscription Plan</h1>
           <article className="plan" id="solo" onClick={this.handlePlanSelect.bind(this, 'solo')}>
             <p>solo</p>
@@ -151,10 +170,16 @@ class Subscription extends React.Component {
           </article>
         </div>
         <div className="response" id="response"> { resultsMsg } </div>
-        <div  className="failMsg"ref="payment-errors">{this.state.errorMsg}</div>
-        <ReactCSSTransitionGroup transitionName="fancy" transitionEnterTimeout={500} transitionLeaveTimeout={500}>{cardVisible}</ReactCSSTransitionGroup>
+        <div className="failMsg" ref="payment-errors">{this.state.errorMsg}</div>
+        <ReactCSSTransitionGroup
+          transitionName="fancy"
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={500}
+        >
+          {cardVisible}
+        </ReactCSSTransitionGroup>
       </form>
-    )
+    );
   }
 }
 

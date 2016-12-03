@@ -21,19 +21,23 @@ class Header extends React.Component {
 
     if (!User.access_token) {
       homeStatus = <Link className="logo" to="/">
-                     <img className="logoImg"
-                          src="https://s3.amazonaws.com/snailephant/snailephant-logo.svg"
-                          alt="snailephant logo"
-                          title="snailephant" />
+                     <img
+                       alt="snailephant logo"
+                       className="logoImg"
+                       src="https://s3.amazonaws.com/snailephant/snailephant-logo.svg"
+                       title="snailephant"
+                     >
                    </Link>
       loginStatus = <Link className="anchor" to="login">Login</Link>
       userStatus = <Link className="anchor" to="register">Register</Link>
     } else {
       homeStatus = <Link className="logo" to="dashboard">
-                     <img className="logoImg"
-                          src="https://s3.amazonaws.com/snailephant/snailephant-logo.svg"
-                          alt="snailephant logo"
-                          title="snailephant" />
+                     <img
+                       alt="snailephant logo"
+                       className="logoImg"
+                       src="https://s3.amazonaws.com/snailephant/snailephant-logo.svg"
+                       title="snailephant"
+                     >
                    </Link>
       loginStatus = <Link className="anchor" to="subscription">{ email }</Link>
       userStatus = <Link className="anchor" to="/" onClick={() => {

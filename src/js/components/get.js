@@ -22,13 +22,13 @@ class Get extends React.Component {
     return (
       <section id="mc_embed_signup">
         <article className="subscribe-form">
-          <img className="getLogo" src="https://s3.amazonaws.com/snailephant/snailephant-logo.svg" alt="snailephant logo"/>
+          <img className="getLogo" src="https://s3.amazonaws.com/snailephant/snailephant-logo.svg" alt="snailephant logo">
 
           <h2 className="hashtag">#ThatFeelingWhen</h2>
 
           <p className="getText">Few things feel worse than forgetting to send your mother a birthday card. SHE'S YOUR MOM!</p>
           <p className="getText">Worst of all, your grandma will never forgive you for failing to remember her favorite holiday: Arbor day.</p>
-          <p className="getText">Lucky for you, we can help you will all of this.</p>
+          <p className="getText">Lucky for you, we can help you with all of this.</p>
           <p className="getText"><strong>Never forget to send a card again.</strong></p>
           <p className="getText">Snailephant lets you create and mail your own cards! Just pick the date you want it to arrive and let us do the work.</p>
 

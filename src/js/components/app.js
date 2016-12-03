@@ -1,29 +1,26 @@
-import React from 'react';
-import { Link } from 'react-router';
+import React, { Component } from 'react';
 
 import User from '../models/user';
 import Header from './header';
-import ToForm from './toform';
 
-class App extends React.Component {
+export default class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      toform: "",
-      date: "",
-      html: "",
-    }
+      toform: '',
+      date: '',
+      html: '',
+    };
   }
 
   componentDidMount() {
     User.checkloginstatus();
   }
 
-  render () {
-    let childrenWithProps = React.Children.map(this.props.children, child => {
-      return React.cloneElement(child)
-    })
+  render() {
+    const childrenWithProps =
+      React.Children.map(this.props.children, child => React.cloneElement(child));
 
     return (
       <div>
@@ -31,8 +28,6 @@ class App extends React.Component {
 
         {childrenWithProps}
       </div>
-    )
+    );
   }
 }
-
-export default App;

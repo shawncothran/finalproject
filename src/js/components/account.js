@@ -1,28 +1,27 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router';
+import $ from 'jquery';
 
-class Account extends React.Component {
-  constructor(props){
-    super(props)
+export default class Account extends Component {
+  constructor(props) {
+    super(props);
 
     this.handleSubscribe = this.handleSubscribe.bind(this);
   }
 
   handleSubscribe() {
     $.ajax({
-      url: 'https://twittertiy.herokuapp.com/users'
-    })
+      url: 'https://twittertiy.herokuapp.com/users',
+    });
   }
 
   render() {
     return (
-      <Link className="anchor" to="dashboard">Dashboard</Link>
-
       <form>
-        <input type="text" placeholder="finish me!"/>
+        <Link className="anchor" to="dashboard">Dashboard</Link>
+
+        <input type="text" placeholder="finish me!" />
       </form>
-    )
+    );
   }
 }
-
-export default Account;

@@ -13,7 +13,7 @@ import CardCreator from './components/cardcreator';
 import Success from './components/success';
 import Get from './components/get';
 
-let NotFound = () => {
+const NotFound = () => {
   return (
     <div className="wrapper">
       <h1 className="error">
