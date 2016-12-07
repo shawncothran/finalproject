@@ -34,3 +34,7 @@ export default class Background extends Component {
     );
   }
 }
+
+Background.propTypes = {
+  updateCard: React.PropTypes.func,
+};

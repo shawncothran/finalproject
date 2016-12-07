@@ -10,16 +10,13 @@ export default class Account extends Component {
   }
 
   handleSubscribe() {
-    $.ajax({
-      url: 'https://twittertiy.herokuapp.com/users',
-    });
+    $.ajax({ url: 'https://twittertiy.herokuapp.com/users' });
   }
 
   render() {
     return (
       <form>
         <Link className="anchor" to="dashboard">Dashboard</Link>
-
         <input type="text" placeholder="finish me!" />
       </form>
     );

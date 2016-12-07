@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router';
 import classNames from 'classnames';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import User from '../models/user';
 
-class Subscription extends React.Component {
+export default class Subscription extends Component {
   constructor(props) {
     super(props);
 
@@ -17,10 +17,13 @@ class Subscription extends React.Component {
     };
 
     this.handlePaySubmit = this.handlePaySubmit.bind(this);
+    this.handlePlanSelect = this.handlePlanSelect.bind(this);
     this.stripeResponseHandler = this.stripeResponseHandler.bind(this);
     this.handleResults = this.handleResults.bind(this);
     this.hideResults = this.hideResults.bind(this);
 
+    /* global someFunction Stripe:true */
+    /* eslint no-undef: "error" */
     Stripe.setPublishableKey('pk_test_eiTJaf9ETvML34B3RRoq2gRh');
   }
 
@@ -29,7 +32,7 @@ class Subscription extends React.Component {
 
     this.setState({ disableButton: true, error: null, errorMsg: '' });
 
-    Stripe.card.createToken(this.refs.form, this.stripeResponseHandler);
+    Stripe.card.createToken(this.formRef, this.stripeResponseHandler);
   }
 
   handlePlanSelect(plan) {
@@ -62,10 +65,10 @@ class Subscription extends React.Component {
       this.setState({ error: false });
     }
 
-    this.refs.cc.value = '';
-    this.refs.cvc.value = '';
-    this.refs.mo.value = '';
-    this.refs.yr.value = '';
+    this.ccRef.value = '';
+    this.cvcRef.value = '';
+    this.moRef.value = '';
+    this.yrRef.value = '';
   }
 
   hideResults() {
@@ -93,7 +96,10 @@ class Subscription extends React.Component {
               <span className="cc">Card Number</span>
               <input
                 type="text"
-                ref="cc"
+                ref={(cc) => {
+                  this.ccRef = cc;
+                  return this.ccRef;
+                }}
                 name="cc"
                 size="20"
                 data-stripe="number"
@@ -104,17 +110,43 @@ class Subscription extends React.Component {
           <div className="form-row">
             <label htmlFor="cvc">
               <span className="cc">CVC</span>
-              <input type="text" ref="cvc" name="cvc" size="4" data-stripe="cvc" />
+              <input
+                data-stripe="cvc"
+                name="cvc"
+                ref={(cvc) => {
+                  this.cvcRef = cvc;
+                  return this.cvcRef;
+                }}
+                size="4"
+                type="text"
+              />
             </label>
           </div>
 
           <div className="form-row">
             <label className="float" htmlFor="mo">
               <span className="cc">Expiration (MM/YYYY)</span>
-              <input type="text" ref="mo" name="mo" size="2" data-stripe="exp-month" />
+              <input
+                data-stripe="exp-month"
+                name="mo"
+                ref={(mo) => {
+                  this.moRef = mo;
+                  return this.moRef;
+                }}
+                size="2"
+                type="text"
+              />
             </label>
             <span id="YYYY"> / </span>
-            <input type="text" ref="yr" size="4" data-stripe="exp-year" />
+            <input
+              data-stripe="exp-year"
+              ref={(yr) => {
+                this.yrRef = yr;
+                return this.yrRef;
+              }}
+              size="4"
+              type="text"
+            />
           </div>
 
           <button
@@ -132,7 +164,7 @@ class Subscription extends React.Component {
       resultsMsg = (
         <div className="successMsg">
           <button onClick={this.hideResults}>X</button>
-          <p>You're all set! <Link className="anchor" to="dashboard">
+          <p>You&#39;re all set! <Link className="anchor" to="dashboard">
             Head to your Dashboard</Link>
           </p>
         </div>);
@@ -149,28 +181,44 @@ class Subscription extends React.Component {
     }
 
     return (
-      <form className="subForm" ref="form" onSubmit={this.handlePaySubmit}>
+      <form
+        className="subForm"
+        onSubmit={this.handlePaySubmit}
+        ref={(form) => {
+          this.formRef = form;
+          return this.formRef;
+        }}
+      >
         <div className="form-row">
           <h1>Choose Your Snailscription Plan</h1>
-          <article className="plan" id="solo" onClick={this.handlePlanSelect.bind(this, 'solo')}>
+          <article className="plan" id="solo" name="solo" onClick={this.handlePlanSelect('solo')}>
             <p>solo</p>
-            <label>Individual Card for $2</label>
+            <label htmlFor="solo">Individual Card for $2</label>
           </article>
-          <article className="plan" id="basic" onClick={this.handlePlanSelect.bind(this, 'basic')}>
+          <article className="plan" id="basic" name="basic" onClick={this.handlePlanSelect('basic')}>
             <p>basic</p>
-            <label>3 Cards Each Month for $5/mo</label>
+            <label htmlFor="basic">3 Cards Each Month for $5/mo</label>
           </article>
-          <article className="plan" id="premium" onClick={this.handlePlanSelect.bind(this, 'premium')}>
+          <article className="plan" id="premium" name="premium" onClick={this.handlePlanSelect('premium')}>
             <p>premium</p>
-            <label>5 Cards Each Month for $8/mo</label>
+            <label htmlFor="premium">5 Cards Each Month for $8/mo</label>
           </article>
-          <article className="plan" id="platinum" onClick={this.handlePlanSelect.bind(this, 'platinum')}>
+          <article className="plan" id="platinum" name="platinum" onClick={this.handlePlanSelect('platinum')}>
             <p>platinum</p>
-            <label>10 Cards Each Month for $14/mo</label>
+            <label htmlFor="platinum">10 Cards Each Month for $14/mo</label>
           </article>
         </div>
-        <div className="response" id="response"> { resultsMsg } </div>
-        <div className="failMsg" ref="payment-errors">{this.state.errorMsg}</div>
+        <div
+          className="response"
+          id="response"
+        >
+          {resultsMsg}
+        </div>
+        <div
+          className="failMsg"
+        >
+          {this.state.errorMsg}
+        </div>
         <ReactCSSTransitionGroup
           transitionName="fancy"
           transitionEnterTimeout={500}
@@ -182,5 +230,3 @@ class Subscription extends React.Component {
     );
   }
 }
-
-export default Subscription;

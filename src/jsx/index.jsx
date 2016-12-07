@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import {browserHistory, Router, Route, IndexRoute, Link} from 'react-router';
+import { browserHistory, Router, Route, IndexRoute, Link } from 'react-router';
 
 import App from './components/app';
 import Home from './components/home';
@@ -13,17 +13,15 @@ import CardCreator from './components/cardcreator';
 import Success from './components/success';
 import Get from './components/get';
 
-const NotFound = () => {
-  return (
-    <div className="wrapper">
-      <h1 className="error">
-        404 ERROR: There is nothing here for you!
-      </h1>
+const NotFound = () => (
+  <div className="wrapper">
+    <h1 className="error">
+      404 ERROR: There is nothing here for you!
+    </h1>
 
-      <Link className="anchor" to="/">Start over.</Link>
-    </div>
-  )
-}
+    <Link className="anchor" to="/">Start over.</Link>
+  </div>
+);
 
 render((
   <Router history={browserHistory}>
@@ -32,13 +30,13 @@ render((
       <Route path="login" component={Login} />
       <Route path="register" component={Register} />
       <Route path="dashboard" component={Dashboard}>
-        <IndexRoute component={CardCreator}/>
+        <IndexRoute component={CardCreator} />
       </Route>
-      <Route path="/success" component={Success}/>
+      <Route path="/success" component={Success} />
       <Route path="toform" component={ToForm} />
       <Route path="subscription" component={Subscription} />
     </Route>
     <Route path="get" component={Get} />
-    <Route path='*' component={NotFound} />
+    <Route path="*" component={NotFound} />
   </Router>
 ), document.getElementById('app'));

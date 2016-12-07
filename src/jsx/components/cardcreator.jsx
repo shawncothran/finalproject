@@ -85,3 +85,8 @@ export default class CardCreator extends Component {
     );
   }
 }
+
+CardCreator.propTypes = {
+  front: React.PropTypes.string,
+  views: React.PropTypes.object,
+};

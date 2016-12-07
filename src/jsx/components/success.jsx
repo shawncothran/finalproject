@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router';
-import moment from 'moment';
 
-class Success extends React.Component {
+export default class Success extends Component {
   constructor(props) {
     super(props);
 
@@ -24,8 +23,6 @@ class Success extends React.Component {
           <Link className="button successButton" to="dashboard">Start a new card!!</Link>
         </section>
       </section>
-    )
+    );
   }
 }
-
-export default Success;

@@ -1,10 +1,10 @@
-import $ from "jquery";
+import $ from 'jquery';
 
-import User from "./user";
+import User from './user';
 
 class Card {
   cardFront(data) {
-    let {
+    const {
       background,
       color,
       fontFamily,
@@ -16,7 +16,7 @@ class Card {
       <head>
         <title>Snailephant 4x6 Postcard Front</title>
         <link href='https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope|Great+Vibes|Playfair+Display:700|Raleway:900,300,200|Mountains+of+Christmas' rel='stylesheet' type='text/css'>
-        <style media="print">
+        <style media='print'>
           *,*:before,*:after {
             -webkit-box-sizing:border-box;
             -moz-box-sizing:border-box;
@@ -55,7 +55,7 @@ class Card {
             word-wrap:break-word;
           }
         </style>
-        <style media="screen">
+        <style media='screen'>
           *, *:before, *:after {
             box-sizing:border-box;
             -moz-box-sizing:border-box;
@@ -98,38 +98,34 @@ class Card {
           <h1>${text}</h1>
         </div>
       </body>
-    </html>`
+    </html>`;
   }
 
   postCard(data, done) {
-    let url = "http://snailephant.herokuapp.com/cards";
-    let front = this.cardFront(data.front);
-
-    let reqData = {
+    const url = 'http://snailephant.herokuapp.com/cards';
+    const front = this.cardFront(data.front);
+    const reqData = {
       front,
       name: data.to.name,
       address_line1: data.to.address_line1,
       address_line2: data.to.address_line2,
       address_city: data.to.address_city,
-      address_country: "US",
+      address_country: 'US',
       address_state: data.to.address_state,
       address_zip: data.to.address_zip,
-      back: "<html></html>",
+      back: '<html></html>',
       date: data.date,
-    }
-
-    let options = {
-      url: url,
-      method: "POST",
-      data: {card: reqData},
-      headers: {
-        "Authorization": "Bearer " + User.access_token
-      },
+    };
+    const options = {
+      url,
+      method: 'POST',
+      data: { card: reqData },
+      headers: { Authorization: `Bearer ${User.accessToken}` },
     };
 
-    $.ajax(options).done(response => {
-        done();
-    }).fail(error => {
+    $.ajax(options).done(() => {
+      done();
+    }).fail((error) => {
       if (done) {
         done(error);
       }
