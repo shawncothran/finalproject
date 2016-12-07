@@ -22,15 +22,12 @@
     "eslint-plugin-jsx-a11y": "^2.2.2",
     "eslint-plugin-react": "^6.3.0",
     "gulp": "^3.9.0",
-<<<<<<< HEAD
-=======
     "gulp-autoprefixer": "^3.1.0",
     "gulp-clean-css": "^2.0.13",
     "gulp-duration": "^0.0.0",
     "gulp-eslint": "^3.0.1",
     "gulp-gh-pages": "^0.5.4",
     "gulp-notify": "^2.2.0",
->>>>>>> 7c2caca6c24ded348d4a7d18238919deaf6f752f
     "gulp-sass": "^2.0.4",
     "gulp-sourcemaps": "^1.9.1",
     "gulp-streamify": "^1.0.2",
