@@ -8,7 +8,12 @@ export default class Timeline extends Component {
     let cards = this.props.cards.map(card => (
       <div className="outerwrap">
         <div className="wrap">
-          <iframe className="frame" scrolling="no" key={card.id} src={rootApi + card.id} />
+          <iframe
+            className="frame"
+            key={card.id}
+            scrolling="no"
+            src={rootApi + card.id}
+          />
 
           <date>{moment(card.date).format('MMM Do YYYY')}</date>
         </div>
@@ -29,5 +34,5 @@ export default class Timeline extends Component {
 }
 
 Timeline.propTypes = {
-  cards: React.PropTypes.object,
+  cards: React.PropTypes.array,
 };

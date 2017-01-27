@@ -1,7 +1,7 @@
-@import '../../dist/bower_components/normalize-css/normalize';
-@import '../../dist/bower_components/bourbon/app/assets/stylesheets/bourbon';
+@import '../../bower_components/normalize-css/normalize';
+@import '../../bower_components/bourbon/app/assets/stylesheets/bourbon';
 // $visual-grid: true;
-@import '../../dist/bower_components/neat/app/assets/stylesheets/neat';
+@import '../../bower_components/neat/app/assets/stylesheets/neat';
 html {
   font-size: 19.2px; // maintains consistent size between rem size on app and rem size on thumbnails //
   @include media(min-width 500px max-width 799px) {

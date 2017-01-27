@@ -122,8 +122,8 @@ class User {
         done(null, response);
         this.dispatch();
       }
-    })
-    .fail(error => done(error));
+    });
+    // .fail(error => done(error));
   }
 
   pay({ token, plan }, done) {

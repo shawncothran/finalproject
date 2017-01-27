@@ -73,7 +73,14 @@ export default class Dashboard extends Component {
       />),
     ];
     const childrenWithProps = React.Children.map(
-      this.props.children, child => React.cloneElement(child, { ...this.state, views })
+      this.props.children,
+      child => React.cloneElement(child, {
+        cards: this.state.cards,
+        date: this.state.date,
+        front: this.state.front,
+        to: this.state.to,
+        views,
+      })
     );
 
     return (

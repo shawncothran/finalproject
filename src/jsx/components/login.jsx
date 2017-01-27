@@ -32,11 +32,11 @@ export default class Login extends Component {
           this.setState({ email });
           this.props.history.pushState(null, 'dashboard');
         } else {
-          alert('Hmmm... I don&#39;t remember that one. Try again');
+          alert('Hmmm... I do not remember that one. Try again');
         }
       });
     } else {
-      alert('Hmmm... I don&#39;t remember that one. Try again');
+      alert('Hmmm... I do not remember that one. Try again');
       this.emailRef.value = '';
       this.passwordRef.value = '';
     }
