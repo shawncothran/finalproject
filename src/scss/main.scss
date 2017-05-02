@@ -845,22 +845,22 @@ article.plan {
 
 .subscribe-form {
   left: 0;
+  margin: 0 auto;
   padding: 15px;
   position: relative;
   width: 300px;
-  margin: 0 auto;
 
   @include media('>=desktop') {
-    margin: 0;
     left: 50vw;
+    margin: 0;
     padding: 25px;
     width: 380px;
   }
 }
 
 .getLogo {
-  width: 150px;
   margin: 3px 0 0;
+  width: 150px;
 
   @include media('>=desktop') {
     margin: 3px 0 32px;
@@ -869,9 +869,9 @@ article.plan {
 }
 
 .getText {
-  margin-bottom: 14px;
   font-family: $sourceSans;
   letter-spacing: -0.37px;
+  margin-bottom: 14px;
 
   &:first-of-type {
     margin-top: 0;
@@ -884,12 +884,12 @@ article.plan {
 
 .hashtag {
   color: #044860;
-  margin-bottom: 8px;
-  margin-top: 10px;
-  font-weight: 900;
   font-family: $sourceSans;
   font-size: 20px;
+  font-weight: 900;
   letter-spacing: -0.9px;
+  margin-bottom: 8px;
+  margin-top: 10px;
 
   @include media('>=desktop') {
     margin-top: 15px;
@@ -902,12 +902,12 @@ article.plan {
   border-radius: 5px;
   border: solid 1px #ddd;
   box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.5);
-  padding: 4px 14px;
-  font-size: 14px;
   font-family: $sourceSans;
+  font-size: 14px;
   font-weight: 100;
   line-height: 25px;
   margin-bottom: 24px;
+  padding: 4px 14px;
   width: 270px;
 
   @include media('>=desktop') {
@@ -916,8 +916,8 @@ article.plan {
 }
 
 .-full {
-  width: 75vmin;
   display: inline-block;
+  width: 75vmin;
 }
 
 .-centered {
