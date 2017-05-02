@@ -4,11 +4,22 @@
 @import 'utils/neat/neat';
 @import 'utils/include-media';
 
+// Media Queries
 $breakpoints: (
   'phone': 320px,
   'tablet': 500px,
   'desktop': 800px
 );
+
+// Fonts
+$helvetica: 'HelveticaNeue',
+'Helvetica',
+'Roboto',
+'Arial',
+sans-serif;
+$sourceSans: 'Source Sans Pro', $helvetica;
+$raleway: 'Raleway', $helvetica;
+$greatVibes: 'Great Vibes', $helvetica;
 
 html {
   font-size: 19.2px; // maintains consistent size between rem size on app and rem size on thumbnails //
@@ -23,7 +34,7 @@ html {
 }
 
 body {
-  font-family: 'Raleway', 'Helvetica', 'Arial', sans-serif; // logo //
+  font-family: $raleway; // logo //
   font-size: 3.8vmin;
   font-weight: 200;
 
@@ -111,7 +122,7 @@ h2 {
 }
 
 .headerLogo {
-  font-family: 'Great Vibes', 'Helvetica', 'Arial', sans-serif;
+  font-family: $greatVibes;
   font-size: 6vmin;
   line-height: 7.6vmin;
   padding: 0;
@@ -139,7 +150,7 @@ h2 {
 
 .anchor {
   color: #044860;
-  font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
+  font-family: $sourceSans;
   font-size: 4.5vmin;
   font-weight: 900;
   padding-left: 1.3vmin;
@@ -162,14 +173,12 @@ header,
   margin-right: 1vmin;
 }
 
-.usernav {
-  a:first-child {
-    display: inline-block;
-    max-width: 40vw;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
+.usernav a:first-child {
+  display: inline-block;
+  max-width: 40vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .hero {
@@ -191,7 +200,7 @@ header,
 
 button,
 input {
-  font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
+  font-family: $sourceSans;
 }
 
 .button {
@@ -199,7 +208,7 @@ input {
   border-radius: 6px;
   border: none;
   color: #fff;
-  font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
+  font-family: $sourceSans;
   font-weight: 600;
   padding: 10px 29px;
   text-decoration: none;
@@ -249,10 +258,10 @@ input {
   }
 
   .wrap {
-    margin: 0.75vmin;
-    padding: 0;
     display: inline-block;
+    margin: 0.75vmin;
     overflow: hidden;
+    padding: 0;
 
     date {
       display: block;
@@ -264,41 +273,40 @@ input {
   }
 
   .frame {
+    border: dotted 2px #777;
+    height: 100px;
     margin: 0;
+    overflow: hidden;
     padding: 0;
     width: 150px;
-    height: 100px;
-    border: dotted 2px #777;
-    overflow: hidden;
   }
 }
 
-.userForm {
-  a {
-    clear: both;
-    display: inline-block;
-  }
+.userForm a {
+  clear: both;
+  display: inline-block;
 }
 
 .headPadding {
-  padding: 7.5vmin 5vmin 5vmin;
   overflow: scroll;
+  padding: 7.5vmin 5vmin 5vmin;
 }
 
 .bgSelector {
   .colorPicker {
+    border-radius: 3vmin;
+    border: solid 0.3vmin #777;
+    cursor: pointer;
+    float: left;
+    height: 21.5vmin;
+    margin: 0.5vmin;
+    width: 21.5vmin;
+
     @include media('>=tablet') {
       margin: 0.75vmin;
       width: 13.5vmin;
       height: 13.5vmin;
     }
-    cursor: pointer;
-    margin: 0.5vmin;
-    width: 21.5vmin;
-    height: 21.5vmin;
-    float: left;
-    border: solid 0.3vmin #777;
-    border-radius: 3vmin;
   }
 
   .one {
@@ -351,9 +359,9 @@ input {
 }
 
 .cardCreator {
-  position: relative;
   height: 125.4vmin;
   padding-top: 0.5vmin;
+  position: relative;
   text-align: center;
 
   @include media('>=tablet') {
@@ -368,14 +376,14 @@ input {
     position: absolute;
     width: 100vmin;
   }
-  .prevSlide {
 
+  .prevSlide {
     left: -100%;
   }
 
   .currentSlide {
-    width: 90vmin;
     left: 5vmin;
+    width: 90vmin;
   }
 
   .nextSlide {
@@ -384,19 +392,19 @@ input {
 
   .controls {
     position: absolute;
-    z-index: 5;
-    width: 100vmin;
     top: 45vmin;
+    width: 100vmin;
+    z-index: 5;
 
     .controlBtn {
-      font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
-      position: absolute;
       background: none;
-      padding: 0.5vmin;
-      font-size: 8vmin;
       border: none;
       color: #003BB4;
+      font-family: $sourceSans;
+      font-size: 8vmin;
       outline: none;
+      padding: 0.5vmin;
+      position: absolute;
     }
 
     .previous {
@@ -420,8 +428,8 @@ input {
   }
 
   .card__previous-leave {
-    opacity: 1;
     left: 5%;
+    opacity: 1;
   }
 
   .card__previous-leave.card__previous-leave-active {
@@ -431,8 +439,8 @@ input {
   }
 
   .card__next-enter {
-    opacity: 0;
     left: 100%;
+    opacity: 0;
   }
 
   .card__next-enter.card__next-enter-active {
@@ -442,29 +450,30 @@ input {
   }
 
   .card__next-leave {
-    opacity: 1;
     left: 5%;
+    opacity: 1;
   }
 
   .card__next-leave.card__next-leave-active {
-    opacity: 0;
     left: -100%;
+    opacity: 0;
     transition: left 400ms ease-in, opacity 400ms linear;
   }
 
   h1 {
+    margin: 0.4vmin;
+
     @include media('>=desktop') {
       margin: 0.67em;
     }
-    margin: 0.4vmin;
   }
 }
 
 .cardText {
-  margin: 0 auto;
   display: block;
-  width: 60vmin;
+  margin: 0 auto;
   resize: none;
+  width: 60vmin;
 }
 
 .fontSelects {
@@ -494,18 +503,19 @@ input {
   }
 
   .fontColorPicker {
+    border-radius: 1.5vmin;
+    border: solid 0.25vmin #777;
+    cursor: pointer;
+    display: inline-block;
+    height: 12vmin;
+    margin: 1vmin;
+    width: 12vmin;
+
     @include media('>=desktop') {
       margin: 0.6vmin;
       height: 6vmin;
       width: 6vmin;
     }
-    cursor: pointer;
-    margin: 1vmin;
-    height: 12vmin;
-    width: 12vmin;
-    border: solid 0.25vmin #777;
-    border-radius: 1.5vmin;
-    display: inline-block;
   }
 
   .one {
@@ -534,38 +544,39 @@ input {
 }
 
 .preview {
+  background-color: #dddddd;
+  border: dotted 0.37vmin #777;
+  box-shadow: 0 0 35px 5px rgba(0,0,0,0.36);
+  box-sizing: content-box;
+  height: 10.2rem;
+  margin: 4vmin auto 0;
+  padding: 0;
+  position: relative;
+  width: 15.5rem;
+
   @include media('>=desktop') {
     border: dotted 0.3vmin #777;
   }
-  background-color: #dddddd;
-  box-sizing: content-box;
-  margin: 4vmin auto 0;
-  padding: 0;
-  border: dotted 0.37vmin #777;
-  width: 15.5rem;
-  height: 10.2rem;
-  position: relative;
-  box-shadow: 0 0 35px 5px rgba(0,0,0,0.36);
 
   h1 {
+    margin: 0;
+    max-height: 10.2rem;
+    max-width: 15.5rem;
+    overflow: hidden;
     position: absolute;
     text-align: center;
-    margin: 0;
-    word-wrap: break-word;
-    width: 15.5rem;
-    max-width: 15.5rem;
-    max-height: 10.2rem;
-    overflow: hidden;
-    top: 50%;
     text-shadow: none;
+    top: 50%;
     transform: translateY(-50%);
+    width: 15.5rem;
+    word-wrap: break-word;
   }
 }
 
 .toForm {
   fieldset {
-    margin: 0 auto;
     border: none;
+    margin: 0 auto;
     padding-bottom: 0;
     width: 66vmin;
 
@@ -576,7 +587,7 @@ input {
 
   .form {
     float: left;
-    font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
+    font-family: $sourceSans;
     margin: 0.5vmin;
     width: 37.3vmin;
 
@@ -591,8 +602,8 @@ input {
 
   label {
     float: left;
-    text-align: right;
     margin-right: 1.2vmin;
+    text-align: right;
     width: 20.5vmin;
 
     @include media('>=desktop') {
@@ -602,20 +613,20 @@ input {
 }
 
 .submitCard {
-  display: block;
-  opacity: 0;
-  margin: 6vmin auto 0;
   cursor: default;
+  display: block;
+  margin: 6vmin auto 0;
+  opacity: 0;
 }
 
 .subForm {
-  padding: 7.5vmin 5vmin 5vmin;
   overflow: scroll;
+  padding: 7.5vmin 5vmin 5vmin;
 
   h1 {
     position: relative;
-    width: 100%;
     text-align: center;
+    width: 100%;
   }
 }
 
@@ -635,18 +646,19 @@ input {
 }
 
 article.plan {
+  border-radius: 1vw;
+  border: 0.2vmin solid #777;
+  cursor: pointer;
+  float: left;
+  height: 43.5vmin;
+  margin: 0.75vmin;
+  opacity: 0.9;
+  padding-top: 2vmin;
+  width: 43.5vmin;
+
   @include media('>=desktop') {
     width: 21vmin;
   }
-  margin: 0.75vmin;
-  width: 43.5vmin;
-  height: 43.5vmin;
-  float: left;
-  border-radius: 1vw;
-  border: 0.2vmin solid #777;
-  padding-top: 2vmin;
-  cursor: pointer;
-  opacity: 0.9;
 
   &:hover {
     opacity: 1;
@@ -656,8 +668,8 @@ article.plan {
     cursor: pointer;
     display: inline-block;
     margin-top: 7vmin;
-    width: 100%;
     text-align: center;
+    width: 100%;
   }
 
   p {
@@ -682,8 +694,8 @@ article.plan {
 }
 
 .paymentSubmit {
-  width: 100%;
   margin-top: 3vmin;
+  width: 100%;
 }
 
 .solo {
@@ -732,18 +744,18 @@ article.plan {
   border: 0.2vw solid #000;
 
   h3 {
-    display: block;
-    text-align: center;
     background: rgba(21, 39, 67, 0.87);
+    display: block;
+    margin-bottom: 1vmin;
     margin: 0;
     padding-bottom: 1vmin;
-    margin-bottom: 1vmin;
+    text-align: center;
   }
 
   .float {
     display: inherit;
-    text-align: left;
     float: left;
+    text-align: left;
   }
 
   span {
@@ -799,22 +811,22 @@ article.plan {
 }
 
 #mc_embed_signup {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  overflow: scroll;
   background: none;
+  bottom: 0;
   clear: left;
   font: 14px Helvetica, Arial, sans-serif;
+  left: 0;
+  overflow: scroll;
+  position: absolute;
+  right: 0;
+  top: 0;
 
   label {
     display: block;
+    font-family: $sourceSans;
     font-weight: 900;
-    margin-bottom: 23px;
     letter-spacing: -0.37px;
-    font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
+    margin-bottom: 23px;
   }
 
   .button {
@@ -822,8 +834,7 @@ article.plan {
   }
 
   @include media('>=desktop') {
-    background: #fff url(https://s3.amazonaws.com/snailephant/mailbox-web.jpg) left top no-repeat fixed;
-    background-size: 50vw;
+    background: url(https://s3.amazonaws.com/snailephant/mailbox-web.jpg) left center/50vw no-repeat fixed #fff;
     overflow: hidden;
 
     .button {
@@ -859,7 +870,7 @@ article.plan {
 
 .getText {
   margin-bottom: 14px;
-  font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
+  font-family: $sourceSans;
   letter-spacing: -0.37px;
 
   &:first-of-type {
@@ -876,7 +887,7 @@ article.plan {
   margin-bottom: 8px;
   margin-top: 10px;
   font-weight: 900;
-  font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
+  font-family: $sourceSans;
   font-size: 20px;
   letter-spacing: -0.9px;
 
@@ -893,7 +904,7 @@ article.plan {
   box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.5);
   padding: 4px 14px;
   font-size: 14px;
-  font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
+  font-family: $sourceSans;
   font-weight: 100;
   line-height: 25px;
   margin-bottom: 24px;
