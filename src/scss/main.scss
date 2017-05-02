@@ -1,7 +1,7 @@
 @import 'utils/kin';
-@import '../../bower_components/bourbon/app/assets/stylesheets/bourbon';
+@import 'utils/bourbon';
 // $visual-grid: true;
-@import '../../bower_components/neat/app/assets/stylesheets/neat';
+@import 'utils/neat';
 html {
   font-size: 19.2px; // maintains consistent size between rem size on app and rem size on thumbnails //
   @include media(min-width 500px max-width 799px) {
