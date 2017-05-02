@@ -33,19 +33,6 @@ export default class Dashboard extends Component {
     this.handleUpdateCard = this.handleUpdateCard.bind(this);
   }
 
-  // <CardCreator {...this.state}  views = {views}/>
-  const views = [
-    (<Background {...this.state} updateCard={this.handleUpdateCard} />),
-    (<Text {...this.state} updateCard={this.handleUpdateCard} />),
-    (<ToForm {...this.state} updateCard={this.handleUpdateCard} />),
-    (<DateContainer
-      {...this.state}
-      history={this.props.history}
-      getUserCards={this.getUserCards}
-      updateCard={this.handleUpdateCard}
-    />),
-  ];
-
   componentWillMount() {
     this.getUserCards();
   }
@@ -73,6 +60,18 @@ export default class Dashboard extends Component {
   }
 
   render() {
+    // <CardCreator {...this.state}  views = {views}/>
+    const views = [
+      (<Background {...this.state} updateCard={this.handleUpdateCard} />),
+      (<Text {...this.state} updateCard={this.handleUpdateCard} />),
+      (<ToForm {...this.state} updateCard={this.handleUpdateCard} />),
+      (<DateContainer
+        {...this.state}
+        history={this.props.history}
+        getUserCards={this.getUserCards}
+        updateCard={this.handleUpdateCard}
+      />),
+    ];
     const childrenWithProps = React.Children.map(
       this.props.children,
       child => React.cloneElement(child, {
